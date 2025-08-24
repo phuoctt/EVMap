@@ -1,0 +1,195 @@
+{
+  "app_name": "app",
+  "charge_step1_title": "Cắm dây sạc vào xe",
+  "charge_step2_title": "Khóa xe của bạn",
+  "charge_step3_title": "Bắt đầu sạc",
+  "charge_step4_title": "Ngưng sạc",
+  "charge_status_office": "Ngắt kết nối",
+  "charge_status_available": "Sẵn sàng",
+  "charge_status_unavailable": "Không khả dụng",
+  "charge_status_preparing": "Đã cắm vòi",
+  "charge_status_charging": "Đang sạc",
+  "charge_status_supendedEV": "Đang kết nối",
+  "charge_status_finishing": "Đang sử dụng",
+  "charge_confirm_stop_charge": "Bạn chắc chắn muốn ngưng sạc ?",
+  "text_try_again": "Please try again.",
+  "text_confirm": "Xác nhận",
+  "text_cancel": "Hủy bỏ",
+  "text_notify": "Thông báo",
+  "text_no_data": "Không có dữ liệu",
+  "text_charging_cord": "Dây sạc",
+  "text_head": "Trụ",
+  "text_station": "Trạm",
+  "text_start": "Bắt đầu",
+  "text_end": "Kết thúc",
+  "text_back_home": "Trở Về Trang Chủ",
+  "text_all": "Tất cả",
+  "text_next": "Tiếp tục",
+  "error_something_went_wrong_try_again": "Đã xảy ra lỗi. Vui lòng thử lại sau",
+  "error_number_phone_required": "Vui lòng nhập số điện thoại.",
+  "error_number_phone_validate": "Số điện thoại không được lớn hơn 10 ký tự.",
+  "error_password_required": "Vui lòng nhập mật khẩu",
+  "error_confirm_password_required": "Vui lòng nhập xác nhận mật khẩu",
+  "error_confirm_password_not_match": "Mật khẩu xác nhận không khớp",
+  "error_name_required": "Vui lòng nhập họ và tên",
+  "error_email_required": "Vui lòng nhập email",
+  "error_email_validate": "Email không hợp lệ",
+  "error_session_has_expired": "Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại!",
+  "error_qr_code": "Mã QR không hợp lệ",
+  "auth_logout_confirm": "Bạn chắc chắn muốn đăng xuất không ?",
+  "auth_register_success": "Tài khoản của bạn đã được đăng ký thành công! Chào mừng bạn đến với ứng dụng của chúng tôi!",
+  "dashboard_home": "Trang chủ",
+  "dashboard_station": "Trạm sạc",
+  "dashboard_qr": "Quét mã QR",
+  "dashboard_history": "Lịch sử",
+  "dashboard_profile": "Cá nhân",
+  "home_badge_description": "Xế yêu của bạn đang được sạc đầy",
+  "home_charging_progress": "Tiến độ sạc : {value}%",
+  "@home_charging_progress": {
+    "placeholders": {
+      "value": {
+      }
+    }
+  },
+  "home_badge_bill_description": "Bạn có hóa đơn chưa thanh toán",
+  "home_badge_booking": "Bạn có hóa đơn chưa thanh toán",
+
+  "history": "Lịch sử",
+  "history_transaction": "Giao dịch",
+  "history_charge_car": "Sạc xe",
+  "history_pay_bill": "Thanh toán hóa đơn",
+  "history_reservation_deposit": "Đặt chỗ",
+  "history_manual": "Chỉnh sửa bởi quản trị viên",
+  "history_reservation_refund": "Hoàn tiền đặt chỗ",
+  "history_reservation_pay_in": "Nạp thêm điểm",
+  "bill_charge_title": "Thông tin phiên sạc",
+  "bill_total_electricity_consumption": "Tổng lượng điện tiêu thụ",
+  "bill_time_charge": "Thời gian sạc",
+  "bill_status_payment": "Trạng thái thanh toán",
+  "bill_payment": "Hóa đơn thanh toán",
+  "bill_unit_price": "Đơn giá /",
+  "bill_payment_now": "Thanh toán ngay",
+  "bill_trading_code": "Mã giao dịch",
+  "bill_payment_success": "Thanh toán thành công!",
+  "bill_payment_thank_you": "Cám ơn quý khách đã thanh toán giao dịch.",
+  "notification": "Thông báo",
+  "qr_title": "Quét QR code",
+  "qr_content": "Hướng camera về phía mã QR",
+  "qr_code_box": "Nhập Mã Trụ",
+  "qr_code_box_title": "Nhập mã trụ được ghi trên mặt trước của trụ sạc để truy cập thông tin",
+  "qr_code_box_hint_text": "Ví dụ :S1CB01C01",
+  "qr_upload_image": "Tải Ảnh Lên",
+  "top_up_title": "Nạp điểm",
+  "top_up_my_score": "Điểm của bạn:",
+  "top_up_score": "điểm",
+  "top_up_note": "(1 điểm Rabbit EVC = 1 vnđ)",
+  "top_up_select_score": "Chọn số điểm muốn nạp",
+  "top_up_payment_method": "Chọn phương thức thanh toán",
+  "top_up_top_up_now": "Nạp Điểm Ngay",
+  "top_up_payment_instructions": "Xem Hướng Dẫn Thanh Toán",
+  "top_up_payment_method_momo": "Ví momo",
+  "top_up_payment_method_zalo_pay": "ZaloPay",
+  "top_up_payment_method_vn_pay": "VNPAY",
+  "top_up_payment_method_vtc_pay": "VTC Pay",
+  "top_up_payment_viettel_pay": "ViettelPay",
+  "top_up_open_payment_method": "Mở {name}",
+  "@top_up_open_payment_method": {
+    "placeholders": {
+      "name": {
+      }
+    }
+  },
+  "top_up_popup_description": "Vui lòng thanh toán qua ứng dụng {name} hoặc quét mã QR. Hệ thông sẽ cộng điểm ngày sau khi thanh toán thành công.",
+  "@top_up_popup_description": {
+    "placeholders": {
+      "name": {
+      }
+    }
+  },
+  "top_up_popup_title": "Thanh toán bằng {name}",
+  "@top_up_popup_title": {
+    "placeholders": {
+      "name": {
+      }
+    }
+  },
+  "top_up_validate": "Số tiền phải chia hết cho 1,000 vnd",
+  "excharge_title": "Thông tin thanh toán",
+  "excharge_payment_amount": "Số tiền thanh toán",
+  "excharge_payment_method": "Phương thức thanh toán",
+  "excharge_payment_time": "Thời gian thanh toán",
+  "excharge_payment_result": "Kết quả",
+  "excharge_loadmore_money": "Nạp thêm",
+  "excharge_payment_time_expires": "Thời gian thanh toán hết hạn . Vui lòng thử lại!",
+  "station_search_hint_text": "Tìm kiếm trụ sạc",
+  "station_status_available": "Khả dụng",
+  "station_status_busy": "Đang bận sạc",
+  "station_status_offline": "Mất kết nối",
+  "station_status_error": "Lỗi",
+  "station_button_reset": "Thiệt lập lại",
+  "station_button_apply": "Áp dụng",
+  "station_history_search": "Tìm kiếm gần đây",
+  "station_result_search": "Kết quả tìm kiếm",
+  "booking_title": "Đặt chỗ",
+  "booking_time_frame": "Khung thời gian",
+  "booking_limit_note": "Đặt tối đa 4 giờ liên tiếp",
+  "booking_time_start": "Bắt đầu",
+  "booking_time_end": "Kết thúc",
+  "booking_hour": "giờ",
+  "booking_minute": "phút",
+  "booking_second": "giây",
+  "booking_put_in": "Đặt trong",
+  "booking_from": "tử",
+  "booking_time_frame_validate": "Khung thời gian không hợp lệ!",
+  "booking_details": "Chi tiết trụ sạc",
+  "booking_owner": "Chủ sở hữu",
+  "booking_port": "Cổng",
+  "booking_status": "Trạng thái",
+  "booking_price_type": "Loại giá",
+  "booking_unit": "Đơn vị",
+  "booking_name_box": "Tên trụ sạc",
+  "booking_time": "Thời gian đặt chỗ",
+  "booking_total_time": "Tổng thời gian",
+  "booking_become_a_point": "Thành điểm",
+  "booking_success": "Đặt chỗ thành công!",
+  "booking_confirm": "Xác Nhận Đặt Chỗ",
+  "booking_content_me": "Đặt chỗ trong {from} từ {to}",
+  "@booking_content_me": {
+    "placeholders": {
+      "from": {
+      },
+      "to": {
+      }
+    }
+  },
+  "booking_content_other": "Đã được đặt bởi người khác từ\n{time}",
+  "@booking_content_other": {
+    "placeholders": {
+      "time": {
+      }
+    }
+  },
+  "booking_cancel": "Hủy đặt chỗ",
+  "booking_charge_now": "Sạc ngay",
+  "booking_regulations": "Quy định đặt chỗ",
+  "booking_regulations_title": "Chi phí mỗi lần đặt chỗ là 20.000 điểm, nếu:",
+  "booking_regulations_content": "Đến sạc đúng giờ:  hoàn 100% phí",
+  "booking_regulations_content2": "Trễ không quá 20 phút:  hoàn 50% phí",
+  "booking_regulations_content3": "Trễ hơn 20 phút:  không hoàn phí",
+  "booking_regulations_content4": "Hủy đặt chỗ trước 3 giờ:  hoàn 100% phí",
+  "booking_regulations_content5": "Hủy đặt chỗ sau 3 giờ:  hoàn 50% phí",
+  "booking_expand": "Chi tiết",
+  "booking_collapse": "Thu gọn",
+
+  "account_info": "Thông tin tài khoản",
+  "account_info_personal": "Thông tin cá nhân",
+  "account_change_password": "Đổi mật khẩu",
+  "account_setting": "Cài đặt",
+  "account_support_center": "Trung tâm hỗ trợ",
+  "account_policy_and_terms": "Chính sách và điều khoản",
+  "account_app_information": "Thông tin ứng dụng",
+  "account_logout": "Đăng xuất"
+
+
+
+}

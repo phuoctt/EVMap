@@ -1,0 +1,87 @@
+
+class IcPng {
+  static const icAccountZalo = 'assets/images/png/ic_account_zalo.png';
+  static const icCustomMarker = 'assets/images/png/ic_custom_marker.png';
+  static const icDetailStationEffect1 = 'assets/images/png/ic_detail_station_effect1.png';
+  static const icDetailStationEffect2 = 'assets/images/png/ic_detail_station_effect2.png';
+  static const icDetailStationEffect3 = 'assets/images/png/ic_detail_station_effect3.png';
+  static const icHomeChargingHistory = 'assets/images/png/ic_home_charging_history.png';
+  static const icHomeChargingStation = 'assets/images/png/ic_home_charging_station.png';
+  static const icHomeInfo = 'assets/images/png/ic_home_info.png';
+  static const icHomePaper = 'assets/images/png/ic_home_paper.png';
+  static const icHomePromotion = 'assets/images/png/ic_home_promotion.png';
+  static const icHomeSetting = 'assets/images/png/ic_home_setting.png';
+  static const icHomeTutorial = 'assets/images/png/ic_home_tutorial.png';
+  static const icMomo = 'assets/images/png/ic_momo.png';
+  static const icPaymentSuccess = 'assets/images/png/ic_payment_success.png';
+  static const icViettelPay = 'assets/images/png/ic_viettel_pay.png';
+  static const icVnpay = 'assets/images/png/ic_vnpay.png';
+  static const icVtcPay = 'assets/images/png/ic_vtc_pay.png';
+  static const icZaloPay = 'assets/images/png/ic_zalo_pay.png';
+  static const iconAvatarDefault = 'assets/images/png/icon_avatar_default.png';
+  static const imageBackgroundApp = 'assets/images/png/image_background_app.png';
+  static const imageBackgroundAppCenter = 'assets/images/png/image_background_app_center.png';
+  static const imageCarDemo = 'assets/images/png/image_car_demo.png';
+  static const imageChargeStation = 'assets/images/png/image_charge_station.png';
+  static const imageChargerDock = 'assets/images/png/image_charger_dock.png';
+  static const imageDetailBill = 'assets/images/png/image_detail_bill.png';
+  static const imageHomeModel = 'assets/images/png/image_home_model.png';
+  static const imageLogoSplash = 'assets/images/png/image_logo_splash.png';
+  static const imageNotFound = 'assets/images/png/image_not_found.png';
+  static const imagePlaceholder = 'assets/images/png/image_placeholder.png';
+  static const tabbarBackground = 'assets/images/png/tabbar_background.png';
+}
+
+class IcSvg {
+  static const icAccountAppInfo = 'assets/images/svg/ic_account_app_info.svg';
+  static const icAccountChangePw = 'assets/images/svg/ic_account_change_pw.svg';
+  static const icAccountFb = 'assets/images/svg/ic_account_fb.svg';
+  static const icAccountHotline = 'assets/images/svg/ic_account_hotline.svg';
+  static const icAccountInfoPer = 'assets/images/svg/ic_account_info_per.svg';
+  static const icAccountLogout = 'assets/images/svg/ic_account_logout.svg';
+  static const icAccountPolicy = 'assets/images/svg/ic_account_policy.svg';
+  static const icAccountSetting = 'assets/images/svg/ic_account_setting.svg';
+  static const icArrowBack = 'assets/images/svg/ic_arrow_back.svg';
+  static const icBookingInfo = 'assets/images/svg/ic_booking_info.svg';
+  static const icCheck = 'assets/images/svg/ic_check.svg';
+  static const icClock = 'assets/images/svg/ic_clock.svg';
+  static const icDashboardHistory = 'assets/images/svg/ic_dashboard_history.svg';
+  static const icDashboardHome = 'assets/images/svg/ic_dashboard_home.svg';
+  static const icDashboardProfile = 'assets/images/svg/ic_dashboard_profile.svg';
+  static const icDashboardQr = 'assets/images/svg/ic_dashboard_qr.svg';
+  static const icDashboardStation = 'assets/images/svg/ic_dashboard_station.svg';
+  static const icDelete = 'assets/images/svg/ic_delete.svg';
+  static const icDetailStationCharging = 'assets/images/svg/ic_detail_station_charging.svg';
+  static const icDetailStationChargingCord = 'assets/images/svg/ic_detail_station_charging_cord.svg';
+  static const icDetailStationDefectShape = 'assets/images/svg/ic_detail_station_defect_shape.png';
+  static const icDetailStationSetting = 'assets/images/svg/ic_detail_station_setting.svg';
+  static const icFilter = 'assets/images/svg/ic_filter.svg';
+  static const icHistoryBill = 'assets/images/svg/ic_history_bill.svg';
+  static const icHistoryDiamond = 'assets/images/svg/ic_history_diamond.svg';
+  static const icHomeAdd = 'assets/images/svg/ic_home_add.svg';
+  static const icHomeBadge = 'assets/images/svg/ic_home_badge.svg';
+  static const icHomeBooking = 'assets/images/svg/ic_home_booking.svg';
+  static const icHomeGas = 'assets/images/svg/ic_home_gas.svg';
+  static const icHomeHistory = 'assets/images/svg/ic_home_history.svg';
+  static const icHomeKm = 'assets/images/svg/ic_home_km.svg';
+  static const icHomeLocation = 'assets/images/svg/ic_home_location.svg';
+  static const icHomeNotification = 'assets/images/svg/ic_home_notification.svg';
+  static const icHomePin = 'assets/images/svg/ic_home_pin.svg';
+  static const icHomeRedirect = 'assets/images/svg/ic_home_redirect.svg';
+  static const icQrAlbum = 'assets/images/svg/ic_qr_album.svg';
+  static const icQrInput = 'assets/images/svg/ic_qr_input.svg';
+  static const icRegisterAddress = 'assets/images/svg/ic_register_address.svg';
+  static const icRegisterEmail = 'assets/images/svg/ic_register_email.svg';
+  static const icRegisterName = 'assets/images/svg/ic_register_name.svg';
+  static const icRegisterNumberPhone = 'assets/images/svg/ic_register_number_phone.svg';
+  static const icRegisterPw = 'assets/images/svg/ic_register_pw.svg';
+  static const icSearch = 'assets/images/svg/ic_search.svg';
+  static const icSearchLocation = 'assets/images/svg/ic_search_location.svg';
+  static const icSnsApple = 'assets/images/svg/ic_sns_apple.svg';
+  static const icSnsFb = 'assets/images/svg/ic_sns_fb.svg';
+  static const icSnsGg = 'assets/images/svg/ic_sns_gg.svg';
+  static const icStationCha = 'assets/images/svg/ic_station_cha.svg';
+  static const icStationPause = 'assets/images/svg/ic_station_pause.svg';
+  static const iconHomeCoin = 'assets/images/svg/icon_home_coin.svg';
+}
+

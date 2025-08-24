@@ -1,0 +1,135 @@
+# Misc
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.idea/
+.packages
+.pub-cache/
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pubspec.lock
+
+# Flutter generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pubspec.lock
+.melos_tool/
+.melos/
+.melos-workspace/
+.dart_tool/
+.build/
+.flutter-plugins-dependencies
+.gen/
+
+# Obsolete files
+build/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/Podfile.lock
+macos/Flutter/Flutter.framework
+macos/Flutter/Flutter.podspec
+macos/Pods/
+macos/Podfile.lock
+macos/.symlinks/
+
+# Android
+**/android/**/gradle-wrapper.jar
+**/android/.gradle/
+**/android/captures/
+**/android/gradlew
+**/android/gradlew.bat
+**/android/local.properties
+**/android/.idea/
+**/android/.settings/
+**/android/*.iml
+**/android/out/
+**/android/app/release/
+**/android/app/profile/
+**/android/app/debug/
+**/android/key.properties
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/App.framework
+**/ios/Flutter/engine/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/ios/Runner/Generated.xcconfig
+**/ios/Runner.xcodeproj/project.xcworkspace/
+**/ios/Runner.xcworkspace/
+**/ios/Podfile.lock
+
+# macOS
+**/macos/Pods/
+**/macos/.symlinks/
+**/macos/Flutter/Flutter.framework
+**/macos/Flutter/Flutter.podspec
+**/macos/Flutter/App.framework
+**/macos/Flutter/engine/
+**/macos/ServiceDefinitions.json
+**/macos/Runner/GeneratedPluginRegistrant.*
+**/macos/Runner/Generated.xcconfig
+**/macos/Runner.xcodeproj/project.xcworkspace/
+**/macos/Runner.xcworkspace/
+**/macos/Podfile.lock
+
+# Windows
+**/windows/Flutter/ephemeral/
+**/windows/.dart_tool/
+**/windows/build/
+**/windows/CMakeFiles/
+**/windows/cmake_install.cmake
+**/windows/Makefile
+**/windows/Runner/GeneratedPluginRegistrant.*
+
+# Linux
+**/linux/Flutter/ephemeral/
+**/linux/.dart_tool/
+**/linux/build/
+**/linux/CMakeFiles/
+**/linux/cmake_install.cmake
+**/linux/Makefile
+**/linux/Runner/GeneratedPluginRegistrant.*
+
+# Web
+lib/generated_plugin_registrant.dart
+
+# VS Code
+.vscode/
+.idea/
+*.iml
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+.gradle/
+local.properties
+
+# Firebase (if used)
+google-services.json
+GoogleService-Info.plist
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+# Others
+pubspec.lock
+coverage/
+.melos_tool/
+.melos/

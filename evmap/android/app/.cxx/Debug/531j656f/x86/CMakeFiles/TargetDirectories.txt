@@ -1,0 +1,2 @@
+/Users/pdev/Desktop/FLUTTER/EVMap/evmap/android/app/.cxx/Debug/531j656f/x86/CMakeFiles/edit_cache.dir
+/Users/pdev/Desktop/FLUTTER/EVMap/evmap/android/app/.cxx/Debug/531j656f/x86/CMakeFiles/rebuild_cache.dir

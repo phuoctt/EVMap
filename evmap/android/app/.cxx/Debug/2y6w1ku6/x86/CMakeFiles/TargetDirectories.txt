@@ -1,0 +1,2 @@
+/Users/pdev/Downloads/rabbitevc-app/android/app/.cxx/Debug/2y6w1ku6/x86/CMakeFiles/edit_cache.dir
+/Users/pdev/Downloads/rabbitevc-app/android/app/.cxx/Debug/2y6w1ku6/x86/CMakeFiles/rebuild_cache.dir
