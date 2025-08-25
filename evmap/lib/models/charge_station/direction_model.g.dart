@@ -14,19 +14,11 @@ DirectionResponse _$DirectionResponseFromJson(Map json) => DirectionResponse(
           .toList(),
     );
 
-Map<String, dynamic> _$DirectionResponseToJson(DirectionResponse instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('code', instance.code);
-  writeNotNull('routes', instance.routes);
-  return val;
-}
+Map<String, dynamic> _$DirectionResponseToJson(DirectionResponse instance) =>
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.routes case final value?) 'routes': value,
+    };
 
 RouteDirectionModel _$RouteDirectionModelFromJson(Map json) =>
     RouteDirectionModel(
@@ -40,22 +32,15 @@ RouteDirectionModel _$RouteDirectionModelFromJson(Map json) =>
       weight: (json['weight'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$RouteDirectionModelToJson(RouteDirectionModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('geometry', instance.geometry);
-  writeNotNull('distance', instance.distance);
-  writeNotNull('duration', instance.duration);
-  writeNotNull('weight_name', instance.weightName);
-  writeNotNull('weight', instance.weight);
-  return val;
-}
+Map<String, dynamic> _$RouteDirectionModelToJson(
+        RouteDirectionModel instance) =>
+    <String, dynamic>{
+      if (instance.geometry case final value?) 'geometry': value,
+      if (instance.distance case final value?) 'distance': value,
+      if (instance.duration case final value?) 'duration': value,
+      if (instance.weightName case final value?) 'weight_name': value,
+      if (instance.weight case final value?) 'weight': value,
+    };
 
 Geometry _$GeometryFromJson(Map json) => Geometry(
       coordinates: (json['coordinates'] as List<dynamic>?)
@@ -64,15 +49,6 @@ Geometry _$GeometryFromJson(Map json) => Geometry(
           .toList(),
     );
 
-Map<String, dynamic> _$GeometryToJson(Geometry instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('coordinates', instance.coordinates);
-  return val;
-}
+Map<String, dynamic> _$GeometryToJson(Geometry instance) => <String, dynamic>{
+      if (instance.coordinates case final value?) 'coordinates': value,
+    };

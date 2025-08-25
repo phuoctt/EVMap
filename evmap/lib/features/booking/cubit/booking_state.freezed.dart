@@ -12,7 +12,7 @@ part of 'booking_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$BookingState {
@@ -63,28 +63,34 @@ class _$BookingStateCopyWithImpl<$Res, $Val extends BookingState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$BookingNothingCopyWith<$Res> {
-  factory _$$BookingNothingCopyWith(
-          _$BookingNothing value, $Res Function(_$BookingNothing) then) =
-      __$$BookingNothingCopyWithImpl<$Res>;
+abstract class _$$BookingNothingImplCopyWith<$Res> {
+  factory _$$BookingNothingImplCopyWith(_$BookingNothingImpl value,
+          $Res Function(_$BookingNothingImpl) then) =
+      __$$BookingNothingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BookingNothingCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingNothing>
-    implements _$$BookingNothingCopyWith<$Res> {
-  __$$BookingNothingCopyWithImpl(
-      _$BookingNothing _value, $Res Function(_$BookingNothing) _then)
+class __$$BookingNothingImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingNothingImpl>
+    implements _$$BookingNothingImplCopyWith<$Res> {
+  __$$BookingNothingImplCopyWithImpl(
+      _$BookingNothingImpl _value, $Res Function(_$BookingNothingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$BookingNothing implements BookingNothing {
-  const _$BookingNothing();
+class _$BookingNothingImpl implements BookingNothing {
+  const _$BookingNothingImpl();
 
   @override
   String toString() {
@@ -131,29 +137,32 @@ class _$BookingNothing implements BookingNothing {
 }
 
 abstract class BookingNothing implements BookingState {
-  const factory BookingNothing() = _$BookingNothing;
+  const factory BookingNothing() = _$BookingNothingImpl;
 }
 
 /// @nodoc
-abstract class _$$BookingLoadingCopyWith<$Res> {
-  factory _$$BookingLoadingCopyWith(
-          _$BookingLoading value, $Res Function(_$BookingLoading) then) =
-      __$$BookingLoadingCopyWithImpl<$Res>;
+abstract class _$$BookingLoadingImplCopyWith<$Res> {
+  factory _$$BookingLoadingImplCopyWith(_$BookingLoadingImpl value,
+          $Res Function(_$BookingLoadingImpl) then) =
+      __$$BookingLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BookingLoadingCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingLoading>
-    implements _$$BookingLoadingCopyWith<$Res> {
-  __$$BookingLoadingCopyWithImpl(
-      _$BookingLoading _value, $Res Function(_$BookingLoading) _then)
+class __$$BookingLoadingImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingLoadingImpl>
+    implements _$$BookingLoadingImplCopyWith<$Res> {
+  __$$BookingLoadingImplCopyWithImpl(
+      _$BookingLoadingImpl _value, $Res Function(_$BookingLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$BookingLoading implements BookingLoading {
-  const _$BookingLoading();
+class _$BookingLoadingImpl implements BookingLoading {
+  const _$BookingLoadingImpl();
 
   @override
   String toString() {
@@ -200,29 +209,32 @@ class _$BookingLoading implements BookingLoading {
 }
 
 abstract class BookingLoading implements BookingState {
-  const factory BookingLoading() = _$BookingLoading;
+  const factory BookingLoading() = _$BookingLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$BookingLoadingScreenCopyWith<$Res> {
-  factory _$$BookingLoadingScreenCopyWith(_$BookingLoadingScreen value,
-          $Res Function(_$BookingLoadingScreen) then) =
-      __$$BookingLoadingScreenCopyWithImpl<$Res>;
+abstract class _$$BookingLoadingScreenImplCopyWith<$Res> {
+  factory _$$BookingLoadingScreenImplCopyWith(_$BookingLoadingScreenImpl value,
+          $Res Function(_$BookingLoadingScreenImpl) then) =
+      __$$BookingLoadingScreenImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$BookingLoadingScreenCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingLoadingScreen>
-    implements _$$BookingLoadingScreenCopyWith<$Res> {
-  __$$BookingLoadingScreenCopyWithImpl(_$BookingLoadingScreen _value,
-      $Res Function(_$BookingLoadingScreen) _then)
+class __$$BookingLoadingScreenImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingLoadingScreenImpl>
+    implements _$$BookingLoadingScreenImplCopyWith<$Res> {
+  __$$BookingLoadingScreenImplCopyWithImpl(_$BookingLoadingScreenImpl _value,
+      $Res Function(_$BookingLoadingScreenImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$BookingLoadingScreen implements BookingLoadingScreen {
-  const _$BookingLoadingScreen();
+class _$BookingLoadingScreenImpl implements BookingLoadingScreen {
+  const _$BookingLoadingScreenImpl();
 
   @override
   String toString() {
@@ -269,32 +281,34 @@ class _$BookingLoadingScreen implements BookingLoadingScreen {
 }
 
 abstract class BookingLoadingScreen implements BookingState {
-  const factory BookingLoadingScreen() = _$BookingLoadingScreen;
+  const factory BookingLoadingScreen() = _$BookingLoadingScreenImpl;
 }
 
 /// @nodoc
-abstract class _$$BookingReasionLoggedCopyWith<$Res> {
-  factory _$$BookingReasionLoggedCopyWith(_$BookingReasionLogged value,
-          $Res Function(_$BookingReasionLogged) then) =
-      __$$BookingReasionLoggedCopyWithImpl<$Res>;
+abstract class _$$BookingReasionLoggedImplCopyWith<$Res> {
+  factory _$$BookingReasionLoggedImplCopyWith(_$BookingReasionLoggedImpl value,
+          $Res Function(_$BookingReasionLoggedImpl) then) =
+      __$$BookingReasionLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ReasonModel> data});
 }
 
 /// @nodoc
-class __$$BookingReasionLoggedCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingReasionLogged>
-    implements _$$BookingReasionLoggedCopyWith<$Res> {
-  __$$BookingReasionLoggedCopyWithImpl(_$BookingReasionLogged _value,
-      $Res Function(_$BookingReasionLogged) _then)
+class __$$BookingReasionLoggedImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingReasionLoggedImpl>
+    implements _$$BookingReasionLoggedImplCopyWith<$Res> {
+  __$$BookingReasionLoggedImplCopyWithImpl(_$BookingReasionLoggedImpl _value,
+      $Res Function(_$BookingReasionLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$BookingReasionLogged(
+    return _then(_$BookingReasionLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -305,8 +319,8 @@ class __$$BookingReasionLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookingReasionLogged implements BookingReasionLogged {
-  const _$BookingReasionLogged({required final List<ReasonModel> data})
+class _$BookingReasionLoggedImpl implements BookingReasionLogged {
+  const _$BookingReasionLoggedImpl({required final List<ReasonModel> data})
       : _data = data;
 
   final List<ReasonModel> _data;
@@ -322,12 +336,15 @@ class _$BookingReasionLogged implements BookingReasionLogged {
     return 'BookingState.reasonLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookingReasionLoggedCopyWith<_$BookingReasionLogged> get copyWith =>
-      __$$BookingReasionLoggedCopyWithImpl<_$BookingReasionLogged>(
-          this, _$identity);
+  _$$BookingReasionLoggedImplCopyWith<_$BookingReasionLoggedImpl>
+      get copyWith =>
+          __$$BookingReasionLoggedImplCopyWithImpl<_$BookingReasionLoggedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -370,38 +387,45 @@ class _$BookingReasionLogged implements BookingReasionLogged {
 
 abstract class BookingReasionLogged implements BookingState {
   const factory BookingReasionLogged({required final List<ReasonModel> data}) =
-      _$BookingReasionLogged;
+      _$BookingReasionLoggedImpl;
 
   List<ReasonModel> get data;
-  @JsonKey(ignore: true)
-  _$$BookingReasionLoggedCopyWith<_$BookingReasionLogged> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BookingReasionLoggedImplCopyWith<_$BookingReasionLoggedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReservationHistoryLoggedCopyWith<$Res> {
-  factory _$$ReservationHistoryLoggedCopyWith(_$ReservationHistoryLogged value,
-          $Res Function(_$ReservationHistoryLogged) then) =
-      __$$ReservationHistoryLoggedCopyWithImpl<$Res>;
+abstract class _$$ReservationHistoryLoggedImplCopyWith<$Res> {
+  factory _$$ReservationHistoryLoggedImplCopyWith(
+          _$ReservationHistoryLoggedImpl value,
+          $Res Function(_$ReservationHistoryLoggedImpl) then) =
+      __$$ReservationHistoryLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<BookingModel> data, bool? isFinish});
 }
 
 /// @nodoc
-class __$$ReservationHistoryLoggedCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$ReservationHistoryLogged>
-    implements _$$ReservationHistoryLoggedCopyWith<$Res> {
-  __$$ReservationHistoryLoggedCopyWithImpl(_$ReservationHistoryLogged _value,
-      $Res Function(_$ReservationHistoryLogged) _then)
+class __$$ReservationHistoryLoggedImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$ReservationHistoryLoggedImpl>
+    implements _$$ReservationHistoryLoggedImplCopyWith<$Res> {
+  __$$ReservationHistoryLoggedImplCopyWithImpl(
+      _$ReservationHistoryLoggedImpl _value,
+      $Res Function(_$ReservationHistoryLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
     Object? isFinish = freezed,
   }) {
-    return _then(_$ReservationHistoryLogged(
+    return _then(_$ReservationHistoryLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -416,8 +440,8 @@ class __$$ReservationHistoryLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReservationHistoryLogged implements ReservationHistoryLogged {
-  const _$ReservationHistoryLogged(
+class _$ReservationHistoryLoggedImpl implements ReservationHistoryLogged {
+  const _$ReservationHistoryLoggedImpl(
       {required final List<BookingModel> data, this.isFinish})
       : _data = data;
 
@@ -437,13 +461,14 @@ class _$ReservationHistoryLogged implements ReservationHistoryLogged {
     return 'BookingState.reservationHistoryLogged(data: $data, isFinish: $isFinish)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReservationHistoryLoggedCopyWith<_$ReservationHistoryLogged>
-      get copyWith =>
-          __$$ReservationHistoryLoggedCopyWithImpl<_$ReservationHistoryLogged>(
-              this, _$identity);
+  _$$ReservationHistoryLoggedImplCopyWith<_$ReservationHistoryLoggedImpl>
+      get copyWith => __$$ReservationHistoryLoggedImplCopyWithImpl<
+          _$ReservationHistoryLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -487,38 +512,43 @@ class _$ReservationHistoryLogged implements ReservationHistoryLogged {
 abstract class ReservationHistoryLogged implements BookingState {
   const factory ReservationHistoryLogged(
       {required final List<BookingModel> data,
-      final bool? isFinish}) = _$ReservationHistoryLogged;
+      final bool? isFinish}) = _$ReservationHistoryLoggedImpl;
 
   List<BookingModel> get data;
   bool? get isFinish;
-  @JsonKey(ignore: true)
-  _$$ReservationHistoryLoggedCopyWith<_$ReservationHistoryLogged>
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReservationHistoryLoggedImplCopyWith<_$ReservationHistoryLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BookingSlotsLoggedCopyWith<$Res> {
-  factory _$$BookingSlotsLoggedCopyWith(_$BookingSlotsLogged value,
-          $Res Function(_$BookingSlotsLogged) then) =
-      __$$BookingSlotsLoggedCopyWithImpl<$Res>;
+abstract class _$$BookingSlotsLoggedImplCopyWith<$Res> {
+  factory _$$BookingSlotsLoggedImplCopyWith(_$BookingSlotsLoggedImpl value,
+          $Res Function(_$BookingSlotsLoggedImpl) then) =
+      __$$BookingSlotsLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<SlotDataModel> data});
 }
 
 /// @nodoc
-class __$$BookingSlotsLoggedCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingSlotsLogged>
-    implements _$$BookingSlotsLoggedCopyWith<$Res> {
-  __$$BookingSlotsLoggedCopyWithImpl(
-      _$BookingSlotsLogged _value, $Res Function(_$BookingSlotsLogged) _then)
+class __$$BookingSlotsLoggedImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingSlotsLoggedImpl>
+    implements _$$BookingSlotsLoggedImplCopyWith<$Res> {
+  __$$BookingSlotsLoggedImplCopyWithImpl(_$BookingSlotsLoggedImpl _value,
+      $Res Function(_$BookingSlotsLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$BookingSlotsLogged(
+    return _then(_$BookingSlotsLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -529,8 +559,8 @@ class __$$BookingSlotsLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookingSlotsLogged implements BookingSlotsLogged {
-  const _$BookingSlotsLogged({required final List<SlotDataModel> data})
+class _$BookingSlotsLoggedImpl implements BookingSlotsLogged {
+  const _$BookingSlotsLoggedImpl({required final List<SlotDataModel> data})
       : _data = data;
 
   final List<SlotDataModel> _data;
@@ -546,11 +576,13 @@ class _$BookingSlotsLogged implements BookingSlotsLogged {
     return 'BookingState.slotsLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookingSlotsLoggedCopyWith<_$BookingSlotsLogged> get copyWith =>
-      __$$BookingSlotsLoggedCopyWithImpl<_$BookingSlotsLogged>(
+  _$$BookingSlotsLoggedImplCopyWith<_$BookingSlotsLoggedImpl> get copyWith =>
+      __$$BookingSlotsLoggedImplCopyWithImpl<_$BookingSlotsLoggedImpl>(
           this, _$identity);
 
   @override
@@ -594,37 +626,42 @@ class _$BookingSlotsLogged implements BookingSlotsLogged {
 
 abstract class BookingSlotsLogged implements BookingState {
   const factory BookingSlotsLogged({required final List<SlotDataModel> data}) =
-      _$BookingSlotsLogged;
+      _$BookingSlotsLoggedImpl;
 
   List<SlotDataModel> get data;
-  @JsonKey(ignore: true)
-  _$$BookingSlotsLoggedCopyWith<_$BookingSlotsLogged> get copyWith =>
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BookingSlotsLoggedImplCopyWith<_$BookingSlotsLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BookingSuccessCopyWith<$Res> {
-  factory _$$BookingSuccessCopyWith(
-          _$BookingSuccess value, $Res Function(_$BookingSuccess) then) =
-      __$$BookingSuccessCopyWithImpl<$Res>;
+abstract class _$$BookingSuccessImplCopyWith<$Res> {
+  factory _$$BookingSuccessImplCopyWith(_$BookingSuccessImpl value,
+          $Res Function(_$BookingSuccessImpl) then) =
+      __$$BookingSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SlotDataModel? detail});
 }
 
 /// @nodoc
-class __$$BookingSuccessCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingSuccess>
-    implements _$$BookingSuccessCopyWith<$Res> {
-  __$$BookingSuccessCopyWithImpl(
-      _$BookingSuccess _value, $Res Function(_$BookingSuccess) _then)
+class __$$BookingSuccessImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingSuccessImpl>
+    implements _$$BookingSuccessImplCopyWith<$Res> {
+  __$$BookingSuccessImplCopyWithImpl(
+      _$BookingSuccessImpl _value, $Res Function(_$BookingSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? detail = freezed,
   }) {
-    return _then(_$BookingSuccess(
+    return _then(_$BookingSuccessImpl(
       detail: freezed == detail
           ? _value.detail
           : detail // ignore: cast_nullable_to_non_nullable
@@ -635,8 +672,8 @@ class __$$BookingSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookingSuccess implements BookingSuccess {
-  const _$BookingSuccess({this.detail});
+class _$BookingSuccessImpl implements BookingSuccess {
+  const _$BookingSuccessImpl({this.detail});
 
   @override
   final SlotDataModel? detail;
@@ -646,11 +683,14 @@ class _$BookingSuccess implements BookingSuccess {
     return 'BookingState.bookingSuccess(detail: $detail)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookingSuccessCopyWith<_$BookingSuccess> get copyWith =>
-      __$$BookingSuccessCopyWithImpl<_$BookingSuccess>(this, _$identity);
+  _$$BookingSuccessImplCopyWith<_$BookingSuccessImpl> get copyWith =>
+      __$$BookingSuccessImplCopyWithImpl<_$BookingSuccessImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -693,37 +733,42 @@ class _$BookingSuccess implements BookingSuccess {
 
 abstract class BookingSuccess implements BookingState {
   const factory BookingSuccess({final SlotDataModel? detail}) =
-      _$BookingSuccess;
+      _$BookingSuccessImpl;
 
   SlotDataModel? get detail;
-  @JsonKey(ignore: true)
-  _$$BookingSuccessCopyWith<_$BookingSuccess> get copyWith =>
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BookingSuccessImplCopyWith<_$BookingSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BookingCancelCopyWith<$Res> {
-  factory _$$BookingCancelCopyWith(
-          _$BookingCancel value, $Res Function(_$BookingCancel) then) =
-      __$$BookingCancelCopyWithImpl<$Res>;
+abstract class _$$BookingCancelImplCopyWith<$Res> {
+  factory _$$BookingCancelImplCopyWith(
+          _$BookingCancelImpl value, $Res Function(_$BookingCancelImpl) then) =
+      __$$BookingCancelImplCopyWithImpl<$Res>;
   @useResult
   $Res call({num? idBooking});
 }
 
 /// @nodoc
-class __$$BookingCancelCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingCancel>
-    implements _$$BookingCancelCopyWith<$Res> {
-  __$$BookingCancelCopyWithImpl(
-      _$BookingCancel _value, $Res Function(_$BookingCancel) _then)
+class __$$BookingCancelImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingCancelImpl>
+    implements _$$BookingCancelImplCopyWith<$Res> {
+  __$$BookingCancelImplCopyWithImpl(
+      _$BookingCancelImpl _value, $Res Function(_$BookingCancelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? idBooking = freezed,
   }) {
-    return _then(_$BookingCancel(
+    return _then(_$BookingCancelImpl(
       idBooking: freezed == idBooking
           ? _value.idBooking
           : idBooking // ignore: cast_nullable_to_non_nullable
@@ -734,8 +779,8 @@ class __$$BookingCancelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookingCancel implements BookingCancel {
-  const _$BookingCancel({this.idBooking});
+class _$BookingCancelImpl implements BookingCancel {
+  const _$BookingCancelImpl({this.idBooking});
 
   @override
   final num? idBooking;
@@ -745,11 +790,13 @@ class _$BookingCancel implements BookingCancel {
     return 'BookingState.bookingCancel(idBooking: $idBooking)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookingCancelCopyWith<_$BookingCancel> get copyWith =>
-      __$$BookingCancelCopyWithImpl<_$BookingCancel>(this, _$identity);
+  _$$BookingCancelImplCopyWith<_$BookingCancelImpl> get copyWith =>
+      __$$BookingCancelImplCopyWithImpl<_$BookingCancelImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -791,37 +838,42 @@ class _$BookingCancel implements BookingCancel {
 }
 
 abstract class BookingCancel implements BookingState {
-  const factory BookingCancel({final num? idBooking}) = _$BookingCancel;
+  const factory BookingCancel({final num? idBooking}) = _$BookingCancelImpl;
 
   num? get idBooking;
-  @JsonKey(ignore: true)
-  _$$BookingCancelCopyWith<_$BookingCancel> get copyWith =>
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BookingCancelImplCopyWith<_$BookingCancelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$BookingErrorCopyWith<$Res> {
-  factory _$$BookingErrorCopyWith(
-          _$BookingError value, $Res Function(_$BookingError) then) =
-      __$$BookingErrorCopyWithImpl<$Res>;
+abstract class _$$BookingErrorImplCopyWith<$Res> {
+  factory _$$BookingErrorImplCopyWith(
+          _$BookingErrorImpl value, $Res Function(_$BookingErrorImpl) then) =
+      __$$BookingErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$BookingErrorCopyWithImpl<$Res>
-    extends _$BookingStateCopyWithImpl<$Res, _$BookingError>
-    implements _$$BookingErrorCopyWith<$Res> {
-  __$$BookingErrorCopyWithImpl(
-      _$BookingError _value, $Res Function(_$BookingError) _then)
+class __$$BookingErrorImplCopyWithImpl<$Res>
+    extends _$BookingStateCopyWithImpl<$Res, _$BookingErrorImpl>
+    implements _$$BookingErrorImplCopyWith<$Res> {
+  __$$BookingErrorImplCopyWithImpl(
+      _$BookingErrorImpl _value, $Res Function(_$BookingErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$BookingError(
+    return _then(_$BookingErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -832,8 +884,8 @@ class __$$BookingErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$BookingError implements BookingError {
-  const _$BookingError({this.error});
+class _$BookingErrorImpl implements BookingError {
+  const _$BookingErrorImpl({this.error});
 
   @override
   final String? error;
@@ -843,11 +895,13 @@ class _$BookingError implements BookingError {
     return 'BookingState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BookingErrorCopyWith<_$BookingError> get copyWith =>
-      __$$BookingErrorCopyWithImpl<_$BookingError>(this, _$identity);
+  _$$BookingErrorImplCopyWith<_$BookingErrorImpl> get copyWith =>
+      __$$BookingErrorImplCopyWithImpl<_$BookingErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -889,10 +943,13 @@ class _$BookingError implements BookingError {
 }
 
 abstract class BookingError implements BookingState {
-  const factory BookingError({final String? error}) = _$BookingError;
+  const factory BookingError({final String? error}) = _$BookingErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$BookingErrorCopyWith<_$BookingError> get copyWith =>
+
+  /// Create a copy of BookingState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BookingErrorImplCopyWith<_$BookingErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

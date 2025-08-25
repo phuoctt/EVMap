@@ -16,19 +16,11 @@ FeedModel _$FeedModelFromJson(Map json) => FeedModel(
           : DateTime.parse(json['publish_date'] as String),
     );
 
-Map<String, dynamic> _$FeedModelToJson(FeedModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('title', instance.title);
-  writeNotNull('link', instance.link);
-  writeNotNull('content', instance.content);
-  writeNotNull('content_snippet', instance.contentSnippet);
-  writeNotNull('publish_date', instance.publishDate?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$FeedModelToJson(FeedModel instance) => <String, dynamic>{
+      if (instance.title case final value?) 'title': value,
+      if (instance.link case final value?) 'link': value,
+      if (instance.content case final value?) 'content': value,
+      if (instance.contentSnippet case final value?) 'content_snippet': value,
+      if (instance.publishDate?.toIso8601String() case final value?)
+        'publish_date': value,
+    };

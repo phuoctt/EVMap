@@ -12,7 +12,7 @@ part of 'user_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserState {
@@ -56,28 +56,34 @@ class _$UserStateCopyWithImpl<$Res, $Val extends UserState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_UserStateCopyWith<$Res> {
-  factory _$$_UserStateCopyWith(
-          _$_UserState value, $Res Function(_$_UserState) then) =
-      __$$_UserStateCopyWithImpl<$Res>;
+abstract class _$$UserStateImplCopyWith<$Res> {
+  factory _$$UserStateImplCopyWith(
+          _$UserStateImpl value, $Res Function(_$UserStateImpl) then) =
+      __$$UserStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UserStateCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$_UserState>
-    implements _$$_UserStateCopyWith<$Res> {
-  __$$_UserStateCopyWithImpl(
-      _$_UserState _value, $Res Function(_$_UserState) _then)
+class __$$UserStateImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserStateImpl>
+    implements _$$UserStateImplCopyWith<$Res> {
+  __$$UserStateImplCopyWithImpl(
+      _$UserStateImpl _value, $Res Function(_$UserStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_UserState implements _UserState {
-  const _$_UserState();
+class _$UserStateImpl implements _UserState {
+  const _$UserStateImpl();
 
   @override
   String toString() {
@@ -118,29 +124,32 @@ class _$_UserState implements _UserState {
 }
 
 abstract class _UserState implements UserState {
-  const factory _UserState() = _$_UserState;
+  const factory _UserState() = _$UserStateImpl;
 }
 
 /// @nodoc
-abstract class _$$UserLoadingCopyWith<$Res> {
-  factory _$$UserLoadingCopyWith(
-          _$UserLoading value, $Res Function(_$UserLoading) then) =
-      __$$UserLoadingCopyWithImpl<$Res>;
+abstract class _$$UserLoadingImplCopyWith<$Res> {
+  factory _$$UserLoadingImplCopyWith(
+          _$UserLoadingImpl value, $Res Function(_$UserLoadingImpl) then) =
+      __$$UserLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserLoadingCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$UserLoading>
-    implements _$$UserLoadingCopyWith<$Res> {
-  __$$UserLoadingCopyWithImpl(
-      _$UserLoading _value, $Res Function(_$UserLoading) _then)
+class __$$UserLoadingImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserLoadingImpl>
+    implements _$$UserLoadingImplCopyWith<$Res> {
+  __$$UserLoadingImplCopyWithImpl(
+      _$UserLoadingImpl _value, $Res Function(_$UserLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UserLoading implements UserLoading {
-  const _$UserLoading();
+class _$UserLoadingImpl implements UserLoading {
+  const _$UserLoadingImpl();
 
   @override
   String toString() {
@@ -181,29 +190,32 @@ class _$UserLoading implements UserLoading {
 }
 
 abstract class UserLoading implements UserState {
-  const factory UserLoading() = _$UserLoading;
+  const factory UserLoading() = _$UserLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$UserLoggedCopyWith<$Res> {
-  factory _$$UserLoggedCopyWith(
-          _$UserLogged value, $Res Function(_$UserLogged) then) =
-      __$$UserLoggedCopyWithImpl<$Res>;
+abstract class _$$UserLoggedImplCopyWith<$Res> {
+  factory _$$UserLoggedImplCopyWith(
+          _$UserLoggedImpl value, $Res Function(_$UserLoggedImpl) then) =
+      __$$UserLoggedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserLoggedCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$UserLogged>
-    implements _$$UserLoggedCopyWith<$Res> {
-  __$$UserLoggedCopyWithImpl(
-      _$UserLogged _value, $Res Function(_$UserLogged) _then)
+class __$$UserLoggedImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserLoggedImpl>
+    implements _$$UserLoggedImplCopyWith<$Res> {
+  __$$UserLoggedImplCopyWithImpl(
+      _$UserLoggedImpl _value, $Res Function(_$UserLoggedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UserLogged implements UserLogged {
-  const _$UserLogged();
+class _$UserLoggedImpl implements UserLogged {
+  const _$UserLoggedImpl();
 
   @override
   String toString() {
@@ -244,29 +256,32 @@ class _$UserLogged implements UserLogged {
 }
 
 abstract class UserLogged implements UserState {
-  const factory UserLogged() = _$UserLogged;
+  const factory UserLogged() = _$UserLoggedImpl;
 }
 
 /// @nodoc
-abstract class _$$UserRegisterLoggedCopyWith<$Res> {
-  factory _$$UserRegisterLoggedCopyWith(_$UserRegisterLogged value,
-          $Res Function(_$UserRegisterLogged) then) =
-      __$$UserRegisterLoggedCopyWithImpl<$Res>;
+abstract class _$$UserRegisterLoggedImplCopyWith<$Res> {
+  factory _$$UserRegisterLoggedImplCopyWith(_$UserRegisterLoggedImpl value,
+          $Res Function(_$UserRegisterLoggedImpl) then) =
+      __$$UserRegisterLoggedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserRegisterLoggedCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$UserRegisterLogged>
-    implements _$$UserRegisterLoggedCopyWith<$Res> {
-  __$$UserRegisterLoggedCopyWithImpl(
-      _$UserRegisterLogged _value, $Res Function(_$UserRegisterLogged) _then)
+class __$$UserRegisterLoggedImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserRegisterLoggedImpl>
+    implements _$$UserRegisterLoggedImplCopyWith<$Res> {
+  __$$UserRegisterLoggedImplCopyWithImpl(_$UserRegisterLoggedImpl _value,
+      $Res Function(_$UserRegisterLoggedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UserRegisterLogged implements UserRegisterLogged {
-  const _$UserRegisterLogged();
+class _$UserRegisterLoggedImpl implements UserRegisterLogged {
+  const _$UserRegisterLoggedImpl();
 
   @override
   String toString() {
@@ -307,29 +322,32 @@ class _$UserRegisterLogged implements UserRegisterLogged {
 }
 
 abstract class UserRegisterLogged implements UserState {
-  const factory UserRegisterLogged() = _$UserRegisterLogged;
+  const factory UserRegisterLogged() = _$UserRegisterLoggedImpl;
 }
 
 /// @nodoc
-abstract class _$$UserLogoutCopyWith<$Res> {
-  factory _$$UserLogoutCopyWith(
-          _$UserLogout value, $Res Function(_$UserLogout) then) =
-      __$$UserLogoutCopyWithImpl<$Res>;
+abstract class _$$UserLogoutImplCopyWith<$Res> {
+  factory _$$UserLogoutImplCopyWith(
+          _$UserLogoutImpl value, $Res Function(_$UserLogoutImpl) then) =
+      __$$UserLogoutImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserLogoutCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$UserLogout>
-    implements _$$UserLogoutCopyWith<$Res> {
-  __$$UserLogoutCopyWithImpl(
-      _$UserLogout _value, $Res Function(_$UserLogout) _then)
+class __$$UserLogoutImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserLogoutImpl>
+    implements _$$UserLogoutImplCopyWith<$Res> {
+  __$$UserLogoutImplCopyWithImpl(
+      _$UserLogoutImpl _value, $Res Function(_$UserLogoutImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UserLogout implements UserLogout {
-  const _$UserLogout();
+class _$UserLogoutImpl implements UserLogout {
+  const _$UserLogoutImpl();
 
   @override
   String toString() {
@@ -370,29 +388,32 @@ class _$UserLogout implements UserLogout {
 }
 
 abstract class UserLogout implements UserState {
-  const factory UserLogout() = _$UserLogout;
+  const factory UserLogout() = _$UserLogoutImpl;
 }
 
 /// @nodoc
-abstract class _$$PasswordUpdatedCopyWith<$Res> {
-  factory _$$PasswordUpdatedCopyWith(
-          _$PasswordUpdated value, $Res Function(_$PasswordUpdated) then) =
-      __$$PasswordUpdatedCopyWithImpl<$Res>;
+abstract class _$$PasswordUpdatedImplCopyWith<$Res> {
+  factory _$$PasswordUpdatedImplCopyWith(_$PasswordUpdatedImpl value,
+          $Res Function(_$PasswordUpdatedImpl) then) =
+      __$$PasswordUpdatedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$PasswordUpdatedCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$PasswordUpdated>
-    implements _$$PasswordUpdatedCopyWith<$Res> {
-  __$$PasswordUpdatedCopyWithImpl(
-      _$PasswordUpdated _value, $Res Function(_$PasswordUpdated) _then)
+class __$$PasswordUpdatedImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$PasswordUpdatedImpl>
+    implements _$$PasswordUpdatedImplCopyWith<$Res> {
+  __$$PasswordUpdatedImplCopyWithImpl(
+      _$PasswordUpdatedImpl _value, $Res Function(_$PasswordUpdatedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$PasswordUpdated implements PasswordUpdated {
-  const _$PasswordUpdated();
+class _$PasswordUpdatedImpl implements PasswordUpdated {
+  const _$PasswordUpdatedImpl();
 
   @override
   String toString() {
@@ -433,26 +454,28 @@ class _$PasswordUpdated implements PasswordUpdated {
 }
 
 abstract class PasswordUpdated implements UserState {
-  const factory PasswordUpdated() = _$PasswordUpdated;
+  const factory PasswordUpdated() = _$PasswordUpdatedImpl;
 }
 
 /// @nodoc
-abstract class _$$UserErrorCopyWith<$Res> {
-  factory _$$UserErrorCopyWith(
-          _$UserError value, $Res Function(_$UserError) then) =
-      __$$UserErrorCopyWithImpl<$Res>;
+abstract class _$$UserErrorImplCopyWith<$Res> {
+  factory _$$UserErrorImplCopyWith(
+          _$UserErrorImpl value, $Res Function(_$UserErrorImpl) then) =
+      __$$UserErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error, List<String>? errors, Object? data});
 }
 
 /// @nodoc
-class __$$UserErrorCopyWithImpl<$Res>
-    extends _$UserStateCopyWithImpl<$Res, _$UserError>
-    implements _$$UserErrorCopyWith<$Res> {
-  __$$UserErrorCopyWithImpl(
-      _$UserError _value, $Res Function(_$UserError) _then)
+class __$$UserErrorImplCopyWithImpl<$Res>
+    extends _$UserStateCopyWithImpl<$Res, _$UserErrorImpl>
+    implements _$$UserErrorImplCopyWith<$Res> {
+  __$$UserErrorImplCopyWithImpl(
+      _$UserErrorImpl _value, $Res Function(_$UserErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -460,7 +483,7 @@ class __$$UserErrorCopyWithImpl<$Res>
     Object? errors = freezed,
     Object? data = freezed,
   }) {
-    return _then(_$UserError(
+    return _then(_$UserErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -476,8 +499,8 @@ class __$$UserErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserError implements UserError {
-  const _$UserError({this.error, final List<String>? errors, this.data})
+class _$UserErrorImpl implements UserError {
+  const _$UserErrorImpl({this.error, final List<String>? errors, this.data})
       : _errors = errors;
 
   @override
@@ -500,11 +523,13 @@ class _$UserError implements UserError {
     return 'UserState.error(error: $error, errors: $errors, data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserErrorCopyWith<_$UserError> get copyWith =>
-      __$$UserErrorCopyWithImpl<_$UserError>(this, _$identity);
+  _$$UserErrorImplCopyWith<_$UserErrorImpl> get copyWith =>
+      __$$UserErrorImplCopyWithImpl<_$UserErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -543,12 +568,15 @@ abstract class UserError implements UserState {
   const factory UserError(
       {final String? error,
       final List<String>? errors,
-      final Object? data}) = _$UserError;
+      final Object? data}) = _$UserErrorImpl;
 
   String? get error;
   List<String>? get errors;
   Object? get data;
-  @JsonKey(ignore: true)
-  _$$UserErrorCopyWith<_$UserError> get copyWith =>
+
+  /// Create a copy of UserState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserErrorImplCopyWith<_$UserErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

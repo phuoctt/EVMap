@@ -17,22 +17,14 @@ ChargeDataModel _$ChargeDataModelFromJson(Map json) => ChargeDataModel(
               Map<String, dynamic>.from(json['meta'] as Map)),
     );
 
-Map<String, dynamic> _$ChargeDataModelToJson(ChargeDataModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('connectorId', instance.connectorId);
-  writeNotNull('status', instance.status);
-  writeNotNull('errorCode', instance.errorCode);
-  writeNotNull('transactionId', instance.transactionId);
-  writeNotNull('meta', instance.meta);
-  return val;
-}
+Map<String, dynamic> _$ChargeDataModelToJson(ChargeDataModel instance) =>
+    <String, dynamic>{
+      if (instance.connectorId case final value?) 'connectorId': value,
+      if (instance.status case final value?) 'status': value,
+      if (instance.errorCode case final value?) 'errorCode': value,
+      if (instance.transactionId case final value?) 'transactionId': value,
+      if (instance.meta case final value?) 'meta': value,
+    };
 
 ChargeMetaModel _$ChargeMetaModelFromJson(Map json) => ChargeMetaModel()
   ..temperature = json['temperature'] == null
@@ -53,22 +45,15 @@ ChargeMetaModel _$ChargeMetaModelFromJson(Map json) => ChargeMetaModel()
       : ChargeMetaDataModel.fromJson(
           Map<String, dynamic>.from(json['soc'] as Map));
 
-Map<String, dynamic> _$ChargeMetaModelToJson(ChargeMetaModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('temperature', instance.temperature);
-  writeNotNull(
-      'energy_active_import_register', instance.energy_active_import_register);
-  writeNotNull('power_active_import', instance.power_active_import);
-  writeNotNull('soc', instance.soc);
-  return val;
-}
+Map<String, dynamic> _$ChargeMetaModelToJson(ChargeMetaModel instance) =>
+    <String, dynamic>{
+      if (instance.temperature case final value?) 'temperature': value,
+      if (instance.energy_active_import_register case final value?)
+        'energy_active_import_register': value,
+      if (instance.power_active_import case final value?)
+        'power_active_import': value,
+      if (instance.soc case final value?) 'soc': value,
+    };
 
 ChargeMetaDataModel _$ChargeMetaDataModelFromJson(Map json) =>
     ChargeMetaDataModel()
@@ -76,17 +61,10 @@ ChargeMetaDataModel _$ChargeMetaDataModelFromJson(Map json) =>
       ..value = json['value'] as String?
       ..unit = json['unit'] as String?;
 
-Map<String, dynamic> _$ChargeMetaDataModelToJson(ChargeMetaDataModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('measurand', instance.measurand);
-  writeNotNull('value', instance.value);
-  writeNotNull('unit', instance.unit);
-  return val;
-}
+Map<String, dynamic> _$ChargeMetaDataModelToJson(
+        ChargeMetaDataModel instance) =>
+    <String, dynamic>{
+      if (instance.measurand case final value?) 'measurand': value,
+      if (instance.value case final value?) 'value': value,
+      if (instance.unit case final value?) 'unit': value,
+    };

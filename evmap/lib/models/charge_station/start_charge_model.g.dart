@@ -12,15 +12,7 @@ StartChargeDataModel _$StartChargeDataModelFromJson(Map json) =>
     );
 
 Map<String, dynamic> _$StartChargeDataModelToJson(
-    StartChargeDataModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('transaction_id', instance.transaction_id);
-  return val;
-}
+        StartChargeDataModel instance) =>
+    <String, dynamic>{
+      if (instance.transaction_id case final value?) 'transaction_id': value,
+    };

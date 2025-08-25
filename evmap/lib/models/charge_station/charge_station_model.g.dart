@@ -29,28 +29,23 @@ ChargeStationModel _$ChargeStationModelFromJson(Map json) => ChargeStationModel(
               Map<String, dynamic>.from(json['customer'] as Map)),
     );
 
-Map<String, dynamic> _$ChargeStationModelToJson(ChargeStationModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  writeNotNull('images', instance.images);
-  writeNotNull('chargeBoxList', instance.chargeBoxList);
-  writeNotNull('description', instance.description);
-  writeNotNull('address', instance.address);
-  writeNotNull('location_latitude', instance.location_latitude);
-  writeNotNull('location_longitude', instance.location_longitude);
-  writeNotNull('distance', instance.distance);
-  writeNotNull('distance_inMeters', instance.distance_inMeters);
-  writeNotNull('customer', instance.customer);
-  return val;
-}
+Map<String, dynamic> _$ChargeStationModelToJson(ChargeStationModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.images case final value?) 'images': value,
+      if (instance.chargeBoxList case final value?) 'chargeBoxList': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.address case final value?) 'address': value,
+      if (instance.location_latitude case final value?)
+        'location_latitude': value,
+      if (instance.location_longitude case final value?)
+        'location_longitude': value,
+      if (instance.distance case final value?) 'distance': value,
+      if (instance.distance_inMeters case final value?)
+        'distance_inMeters': value,
+      if (instance.customer case final value?) 'customer': value,
+    };
 
 ImageChargeStationModel _$ImageChargeStationModelFromJson(Map json) =>
     ImageChargeStationModel()
@@ -60,36 +55,21 @@ ImageChargeStationModel _$ImageChargeStationModelFromJson(Map json) =>
       ..name = json['name'] as String?;
 
 Map<String, dynamic> _$ImageChargeStationModelToJson(
-    ImageChargeStationModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('chargeStation_id', instance.chargeStation_id);
-  writeNotNull('images', instance.images);
-  writeNotNull('name', instance.name);
-  return val;
-}
+        ImageChargeStationModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.chargeStation_id case final value?)
+        'chargeStation_id': value,
+      if (instance.images case final value?) 'images': value,
+      if (instance.name case final value?) 'name': value,
+    };
 
 CustomerModel _$CustomerModelFromJson(Map json) => CustomerModel()
   ..id = json['id'] as num?
   ..full_name = json['full_name'] as String?;
 
-Map<String, dynamic> _$CustomerModelToJson(CustomerModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('full_name', instance.full_name);
-  return val;
-}
+Map<String, dynamic> _$CustomerModelToJson(CustomerModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.full_name case final value?) 'full_name': value,
+    };

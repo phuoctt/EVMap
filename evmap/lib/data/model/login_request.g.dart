@@ -15,22 +15,12 @@ LoginRequest _$LoginRequestFromJson(Map json) => LoginRequest(
       device_id: json['device_id'] as String?,
     );
 
-Map<String, dynamic> _$LoginRequestToJson(LoginRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('phone_number', instance.phone_number);
-  writeNotNull('password', instance.password);
-  writeNotNull('first_name', instance.first_name);
-  writeNotNull('last_name', instance.last_name);
-  writeNotNull('email', instance.email);
-  writeNotNull('device_id', instance.device_id);
-  // writeNotNull('balance', 12);
-
-  return val;
-}
+Map<String, dynamic> _$LoginRequestToJson(LoginRequest instance) =>
+    <String, dynamic>{
+      if (instance.phone_number case final value?) 'phone_number': value,
+      if (instance.password case final value?) 'password': value,
+      if (instance.first_name case final value?) 'first_name': value,
+      if (instance.last_name case final value?) 'last_name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.device_id case final value?) 'device_id': value,
+    };

@@ -3,12 +3,33 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:qr_code_dart_scan/qr_code_dart_scan.dart';
 import 'package:rabbitevc/share/utils/localization_utils.dart';
+
 // import 'package:url_launcher/url_launcher.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 
 class AppUtils {
+  static Future<Position?> getMyLocation() async {
+    var status = await Permission.locationWhenInUse.status;
+    if (!status.isGranted) {
+      status = await Permission.locationWhenInUse.request();
+      if (!status.isGranted) {
+        return null;
+      }
+    }
+
+    try {
+      Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+      return position;
+    } catch (e) {
+      return null;
+    }
+  }
+
   static Future<String> getDeviceId() async {
     var deviceInfo = DeviceInfoPlugin();
     late String deviceId;

@@ -12,7 +12,7 @@ part of 'user_point_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$UserPointState {
@@ -49,28 +49,34 @@ class _$UserPointStateCopyWithImpl<$Res, $Val extends UserPointState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$UserPointLoadingCopyWith<$Res> {
-  factory _$$UserPointLoadingCopyWith(
-          _$UserPointLoading value, $Res Function(_$UserPointLoading) then) =
-      __$$UserPointLoadingCopyWithImpl<$Res>;
+abstract class _$$UserPointLoadingImplCopyWith<$Res> {
+  factory _$$UserPointLoadingImplCopyWith(_$UserPointLoadingImpl value,
+          $Res Function(_$UserPointLoadingImpl) then) =
+      __$$UserPointLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UserPointLoadingCopyWithImpl<$Res>
-    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointLoading>
-    implements _$$UserPointLoadingCopyWith<$Res> {
-  __$$UserPointLoadingCopyWithImpl(
-      _$UserPointLoading _value, $Res Function(_$UserPointLoading) _then)
+class __$$UserPointLoadingImplCopyWithImpl<$Res>
+    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointLoadingImpl>
+    implements _$$UserPointLoadingImplCopyWith<$Res> {
+  __$$UserPointLoadingImplCopyWithImpl(_$UserPointLoadingImpl _value,
+      $Res Function(_$UserPointLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UserPointLoading implements UserPointLoading {
-  const _$UserPointLoading();
+class _$UserPointLoadingImpl implements UserPointLoading {
+  const _$UserPointLoadingImpl();
 
   @override
   String toString() {
@@ -103,32 +109,34 @@ class _$UserPointLoading implements UserPointLoading {
 }
 
 abstract class UserPointLoading implements UserPointState {
-  const factory UserPointLoading() = _$UserPointLoading;
+  const factory UserPointLoading() = _$UserPointLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$UserPointLoggedCopyWith<$Res> {
-  factory _$$UserPointLoggedCopyWith(
-          _$UserPointLogged value, $Res Function(_$UserPointLogged) then) =
-      __$$UserPointLoggedCopyWithImpl<$Res>;
+abstract class _$$UserPointLoggedImplCopyWith<$Res> {
+  factory _$$UserPointLoggedImplCopyWith(_$UserPointLoggedImpl value,
+          $Res Function(_$UserPointLoggedImpl) then) =
+      __$$UserPointLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserPointModel user});
 }
 
 /// @nodoc
-class __$$UserPointLoggedCopyWithImpl<$Res>
-    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointLogged>
-    implements _$$UserPointLoggedCopyWith<$Res> {
-  __$$UserPointLoggedCopyWithImpl(
-      _$UserPointLogged _value, $Res Function(_$UserPointLogged) _then)
+class __$$UserPointLoggedImplCopyWithImpl<$Res>
+    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointLoggedImpl>
+    implements _$$UserPointLoggedImplCopyWith<$Res> {
+  __$$UserPointLoggedImplCopyWithImpl(
+      _$UserPointLoggedImpl _value, $Res Function(_$UserPointLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$UserPointLogged(
+    return _then(_$UserPointLoggedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -139,8 +147,8 @@ class __$$UserPointLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserPointLogged implements UserPointLogged {
-  const _$UserPointLogged(this.user);
+class _$UserPointLoggedImpl implements UserPointLogged {
+  const _$UserPointLoggedImpl(this.user);
 
   @override
   final UserPointModel user;
@@ -150,11 +158,14 @@ class _$UserPointLogged implements UserPointLogged {
     return 'UserPointState.logged(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserPointLoggedCopyWith<_$UserPointLogged> get copyWith =>
-      __$$UserPointLoggedCopyWithImpl<_$UserPointLogged>(this, _$identity);
+  _$$UserPointLoggedImplCopyWith<_$UserPointLoggedImpl> get copyWith =>
+      __$$UserPointLoggedImplCopyWithImpl<_$UserPointLoggedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,37 +193,43 @@ class _$UserPointLogged implements UserPointLogged {
 }
 
 abstract class UserPointLogged implements UserPointState {
-  const factory UserPointLogged(final UserPointModel user) = _$UserPointLogged;
+  const factory UserPointLogged(final UserPointModel user) =
+      _$UserPointLoggedImpl;
 
   UserPointModel get user;
-  @JsonKey(ignore: true)
-  _$$UserPointLoggedCopyWith<_$UserPointLogged> get copyWith =>
+
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserPointLoggedImplCopyWith<_$UserPointLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$UserPointErrorCopyWith<$Res> {
-  factory _$$UserPointErrorCopyWith(
-          _$UserPointError value, $Res Function(_$UserPointError) then) =
-      __$$UserPointErrorCopyWithImpl<$Res>;
+abstract class _$$UserPointErrorImplCopyWith<$Res> {
+  factory _$$UserPointErrorImplCopyWith(_$UserPointErrorImpl value,
+          $Res Function(_$UserPointErrorImpl) then) =
+      __$$UserPointErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$UserPointErrorCopyWithImpl<$Res>
-    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointError>
-    implements _$$UserPointErrorCopyWith<$Res> {
-  __$$UserPointErrorCopyWithImpl(
-      _$UserPointError _value, $Res Function(_$UserPointError) _then)
+class __$$UserPointErrorImplCopyWithImpl<$Res>
+    extends _$UserPointStateCopyWithImpl<$Res, _$UserPointErrorImpl>
+    implements _$$UserPointErrorImplCopyWith<$Res> {
+  __$$UserPointErrorImplCopyWithImpl(
+      _$UserPointErrorImpl _value, $Res Function(_$UserPointErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$UserPointError(
+    return _then(_$UserPointErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -223,8 +240,8 @@ class __$$UserPointErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserPointError implements UserPointError {
-  const _$UserPointError({this.error});
+class _$UserPointErrorImpl implements UserPointError {
+  const _$UserPointErrorImpl({this.error});
 
   @override
   final String? error;
@@ -234,11 +251,14 @@ class _$UserPointError implements UserPointError {
     return 'UserPointState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserPointErrorCopyWith<_$UserPointError> get copyWith =>
-      __$$UserPointErrorCopyWithImpl<_$UserPointError>(this, _$identity);
+  _$$UserPointErrorImplCopyWith<_$UserPointErrorImpl> get copyWith =>
+      __$$UserPointErrorImplCopyWithImpl<_$UserPointErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -266,10 +286,13 @@ class _$UserPointError implements UserPointError {
 }
 
 abstract class UserPointError implements UserPointState {
-  const factory UserPointError({final String? error}) = _$UserPointError;
+  const factory UserPointError({final String? error}) = _$UserPointErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$UserPointErrorCopyWith<_$UserPointError> get copyWith =>
+
+  /// Create a copy of UserPointState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserPointErrorImplCopyWith<_$UserPointErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,6 +12,7 @@ import 'package:rabbitevc/models/charge_station/charge_station_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_type_model.dart';
 import 'package:rabbitevc/models/charge_station/direction_model.dart';
 import 'package:rabbitevc/models/charge_station/start_charge_model.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'charge_station_api_service.g.dart';
@@ -95,4 +96,10 @@ abstract class ChargeStationApiService {
 
   @GET('masters/reasons')
   Future<BaseResponse<List<ReasonModel>>> reasons();
+
+  @GET('discovery/stations')
+  Future<BaseResponse<ListResponse<Station>>> stations({@Query('limit') int? limit});
+
+  @GET('discovery/stations/{id}')
+  Future<BaseResponse<Station>> detailStation({@Path('id') num? id});
 }

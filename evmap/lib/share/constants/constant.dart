@@ -16,12 +16,13 @@ class ApiStatus {
 }
 
 class AppConfig {
-  static const urlDev = 'https://dev-api.rabbitevc.vn/api/v1/';
+  static const urlDev = 'https://dev-evmap-api.rabbitevc.vn/api/v1/';
+
   static const urlSocketDev = 'https://dev-ws.rabbitevc.vn';
 
-  static const urlStag = 'https://dev-api.rabbitevc.vn/api/v1/';
+  static const urlStag = 'https://dev-evmap-api.rabbitevc.vn/api/v1/';
 
-  static const urlProd = 'https://dev-api.rabbitevc.vn/api/v1/';
+  static const urlProd = 'https://dev-evmap-api.rabbitevc.vn/api/v1/';
 
 
 

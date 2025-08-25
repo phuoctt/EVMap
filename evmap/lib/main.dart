@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rabbitevc/app_setup.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_box_in_app_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/dashboard/screens/dashboard_screen.dart';
 import 'package:rabbitevc/features/dashboard/screens/splash_screen.dart';
 import 'package:rabbitevc/features/dashboard/widgets/map_ui.dart';
@@ -50,6 +51,7 @@ void mainApp() async {
       BlocProvider<ChargeCubit>(create: (context) => ChargeCubit()),
       BlocProvider<TransactionCubit>(create: (context) => TransactionCubit()),
       BlocProvider<TopUpCubit>(create: (context) => TopUpCubit()),
+      BlocProvider<StationCubit>(create: (context) => StationCubit(),lazy: false),
     ],
     child: MyApp(app: app),
   ));
@@ -147,6 +149,8 @@ class _MyAppState extends State<MyApp> {
             ExChargeScreen.route,
             arguments: {'data': paymentModel},
             (route) => route.isFirst);
+        break;
+      case null:
         break;
     }
   }

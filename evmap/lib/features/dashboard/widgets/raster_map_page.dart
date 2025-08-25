@@ -1,6 +1,9 @@
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/utils/utils.dart';
 import 'package:rabbitevc/utils/tile_servers.dart';
 import 'package:rabbitevc/utils/viewport_painter.dart';
@@ -10,7 +13,8 @@ import 'package:latlng/latlng.dart';
 import 'package:map/map.dart';
 
 class RasterMapPage extends StatefulWidget {
-  const RasterMapPage({Key? key}) : super(key: key);
+  final List<LatLng> markers;
+  const RasterMapPage({Key? key,required this.markers}) : super(key: key);
 
   @override
   RasterMapPageState createState() => RasterMapPageState();
@@ -23,13 +27,14 @@ class RasterMapPageState extends State<RasterMapPage> {
   // );
   final controller = MapController(
     location: const LatLng(
-      Angle.degree(10.7769),   // Latitude HCM
-      Angle.degree(106.7009),  // Longitude HCM
+      Angle.degree(10.7769),
+      Angle.degree(106.7009),
     ),
-    zoom: 12, // 12 nhìn rõ thành phố, bạn có thể chỉnh
+    zoom: 12,
   );
 
   bool _darkMode = false;
+  // List<LatLng> markers = [];
 
   void _gotoDefault() {
     controller.center = const LatLng(Angle.degree(35.68), Angle.degree(51.41));
@@ -47,6 +52,7 @@ class RasterMapPageState extends State<RasterMapPage> {
 
   Offset? _dragStart;
   double _scaleStart = 1.0;
+
   void _onScaleStart(ScaleStartDetails details) {
     _dragStart = details.focalPoint;
     _scaleStart = 1.0;
@@ -113,7 +119,8 @@ class RasterMapPageState extends State<RasterMapPage> {
               details.localPosition,
             ),
             onScaleStart: _onScaleStart,
-            onScaleUpdate: (details) => _onScaleUpdate(details, transformer),
+            onScaleUpdate: (details) =>
+                _onScaleUpdate(details, transformer),
             child: Listener(
               behavior: HitTestBehavior.opaque,
               onPointerSignal: (event) {
@@ -142,12 +149,27 @@ class RasterMapPageState extends State<RasterMapPage> {
                       y %= tilesInZoom;
 
                       return CachedNetworkImage(
-                        imageUrl:
-                            _darkMode ? googleDark(z, x, y) : google(z, x, y),
+                        imageUrl: _darkMode
+                            ? googleDark(z, x, y)
+                            : google(z, x, y),
                         fit: BoxFit.cover,
                       );
                     },
                   ),
+                  // Marker
+                  ...widget.markers.map((location) {
+                    final markerOffset = transformer.toOffset(location);
+                    return Positioned(
+                      left: markerOffset.dx - 12,
+                      top: markerOffset.dy - 24,
+                      child: const Icon(
+                        Icons.location_on,
+                        color: Colors.red,
+                        size: 32,
+                      ),
+                    );
+                  }).toList(),
+
                   CustomPaint(
                     painter: ViewportPainter(
                       transformer.getViewport(),

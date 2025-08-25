@@ -17,18 +17,12 @@ BookingRequest _$BookingRequestFromJson(Map json) => BookingRequest(
           : DateTime.parse(json['start_datetime'] as String),
     );
 
-Map<String, dynamic> _$BookingRequestToJson(BookingRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('charge_box_id', instance.charge_box_id);
-  writeNotNull('connector_id', instance.connector_id);
-  writeNotNull('expiry_datetime', instance.expiry_datetime?.toIso8601String());
-  writeNotNull('start_datetime', instance.start_datetime?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$BookingRequestToJson(BookingRequest instance) =>
+    <String, dynamic>{
+      if (instance.charge_box_id case final value?) 'charge_box_id': value,
+      if (instance.connector_id case final value?) 'connector_id': value,
+      if (instance.expiry_datetime?.toIso8601String() case final value?)
+        'expiry_datetime': value,
+      if (instance.start_datetime?.toIso8601String() case final value?)
+        'start_datetime': value,
+    };

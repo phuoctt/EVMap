@@ -12,7 +12,7 @@ part of 'top_up_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TopUpState {
@@ -55,28 +55,34 @@ class _$TopUpStateCopyWithImpl<$Res, $Val extends TopUpState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$TopUpLoadingCopyWith<$Res> {
-  factory _$$TopUpLoadingCopyWith(
-          _$TopUpLoading value, $Res Function(_$TopUpLoading) then) =
-      __$$TopUpLoadingCopyWithImpl<$Res>;
+abstract class _$$TopUpLoadingImplCopyWith<$Res> {
+  factory _$$TopUpLoadingImplCopyWith(
+          _$TopUpLoadingImpl value, $Res Function(_$TopUpLoadingImpl) then) =
+      __$$TopUpLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TopUpLoadingCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpLoading>
-    implements _$$TopUpLoadingCopyWith<$Res> {
-  __$$TopUpLoadingCopyWithImpl(
-      _$TopUpLoading _value, $Res Function(_$TopUpLoading) _then)
+class __$$TopUpLoadingImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpLoadingImpl>
+    implements _$$TopUpLoadingImplCopyWith<$Res> {
+  __$$TopUpLoadingImplCopyWithImpl(
+      _$TopUpLoadingImpl _value, $Res Function(_$TopUpLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TopUpLoading implements TopUpLoading {
-  const _$TopUpLoading();
+class _$TopUpLoadingImpl implements TopUpLoading {
+  const _$TopUpLoadingImpl();
 
   @override
   String toString() {
@@ -115,29 +121,32 @@ class _$TopUpLoading implements TopUpLoading {
 }
 
 abstract class TopUpLoading implements TopUpState {
-  const factory TopUpLoading() = _$TopUpLoading;
+  const factory TopUpLoading() = _$TopUpLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$TopUpLoadingScreenCopyWith<$Res> {
-  factory _$$TopUpLoadingScreenCopyWith(_$TopUpLoadingScreen value,
-          $Res Function(_$TopUpLoadingScreen) then) =
-      __$$TopUpLoadingScreenCopyWithImpl<$Res>;
+abstract class _$$TopUpLoadingScreenImplCopyWith<$Res> {
+  factory _$$TopUpLoadingScreenImplCopyWith(_$TopUpLoadingScreenImpl value,
+          $Res Function(_$TopUpLoadingScreenImpl) then) =
+      __$$TopUpLoadingScreenImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TopUpLoadingScreenCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpLoadingScreen>
-    implements _$$TopUpLoadingScreenCopyWith<$Res> {
-  __$$TopUpLoadingScreenCopyWithImpl(
-      _$TopUpLoadingScreen _value, $Res Function(_$TopUpLoadingScreen) _then)
+class __$$TopUpLoadingScreenImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpLoadingScreenImpl>
+    implements _$$TopUpLoadingScreenImplCopyWith<$Res> {
+  __$$TopUpLoadingScreenImplCopyWithImpl(_$TopUpLoadingScreenImpl _value,
+      $Res Function(_$TopUpLoadingScreenImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TopUpLoadingScreen implements TopUpLoadingScreen {
-  const _$TopUpLoadingScreen();
+class _$TopUpLoadingScreenImpl implements TopUpLoadingScreen {
+  const _$TopUpLoadingScreenImpl();
 
   @override
   String toString() {
@@ -176,32 +185,34 @@ class _$TopUpLoadingScreen implements TopUpLoadingScreen {
 }
 
 abstract class TopUpLoadingScreen implements TopUpState {
-  const factory TopUpLoadingScreen() = _$TopUpLoadingScreen;
+  const factory TopUpLoadingScreen() = _$TopUpLoadingScreenImpl;
 }
 
 /// @nodoc
-abstract class _$$TopUpSuccessCopyWith<$Res> {
-  factory _$$TopUpSuccessCopyWith(
-          _$TopUpSuccess value, $Res Function(_$TopUpSuccess) then) =
-      __$$TopUpSuccessCopyWithImpl<$Res>;
+abstract class _$$TopUpSuccessImplCopyWith<$Res> {
+  factory _$$TopUpSuccessImplCopyWith(
+          _$TopUpSuccessImpl value, $Res Function(_$TopUpSuccessImpl) then) =
+      __$$TopUpSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PaymentModel? data});
 }
 
 /// @nodoc
-class __$$TopUpSuccessCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpSuccess>
-    implements _$$TopUpSuccessCopyWith<$Res> {
-  __$$TopUpSuccessCopyWithImpl(
-      _$TopUpSuccess _value, $Res Function(_$TopUpSuccess) _then)
+class __$$TopUpSuccessImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpSuccessImpl>
+    implements _$$TopUpSuccessImplCopyWith<$Res> {
+  __$$TopUpSuccessImplCopyWithImpl(
+      _$TopUpSuccessImpl _value, $Res Function(_$TopUpSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$TopUpSuccess(
+    return _then(_$TopUpSuccessImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -212,8 +223,8 @@ class __$$TopUpSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TopUpSuccess implements TopUpSuccess {
-  const _$TopUpSuccess({this.data});
+class _$TopUpSuccessImpl implements TopUpSuccess {
+  const _$TopUpSuccessImpl({this.data});
 
   @override
   final PaymentModel? data;
@@ -223,11 +234,13 @@ class _$TopUpSuccess implements TopUpSuccess {
     return 'TopUpState.success(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TopUpSuccessCopyWith<_$TopUpSuccess> get copyWith =>
-      __$$TopUpSuccessCopyWithImpl<_$TopUpSuccess>(this, _$identity);
+  _$$TopUpSuccessImplCopyWith<_$TopUpSuccessImpl> get copyWith =>
+      __$$TopUpSuccessImplCopyWithImpl<_$TopUpSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -261,37 +274,42 @@ class _$TopUpSuccess implements TopUpSuccess {
 }
 
 abstract class TopUpSuccess implements TopUpState {
-  const factory TopUpSuccess({final PaymentModel? data}) = _$TopUpSuccess;
+  const factory TopUpSuccess({final PaymentModel? data}) = _$TopUpSuccessImpl;
 
   PaymentModel? get data;
-  @JsonKey(ignore: true)
-  _$$TopUpSuccessCopyWith<_$TopUpSuccess> get copyWith =>
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TopUpSuccessImplCopyWith<_$TopUpSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TopUpStatusSuccessCopyWith<$Res> {
-  factory _$$TopUpStatusSuccessCopyWith(_$TopUpStatusSuccess value,
-          $Res Function(_$TopUpStatusSuccess) then) =
-      __$$TopUpStatusSuccessCopyWithImpl<$Res>;
+abstract class _$$TopUpStatusSuccessImplCopyWith<$Res> {
+  factory _$$TopUpStatusSuccessImplCopyWith(_$TopUpStatusSuccessImpl value,
+          $Res Function(_$TopUpStatusSuccessImpl) then) =
+      __$$TopUpStatusSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PaymentModel? data});
 }
 
 /// @nodoc
-class __$$TopUpStatusSuccessCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpStatusSuccess>
-    implements _$$TopUpStatusSuccessCopyWith<$Res> {
-  __$$TopUpStatusSuccessCopyWithImpl(
-      _$TopUpStatusSuccess _value, $Res Function(_$TopUpStatusSuccess) _then)
+class __$$TopUpStatusSuccessImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpStatusSuccessImpl>
+    implements _$$TopUpStatusSuccessImplCopyWith<$Res> {
+  __$$TopUpStatusSuccessImplCopyWithImpl(_$TopUpStatusSuccessImpl _value,
+      $Res Function(_$TopUpStatusSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$TopUpStatusSuccess(
+    return _then(_$TopUpStatusSuccessImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -302,8 +320,8 @@ class __$$TopUpStatusSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TopUpStatusSuccess implements TopUpStatusSuccess {
-  const _$TopUpStatusSuccess({this.data});
+class _$TopUpStatusSuccessImpl implements TopUpStatusSuccess {
+  const _$TopUpStatusSuccessImpl({this.data});
 
   @override
   final PaymentModel? data;
@@ -313,11 +331,13 @@ class _$TopUpStatusSuccess implements TopUpStatusSuccess {
     return 'TopUpState.statusSuccess(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TopUpStatusSuccessCopyWith<_$TopUpStatusSuccess> get copyWith =>
-      __$$TopUpStatusSuccessCopyWithImpl<_$TopUpStatusSuccess>(
+  _$$TopUpStatusSuccessImplCopyWith<_$TopUpStatusSuccessImpl> get copyWith =>
+      __$$TopUpStatusSuccessImplCopyWithImpl<_$TopUpStatusSuccessImpl>(
           this, _$identity);
 
   @override
@@ -353,37 +373,42 @@ class _$TopUpStatusSuccess implements TopUpStatusSuccess {
 
 abstract class TopUpStatusSuccess implements TopUpState {
   const factory TopUpStatusSuccess({final PaymentModel? data}) =
-      _$TopUpStatusSuccess;
+      _$TopUpStatusSuccessImpl;
 
   PaymentModel? get data;
-  @JsonKey(ignore: true)
-  _$$TopUpStatusSuccessCopyWith<_$TopUpStatusSuccess> get copyWith =>
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TopUpStatusSuccessImplCopyWith<_$TopUpStatusSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TopUpDetailPaymentCopyWith<$Res> {
-  factory _$$TopUpDetailPaymentCopyWith(_$TopUpDetailPayment value,
-          $Res Function(_$TopUpDetailPayment) then) =
-      __$$TopUpDetailPaymentCopyWithImpl<$Res>;
+abstract class _$$TopUpDetailPaymentImplCopyWith<$Res> {
+  factory _$$TopUpDetailPaymentImplCopyWith(_$TopUpDetailPaymentImpl value,
+          $Res Function(_$TopUpDetailPaymentImpl) then) =
+      __$$TopUpDetailPaymentImplCopyWithImpl<$Res>;
   @useResult
   $Res call({PaymentModel? data});
 }
 
 /// @nodoc
-class __$$TopUpDetailPaymentCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpDetailPayment>
-    implements _$$TopUpDetailPaymentCopyWith<$Res> {
-  __$$TopUpDetailPaymentCopyWithImpl(
-      _$TopUpDetailPayment _value, $Res Function(_$TopUpDetailPayment) _then)
+class __$$TopUpDetailPaymentImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpDetailPaymentImpl>
+    implements _$$TopUpDetailPaymentImplCopyWith<$Res> {
+  __$$TopUpDetailPaymentImplCopyWithImpl(_$TopUpDetailPaymentImpl _value,
+      $Res Function(_$TopUpDetailPaymentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$TopUpDetailPayment(
+    return _then(_$TopUpDetailPaymentImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -394,8 +419,8 @@ class __$$TopUpDetailPaymentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TopUpDetailPayment implements TopUpDetailPayment {
-  const _$TopUpDetailPayment({this.data});
+class _$TopUpDetailPaymentImpl implements TopUpDetailPayment {
+  const _$TopUpDetailPaymentImpl({this.data});
 
   @override
   final PaymentModel? data;
@@ -405,11 +430,13 @@ class _$TopUpDetailPayment implements TopUpDetailPayment {
     return 'TopUpState.detailPayment(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TopUpDetailPaymentCopyWith<_$TopUpDetailPayment> get copyWith =>
-      __$$TopUpDetailPaymentCopyWithImpl<_$TopUpDetailPayment>(
+  _$$TopUpDetailPaymentImplCopyWith<_$TopUpDetailPaymentImpl> get copyWith =>
+      __$$TopUpDetailPaymentImplCopyWithImpl<_$TopUpDetailPaymentImpl>(
           this, _$identity);
 
   @override
@@ -445,37 +472,42 @@ class _$TopUpDetailPayment implements TopUpDetailPayment {
 
 abstract class TopUpDetailPayment implements TopUpState {
   const factory TopUpDetailPayment({final PaymentModel? data}) =
-      _$TopUpDetailPayment;
+      _$TopUpDetailPaymentImpl;
 
   PaymentModel? get data;
-  @JsonKey(ignore: true)
-  _$$TopUpDetailPaymentCopyWith<_$TopUpDetailPayment> get copyWith =>
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TopUpDetailPaymentImplCopyWith<_$TopUpDetailPaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TopUpErrorCopyWith<$Res> {
-  factory _$$TopUpErrorCopyWith(
-          _$TopUpError value, $Res Function(_$TopUpError) then) =
-      __$$TopUpErrorCopyWithImpl<$Res>;
+abstract class _$$TopUpErrorImplCopyWith<$Res> {
+  factory _$$TopUpErrorImplCopyWith(
+          _$TopUpErrorImpl value, $Res Function(_$TopUpErrorImpl) then) =
+      __$$TopUpErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$TopUpErrorCopyWithImpl<$Res>
-    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpError>
-    implements _$$TopUpErrorCopyWith<$Res> {
-  __$$TopUpErrorCopyWithImpl(
-      _$TopUpError _value, $Res Function(_$TopUpError) _then)
+class __$$TopUpErrorImplCopyWithImpl<$Res>
+    extends _$TopUpStateCopyWithImpl<$Res, _$TopUpErrorImpl>
+    implements _$$TopUpErrorImplCopyWith<$Res> {
+  __$$TopUpErrorImplCopyWithImpl(
+      _$TopUpErrorImpl _value, $Res Function(_$TopUpErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$TopUpError(
+    return _then(_$TopUpErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -486,8 +518,8 @@ class __$$TopUpErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TopUpError implements TopUpError {
-  const _$TopUpError({this.error});
+class _$TopUpErrorImpl implements TopUpError {
+  const _$TopUpErrorImpl({this.error});
 
   @override
   final String? error;
@@ -497,11 +529,13 @@ class _$TopUpError implements TopUpError {
     return 'TopUpState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TopUpErrorCopyWith<_$TopUpError> get copyWith =>
-      __$$TopUpErrorCopyWithImpl<_$TopUpError>(this, _$identity);
+  _$$TopUpErrorImplCopyWith<_$TopUpErrorImpl> get copyWith =>
+      __$$TopUpErrorImplCopyWithImpl<_$TopUpErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -535,10 +569,13 @@ class _$TopUpError implements TopUpError {
 }
 
 abstract class TopUpError implements TopUpState {
-  const factory TopUpError({final String? error}) = _$TopUpError;
+  const factory TopUpError({final String? error}) = _$TopUpErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$TopUpErrorCopyWith<_$TopUpError> get copyWith =>
+
+  /// Create a copy of TopUpState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TopUpErrorImplCopyWith<_$TopUpErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

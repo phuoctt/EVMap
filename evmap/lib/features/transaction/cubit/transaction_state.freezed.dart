@@ -12,7 +12,7 @@ part of 'transaction_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$TransactionState {
@@ -63,28 +63,34 @@ class _$TransactionStateCopyWithImpl<$Res, $Val extends TransactionState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$TransactionLoadingCopyWith<$Res> {
-  factory _$$TransactionLoadingCopyWith(_$TransactionLoading value,
-          $Res Function(_$TransactionLoading) then) =
-      __$$TransactionLoadingCopyWithImpl<$Res>;
+abstract class _$$TransactionLoadingImplCopyWith<$Res> {
+  factory _$$TransactionLoadingImplCopyWith(_$TransactionLoadingImpl value,
+          $Res Function(_$TransactionLoadingImpl) then) =
+      __$$TransactionLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TransactionLoadingCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLoading>
-    implements _$$TransactionLoadingCopyWith<$Res> {
-  __$$TransactionLoadingCopyWithImpl(
-      _$TransactionLoading _value, $Res Function(_$TransactionLoading) _then)
+class __$$TransactionLoadingImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLoadingImpl>
+    implements _$$TransactionLoadingImplCopyWith<$Res> {
+  __$$TransactionLoadingImplCopyWithImpl(_$TransactionLoadingImpl _value,
+      $Res Function(_$TransactionLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TransactionLoading implements TransactionLoading {
-  const _$TransactionLoading();
+class _$TransactionLoadingImpl implements TransactionLoading {
+  const _$TransactionLoadingImpl();
 
   @override
   String toString() {
@@ -131,32 +137,34 @@ class _$TransactionLoading implements TransactionLoading {
 }
 
 abstract class TransactionLoading implements TransactionState {
-  const factory TransactionLoading() = _$TransactionLoading;
+  const factory TransactionLoading() = _$TransactionLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$TransactionLoggedCopyWith<$Res> {
-  factory _$$TransactionLoggedCopyWith(
-          _$TransactionLogged value, $Res Function(_$TransactionLogged) then) =
-      __$$TransactionLoggedCopyWithImpl<$Res>;
+abstract class _$$TransactionLoggedImplCopyWith<$Res> {
+  factory _$$TransactionLoggedImplCopyWith(_$TransactionLoggedImpl value,
+          $Res Function(_$TransactionLoggedImpl) then) =
+      __$$TransactionLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserModel user});
 }
 
 /// @nodoc
-class __$$TransactionLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLogged>
-    implements _$$TransactionLoggedCopyWith<$Res> {
-  __$$TransactionLoggedCopyWithImpl(
-      _$TransactionLogged _value, $Res Function(_$TransactionLogged) _then)
+class __$$TransactionLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLoggedImpl>
+    implements _$$TransactionLoggedImplCopyWith<$Res> {
+  __$$TransactionLoggedImplCopyWithImpl(_$TransactionLoggedImpl _value,
+      $Res Function(_$TransactionLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$TransactionLogged(
+    return _then(_$TransactionLoggedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -167,8 +175,8 @@ class __$$TransactionLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionLogged implements TransactionLogged {
-  const _$TransactionLogged(this.user);
+class _$TransactionLoggedImpl implements TransactionLogged {
+  const _$TransactionLoggedImpl(this.user);
 
   @override
   final UserModel user;
@@ -178,11 +186,14 @@ class _$TransactionLogged implements TransactionLogged {
     return 'TransactionState.logged(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionLoggedCopyWith<_$TransactionLogged> get copyWith =>
-      __$$TransactionLoggedCopyWithImpl<_$TransactionLogged>(this, _$identity);
+  _$$TransactionLoggedImplCopyWith<_$TransactionLoggedImpl> get copyWith =>
+      __$$TransactionLoggedImplCopyWithImpl<_$TransactionLoggedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -224,40 +235,47 @@ class _$TransactionLogged implements TransactionLogged {
 }
 
 abstract class TransactionLogged implements TransactionState {
-  const factory TransactionLogged(final UserModel user) = _$TransactionLogged;
+  const factory TransactionLogged(final UserModel user) =
+      _$TransactionLoggedImpl;
 
   UserModel get user;
-  @JsonKey(ignore: true)
-  _$$TransactionLoggedCopyWith<_$TransactionLogged> get copyWith =>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TransactionLoggedImplCopyWith<_$TransactionLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TransactionCheckActiveLoggedCopyWith<$Res> {
-  factory _$$TransactionCheckActiveLoggedCopyWith(
-          _$TransactionCheckActiveLogged value,
-          $Res Function(_$TransactionCheckActiveLogged) then) =
-      __$$TransactionCheckActiveLoggedCopyWithImpl<$Res>;
+abstract class _$$TransactionCheckActiveLoggedImplCopyWith<$Res> {
+  factory _$$TransactionCheckActiveLoggedImplCopyWith(
+          _$TransactionCheckActiveLoggedImpl value,
+          $Res Function(_$TransactionCheckActiveLoggedImpl) then) =
+      __$$TransactionCheckActiveLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<num>? ids, TransactionActiveType? type});
 }
 
 /// @nodoc
-class __$$TransactionCheckActiveLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionCheckActiveLogged>
-    implements _$$TransactionCheckActiveLoggedCopyWith<$Res> {
-  __$$TransactionCheckActiveLoggedCopyWithImpl(
-      _$TransactionCheckActiveLogged _value,
-      $Res Function(_$TransactionCheckActiveLogged) _then)
+class __$$TransactionCheckActiveLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res,
+        _$TransactionCheckActiveLoggedImpl>
+    implements _$$TransactionCheckActiveLoggedImplCopyWith<$Res> {
+  __$$TransactionCheckActiveLoggedImplCopyWithImpl(
+      _$TransactionCheckActiveLoggedImpl _value,
+      $Res Function(_$TransactionCheckActiveLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? ids = freezed,
     Object? type = freezed,
   }) {
-    return _then(_$TransactionCheckActiveLogged(
+    return _then(_$TransactionCheckActiveLoggedImpl(
       ids: freezed == ids
           ? _value._ids
           : ids // ignore: cast_nullable_to_non_nullable
@@ -272,8 +290,9 @@ class __$$TransactionCheckActiveLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionCheckActiveLogged implements TransactionCheckActiveLogged {
-  const _$TransactionCheckActiveLogged({final List<num>? ids, this.type})
+class _$TransactionCheckActiveLoggedImpl
+    implements TransactionCheckActiveLogged {
+  const _$TransactionCheckActiveLoggedImpl({final List<num>? ids, this.type})
       : _ids = ids;
 
   final List<num>? _ids;
@@ -294,12 +313,15 @@ class _$TransactionCheckActiveLogged implements TransactionCheckActiveLogged {
     return 'TransactionState.checkActive(ids: $ids, type: $type)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionCheckActiveLoggedCopyWith<_$TransactionCheckActiveLogged>
-      get copyWith => __$$TransactionCheckActiveLoggedCopyWithImpl<
-          _$TransactionCheckActiveLogged>(this, _$identity);
+  _$$TransactionCheckActiveLoggedImplCopyWith<
+          _$TransactionCheckActiveLoggedImpl>
+      get copyWith => __$$TransactionCheckActiveLoggedImplCopyWithImpl<
+          _$TransactionCheckActiveLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -343,38 +365,46 @@ class _$TransactionCheckActiveLogged implements TransactionCheckActiveLogged {
 abstract class TransactionCheckActiveLogged implements TransactionState {
   const factory TransactionCheckActiveLogged(
       {final List<num>? ids,
-      final TransactionActiveType? type}) = _$TransactionCheckActiveLogged;
+      final TransactionActiveType? type}) = _$TransactionCheckActiveLoggedImpl;
 
   List<num>? get ids;
   TransactionActiveType? get type;
-  @JsonKey(ignore: true)
-  _$$TransactionCheckActiveLoggedCopyWith<_$TransactionCheckActiveLogged>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TransactionCheckActiveLoggedImplCopyWith<
+          _$TransactionCheckActiveLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ReservationkActiveLoggedCopyWith<$Res> {
-  factory _$$ReservationkActiveLoggedCopyWith(_$ReservationkActiveLogged value,
-          $Res Function(_$ReservationkActiveLogged) then) =
-      __$$ReservationkActiveLoggedCopyWithImpl<$Res>;
+abstract class _$$ReservationkActiveLoggedImplCopyWith<$Res> {
+  factory _$$ReservationkActiveLoggedImplCopyWith(
+          _$ReservationkActiveLoggedImpl value,
+          $Res Function(_$ReservationkActiveLoggedImpl) then) =
+      __$$ReservationkActiveLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({BookingModel? data});
 }
 
 /// @nodoc
-class __$$ReservationkActiveLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$ReservationkActiveLogged>
-    implements _$$ReservationkActiveLoggedCopyWith<$Res> {
-  __$$ReservationkActiveLoggedCopyWithImpl(_$ReservationkActiveLogged _value,
-      $Res Function(_$ReservationkActiveLogged) _then)
+class __$$ReservationkActiveLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$ReservationkActiveLoggedImpl>
+    implements _$$ReservationkActiveLoggedImplCopyWith<$Res> {
+  __$$ReservationkActiveLoggedImplCopyWithImpl(
+      _$ReservationkActiveLoggedImpl _value,
+      $Res Function(_$ReservationkActiveLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$ReservationkActiveLogged(
+    return _then(_$ReservationkActiveLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -385,8 +415,8 @@ class __$$ReservationkActiveLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ReservationkActiveLogged implements ReservationkActiveLogged {
-  const _$ReservationkActiveLogged({this.data});
+class _$ReservationkActiveLoggedImpl implements ReservationkActiveLogged {
+  const _$ReservationkActiveLoggedImpl({this.data});
 
   @override
   final BookingModel? data;
@@ -396,13 +426,14 @@ class _$ReservationkActiveLogged implements ReservationkActiveLogged {
     return 'TransactionState.reservationActiveLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ReservationkActiveLoggedCopyWith<_$ReservationkActiveLogged>
-      get copyWith =>
-          __$$ReservationkActiveLoggedCopyWithImpl<_$ReservationkActiveLogged>(
-              this, _$identity);
+  _$$ReservationkActiveLoggedImplCopyWith<_$ReservationkActiveLoggedImpl>
+      get copyWith => __$$ReservationkActiveLoggedImplCopyWithImpl<
+          _$ReservationkActiveLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -445,37 +476,44 @@ class _$ReservationkActiveLogged implements ReservationkActiveLogged {
 
 abstract class ReservationkActiveLogged implements TransactionState {
   const factory ReservationkActiveLogged({final BookingModel? data}) =
-      _$ReservationkActiveLogged;
+      _$ReservationkActiveLoggedImpl;
 
   BookingModel? get data;
-  @JsonKey(ignore: true)
-  _$$ReservationkActiveLoggedCopyWith<_$ReservationkActiveLogged>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReservationkActiveLoggedImplCopyWith<_$ReservationkActiveLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TransactionDetailLoggedCopyWith<$Res> {
-  factory _$$TransactionDetailLoggedCopyWith(_$TransactionDetailLogged value,
-          $Res Function(_$TransactionDetailLogged) then) =
-      __$$TransactionDetailLoggedCopyWithImpl<$Res>;
+abstract class _$$TransactionDetailLoggedImplCopyWith<$Res> {
+  factory _$$TransactionDetailLoggedImplCopyWith(
+          _$TransactionDetailLoggedImpl value,
+          $Res Function(_$TransactionDetailLoggedImpl) then) =
+      __$$TransactionDetailLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({TransactionModel? data});
 }
 
 /// @nodoc
-class __$$TransactionDetailLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionDetailLogged>
-    implements _$$TransactionDetailLoggedCopyWith<$Res> {
-  __$$TransactionDetailLoggedCopyWithImpl(_$TransactionDetailLogged _value,
-      $Res Function(_$TransactionDetailLogged) _then)
+class __$$TransactionDetailLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionDetailLoggedImpl>
+    implements _$$TransactionDetailLoggedImplCopyWith<$Res> {
+  __$$TransactionDetailLoggedImplCopyWithImpl(
+      _$TransactionDetailLoggedImpl _value,
+      $Res Function(_$TransactionDetailLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$TransactionDetailLogged(
+    return _then(_$TransactionDetailLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -486,8 +524,8 @@ class __$$TransactionDetailLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionDetailLogged implements TransactionDetailLogged {
-  const _$TransactionDetailLogged({this.data});
+class _$TransactionDetailLoggedImpl implements TransactionDetailLogged {
+  const _$TransactionDetailLoggedImpl({this.data});
 
   @override
   final TransactionModel? data;
@@ -497,12 +535,14 @@ class _$TransactionDetailLogged implements TransactionDetailLogged {
     return 'TransactionState.detailLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionDetailLoggedCopyWith<_$TransactionDetailLogged> get copyWith =>
-      __$$TransactionDetailLoggedCopyWithImpl<_$TransactionDetailLogged>(
-          this, _$identity);
+  _$$TransactionDetailLoggedImplCopyWith<_$TransactionDetailLoggedImpl>
+      get copyWith => __$$TransactionDetailLoggedImplCopyWithImpl<
+          _$TransactionDetailLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -545,37 +585,42 @@ class _$TransactionDetailLogged implements TransactionDetailLogged {
 
 abstract class TransactionDetailLogged implements TransactionState {
   const factory TransactionDetailLogged({final TransactionModel? data}) =
-      _$TransactionDetailLogged;
+      _$TransactionDetailLoggedImpl;
 
   TransactionModel? get data;
-  @JsonKey(ignore: true)
-  _$$TransactionDetailLoggedCopyWith<_$TransactionDetailLogged> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TransactionDetailLoggedImplCopyWith<_$TransactionDetailLoggedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DetailBillLoggedCopyWith<$Res> {
-  factory _$$DetailBillLoggedCopyWith(
-          _$DetailBillLogged value, $Res Function(_$DetailBillLogged) then) =
-      __$$DetailBillLoggedCopyWithImpl<$Res>;
+abstract class _$$DetailBillLoggedImplCopyWith<$Res> {
+  factory _$$DetailBillLoggedImplCopyWith(_$DetailBillLoggedImpl value,
+          $Res Function(_$DetailBillLoggedImpl) then) =
+      __$$DetailBillLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DetailBillModel? data});
 }
 
 /// @nodoc
-class __$$DetailBillLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$DetailBillLogged>
-    implements _$$DetailBillLoggedCopyWith<$Res> {
-  __$$DetailBillLoggedCopyWithImpl(
-      _$DetailBillLogged _value, $Res Function(_$DetailBillLogged) _then)
+class __$$DetailBillLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$DetailBillLoggedImpl>
+    implements _$$DetailBillLoggedImplCopyWith<$Res> {
+  __$$DetailBillLoggedImplCopyWithImpl(_$DetailBillLoggedImpl _value,
+      $Res Function(_$DetailBillLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$DetailBillLogged(
+    return _then(_$DetailBillLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -586,8 +631,8 @@ class __$$DetailBillLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DetailBillLogged implements DetailBillLogged {
-  const _$DetailBillLogged({this.data});
+class _$DetailBillLoggedImpl implements DetailBillLogged {
+  const _$DetailBillLoggedImpl({this.data});
 
   @override
   final DetailBillModel? data;
@@ -597,11 +642,14 @@ class _$DetailBillLogged implements DetailBillLogged {
     return 'TransactionState.detailBillLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DetailBillLoggedCopyWith<_$DetailBillLogged> get copyWith =>
-      __$$DetailBillLoggedCopyWithImpl<_$DetailBillLogged>(this, _$identity);
+  _$$DetailBillLoggedImplCopyWith<_$DetailBillLoggedImpl> get copyWith =>
+      __$$DetailBillLoggedImplCopyWithImpl<_$DetailBillLoggedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -644,37 +692,42 @@ class _$DetailBillLogged implements DetailBillLogged {
 
 abstract class DetailBillLogged implements TransactionState {
   const factory DetailBillLogged({final DetailBillModel? data}) =
-      _$DetailBillLogged;
+      _$DetailBillLoggedImpl;
 
   DetailBillModel? get data;
-  @JsonKey(ignore: true)
-  _$$DetailBillLoggedCopyWith<_$DetailBillLogged> get copyWith =>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailBillLoggedImplCopyWith<_$DetailBillLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargingBillLoggedCopyWith<$Res> {
-  factory _$$ChargingBillLoggedCopyWith(_$ChargingBillLogged value,
-          $Res Function(_$ChargingBillLogged) then) =
-      __$$ChargingBillLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargingBillLoggedImplCopyWith<$Res> {
+  factory _$$ChargingBillLoggedImplCopyWith(_$ChargingBillLoggedImpl value,
+          $Res Function(_$ChargingBillLoggedImpl) then) =
+      __$$ChargingBillLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({DetailBillModel? data});
 }
 
 /// @nodoc
-class __$$ChargingBillLoggedCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$ChargingBillLogged>
-    implements _$$ChargingBillLoggedCopyWith<$Res> {
-  __$$ChargingBillLoggedCopyWithImpl(
-      _$ChargingBillLogged _value, $Res Function(_$ChargingBillLogged) _then)
+class __$$ChargingBillLoggedImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$ChargingBillLoggedImpl>
+    implements _$$ChargingBillLoggedImplCopyWith<$Res> {
+  __$$ChargingBillLoggedImplCopyWithImpl(_$ChargingBillLoggedImpl _value,
+      $Res Function(_$ChargingBillLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$ChargingBillLogged(
+    return _then(_$ChargingBillLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -685,8 +738,8 @@ class __$$ChargingBillLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargingBillLogged implements ChargingBillLogged {
-  const _$ChargingBillLogged({this.data});
+class _$ChargingBillLoggedImpl implements ChargingBillLogged {
+  const _$ChargingBillLoggedImpl({this.data});
 
   @override
   final DetailBillModel? data;
@@ -696,11 +749,13 @@ class _$ChargingBillLogged implements ChargingBillLogged {
     return 'TransactionState.chargingBillLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargingBillLoggedCopyWith<_$ChargingBillLogged> get copyWith =>
-      __$$ChargingBillLoggedCopyWithImpl<_$ChargingBillLogged>(
+  _$$ChargingBillLoggedImplCopyWith<_$ChargingBillLoggedImpl> get copyWith =>
+      __$$ChargingBillLoggedImplCopyWithImpl<_$ChargingBillLoggedImpl>(
           this, _$identity);
 
   @override
@@ -744,34 +799,42 @@ class _$ChargingBillLogged implements ChargingBillLogged {
 
 abstract class ChargingBillLogged implements TransactionState {
   const factory ChargingBillLogged({final DetailBillModel? data}) =
-      _$ChargingBillLogged;
+      _$ChargingBillLoggedImpl;
 
   DetailBillModel? get data;
-  @JsonKey(ignore: true)
-  _$$ChargingBillLoggedCopyWith<_$ChargingBillLogged> get copyWith =>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargingBillLoggedImplCopyWith<_$ChargingBillLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$TransactionLoadingScreenCopyWith<$Res> {
-  factory _$$TransactionLoadingScreenCopyWith(_$TransactionLoadingScreen value,
-          $Res Function(_$TransactionLoadingScreen) then) =
-      __$$TransactionLoadingScreenCopyWithImpl<$Res>;
+abstract class _$$TransactionLoadingScreenImplCopyWith<$Res> {
+  factory _$$TransactionLoadingScreenImplCopyWith(
+          _$TransactionLoadingScreenImpl value,
+          $Res Function(_$TransactionLoadingScreenImpl) then) =
+      __$$TransactionLoadingScreenImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TransactionLoadingScreenCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLoadingScreen>
-    implements _$$TransactionLoadingScreenCopyWith<$Res> {
-  __$$TransactionLoadingScreenCopyWithImpl(_$TransactionLoadingScreen _value,
-      $Res Function(_$TransactionLoadingScreen) _then)
+class __$$TransactionLoadingScreenImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionLoadingScreenImpl>
+    implements _$$TransactionLoadingScreenImplCopyWith<$Res> {
+  __$$TransactionLoadingScreenImplCopyWithImpl(
+      _$TransactionLoadingScreenImpl _value,
+      $Res Function(_$TransactionLoadingScreenImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TransactionLoadingScreen implements TransactionLoadingScreen {
-  const _$TransactionLoadingScreen();
+class _$TransactionLoadingScreenImpl implements TransactionLoadingScreen {
+  const _$TransactionLoadingScreenImpl();
 
   @override
   String toString() {
@@ -818,30 +881,35 @@ class _$TransactionLoadingScreen implements TransactionLoadingScreen {
 }
 
 abstract class TransactionLoadingScreen implements TransactionState {
-  const factory TransactionLoadingScreen() = _$TransactionLoadingScreen;
+  const factory TransactionLoadingScreen() = _$TransactionLoadingScreenImpl;
 }
 
 /// @nodoc
-abstract class _$$TransactionPaymentSuccessCopyWith<$Res> {
-  factory _$$TransactionPaymentSuccessCopyWith(
-          _$TransactionPaymentSuccess value,
-          $Res Function(_$TransactionPaymentSuccess) then) =
-      __$$TransactionPaymentSuccessCopyWithImpl<$Res>;
+abstract class _$$TransactionPaymentSuccessImplCopyWith<$Res> {
+  factory _$$TransactionPaymentSuccessImplCopyWith(
+          _$TransactionPaymentSuccessImpl value,
+          $Res Function(_$TransactionPaymentSuccessImpl) then) =
+      __$$TransactionPaymentSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$TransactionPaymentSuccessCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionPaymentSuccess>
-    implements _$$TransactionPaymentSuccessCopyWith<$Res> {
-  __$$TransactionPaymentSuccessCopyWithImpl(_$TransactionPaymentSuccess _value,
-      $Res Function(_$TransactionPaymentSuccess) _then)
+class __$$TransactionPaymentSuccessImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res,
+        _$TransactionPaymentSuccessImpl>
+    implements _$$TransactionPaymentSuccessImplCopyWith<$Res> {
+  __$$TransactionPaymentSuccessImplCopyWithImpl(
+      _$TransactionPaymentSuccessImpl _value,
+      $Res Function(_$TransactionPaymentSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$TransactionPaymentSuccess implements TransactionPaymentSuccess {
-  const _$TransactionPaymentSuccess();
+class _$TransactionPaymentSuccessImpl implements TransactionPaymentSuccess {
+  const _$TransactionPaymentSuccessImpl();
 
   @override
   String toString() {
@@ -888,32 +956,34 @@ class _$TransactionPaymentSuccess implements TransactionPaymentSuccess {
 }
 
 abstract class TransactionPaymentSuccess implements TransactionState {
-  const factory TransactionPaymentSuccess() = _$TransactionPaymentSuccess;
+  const factory TransactionPaymentSuccess() = _$TransactionPaymentSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$TransactionErrorCopyWith<$Res> {
-  factory _$$TransactionErrorCopyWith(
-          _$TransactionError value, $Res Function(_$TransactionError) then) =
-      __$$TransactionErrorCopyWithImpl<$Res>;
+abstract class _$$TransactionErrorImplCopyWith<$Res> {
+  factory _$$TransactionErrorImplCopyWith(_$TransactionErrorImpl value,
+          $Res Function(_$TransactionErrorImpl) then) =
+      __$$TransactionErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$TransactionErrorCopyWithImpl<$Res>
-    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionError>
-    implements _$$TransactionErrorCopyWith<$Res> {
-  __$$TransactionErrorCopyWithImpl(
-      _$TransactionError _value, $Res Function(_$TransactionError) _then)
+class __$$TransactionErrorImplCopyWithImpl<$Res>
+    extends _$TransactionStateCopyWithImpl<$Res, _$TransactionErrorImpl>
+    implements _$$TransactionErrorImplCopyWith<$Res> {
+  __$$TransactionErrorImplCopyWithImpl(_$TransactionErrorImpl _value,
+      $Res Function(_$TransactionErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$TransactionError(
+    return _then(_$TransactionErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -924,8 +994,8 @@ class __$$TransactionErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$TransactionError implements TransactionError {
-  const _$TransactionError({this.error});
+class _$TransactionErrorImpl implements TransactionError {
+  const _$TransactionErrorImpl({this.error});
 
   @override
   final String? error;
@@ -935,11 +1005,14 @@ class _$TransactionError implements TransactionError {
     return 'TransactionState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$TransactionErrorCopyWith<_$TransactionError> get copyWith =>
-      __$$TransactionErrorCopyWithImpl<_$TransactionError>(this, _$identity);
+  _$$TransactionErrorImplCopyWith<_$TransactionErrorImpl> get copyWith =>
+      __$$TransactionErrorImplCopyWithImpl<_$TransactionErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -981,10 +1054,14 @@ class _$TransactionError implements TransactionError {
 }
 
 abstract class TransactionError implements TransactionState {
-  const factory TransactionError({final String? error}) = _$TransactionError;
+  const factory TransactionError({final String? error}) =
+      _$TransactionErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$TransactionErrorCopyWith<_$TransactionError> get copyWith =>
+
+  /// Create a copy of TransactionState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TransactionErrorImplCopyWith<_$TransactionErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -7,12 +7,12 @@ part of 'booking_model.dart';
 // **************************************************************************
 
 BookingModel _$BookingModelFromJson(Map json) => BookingModel(
-      id: json['id'] as int?,
-      userId: json['user_id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      userId: (json['user_id'] as num?)?.toInt(),
       chargeBoxId: json['charge_box_id'] as String?,
-      connectorId: json['connector_id'] as int?,
+      connectorId: (json['connector_id'] as num?)?.toInt(),
       transactionId: json['transaction_id'],
-      statusId: json['status_id'] as int?,
+      statusId: (json['status_id'] as num?)?.toInt(),
       statusName: json['status_name'] as String?,
       startDatetime: json['start_datetime'] == null
           ? null
@@ -24,29 +24,24 @@ BookingModel _$BookingModelFromJson(Map json) => BookingModel(
           ? null
           : DateTime.parse(json['request_datetime'] as String),
       cancelDatetime: json['cancel_datetime'],
-      deposit: json['deposit'] as int?,
+      deposit: (json['deposit'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$BookingModelToJson(BookingModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('user_id', instance.userId);
-  writeNotNull('charge_box_id', instance.chargeBoxId);
-  writeNotNull('connector_id', instance.connectorId);
-  writeNotNull('transaction_id', instance.transactionId);
-  writeNotNull('status_id', instance.statusId);
-  writeNotNull('status_name', instance.statusName);
-  writeNotNull('start_datetime', instance.startDatetime?.toIso8601String());
-  writeNotNull('expiry_datetime', instance.expiryDatetime?.toIso8601String());
-  writeNotNull('request_datetime', instance.requestDatetime?.toIso8601String());
-  writeNotNull('cancel_datetime', instance.cancelDatetime);
-  writeNotNull('deposit', instance.deposit);
-  return val;
-}
+Map<String, dynamic> _$BookingModelToJson(BookingModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.userId case final value?) 'user_id': value,
+      if (instance.chargeBoxId case final value?) 'charge_box_id': value,
+      if (instance.connectorId case final value?) 'connector_id': value,
+      if (instance.transactionId case final value?) 'transaction_id': value,
+      if (instance.statusId case final value?) 'status_id': value,
+      if (instance.statusName case final value?) 'status_name': value,
+      if (instance.startDatetime?.toIso8601String() case final value?)
+        'start_datetime': value,
+      if (instance.expiryDatetime?.toIso8601String() case final value?)
+        'expiry_datetime': value,
+      if (instance.requestDatetime?.toIso8601String() case final value?)
+        'request_datetime': value,
+      if (instance.cancelDatetime case final value?) 'cancel_datetime': value,
+      if (instance.deposit case final value?) 'deposit': value,
+    };

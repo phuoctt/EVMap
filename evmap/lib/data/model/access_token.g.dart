@@ -14,34 +14,19 @@ AccessTokenResponse _$AccessTokenResponseFromJson(Map json) =>
               Map<String, dynamic>.from(json['access_token'] as Map)),
     );
 
-Map<String, dynamic> _$AccessTokenResponseToJson(AccessTokenResponse instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('access_token', instance.accessToken);
-  return val;
-}
+Map<String, dynamic> _$AccessTokenResponseToJson(
+        AccessTokenResponse instance) =>
+    <String, dynamic>{
+      if (instance.accessToken case final value?) 'access_token': value,
+    };
 
 AccessToken _$AccessTokenFromJson(Map json) => AccessToken(
       token: json['token'] as String?,
-      ttl: json['ttl'] as int?,
+      ttl: (json['ttl'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$AccessTokenToJson(AccessToken instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('token', instance.token);
-  writeNotNull('ttl', instance.ttl);
-  return val;
-}
+Map<String, dynamic> _$AccessTokenToJson(AccessToken instance) =>
+    <String, dynamic>{
+      if (instance.token case final value?) 'token': value,
+      if (instance.ttl case final value?) 'ttl': value,
+    };

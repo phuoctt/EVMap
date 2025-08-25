@@ -23,41 +23,26 @@ TransactionModel _$TransactionModelFromJson(Map json) => TransactionModel(
       charging_time: json['charging_time'] as String?,
     );
 
-Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('transaction_id', instance.transaction_id);
-  writeNotNull('connector_id', instance.connector_id);
-  writeNotNull('charge_box_id', instance.charge_box_id);
-  writeNotNull('user_id', instance.user_id);
-  writeNotNull('start_event_timestamp',
-      instance.start_event_timestamp?.toIso8601String());
-  writeNotNull('start_timestamp', instance.start_timestamp?.toIso8601String());
-  writeNotNull(
-      'stop_event_timestamp', instance.stop_event_timestamp?.toIso8601String());
-  writeNotNull('charging_time', instance.charging_time);
-  return val;
-}
+Map<String, dynamic> _$TransactionModelToJson(TransactionModel instance) =>
+    <String, dynamic>{
+      if (instance.transaction_id case final value?) 'transaction_id': value,
+      if (instance.connector_id case final value?) 'connector_id': value,
+      if (instance.charge_box_id case final value?) 'charge_box_id': value,
+      if (instance.user_id case final value?) 'user_id': value,
+      if (instance.start_event_timestamp?.toIso8601String() case final value?)
+        'start_event_timestamp': value,
+      if (instance.start_timestamp?.toIso8601String() case final value?)
+        'start_timestamp': value,
+      if (instance.stop_event_timestamp?.toIso8601String() case final value?)
+        'stop_event_timestamp': value,
+      if (instance.charging_time case final value?) 'charging_time': value,
+    };
 
 TransactionIdModel _$TransactionIdModelFromJson(Map json) =>
     TransactionIdModel()
       ..ids = (json['ids'] as List<dynamic>?)?.map((e) => e as num).toList();
 
-Map<String, dynamic> _$TransactionIdModelToJson(TransactionIdModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('ids', instance.ids);
-  return val;
-}
+Map<String, dynamic> _$TransactionIdModelToJson(TransactionIdModel instance) =>
+    <String, dynamic>{
+      if (instance.ids case final value?) 'ids': value,
+    };

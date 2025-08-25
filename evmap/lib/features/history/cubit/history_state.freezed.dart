@@ -12,7 +12,7 @@ part of 'history_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$HistoryState {
@@ -51,28 +51,34 @@ class _$HistoryStateCopyWithImpl<$Res, $Val extends HistoryState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$HistoryLoadingCopyWith<$Res> {
-  factory _$$HistoryLoadingCopyWith(
-          _$HistoryLoading value, $Res Function(_$HistoryLoading) then) =
-      __$$HistoryLoadingCopyWithImpl<$Res>;
+abstract class _$$HistoryLoadingImplCopyWith<$Res> {
+  factory _$$HistoryLoadingImplCopyWith(_$HistoryLoadingImpl value,
+          $Res Function(_$HistoryLoadingImpl) then) =
+      __$$HistoryLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$HistoryLoadingCopyWithImpl<$Res>
-    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryLoading>
-    implements _$$HistoryLoadingCopyWith<$Res> {
-  __$$HistoryLoadingCopyWithImpl(
-      _$HistoryLoading _value, $Res Function(_$HistoryLoading) _then)
+class __$$HistoryLoadingImplCopyWithImpl<$Res>
+    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryLoadingImpl>
+    implements _$$HistoryLoadingImplCopyWith<$Res> {
+  __$$HistoryLoadingImplCopyWithImpl(
+      _$HistoryLoadingImpl _value, $Res Function(_$HistoryLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$HistoryLoading implements HistoryLoading {
-  const _$HistoryLoading();
+class _$HistoryLoadingImpl implements HistoryLoading {
+  const _$HistoryLoadingImpl();
 
   @override
   String toString() {
@@ -107,33 +113,37 @@ class _$HistoryLoading implements HistoryLoading {
 }
 
 abstract class HistoryLoading implements HistoryState {
-  const factory HistoryLoading() = _$HistoryLoading;
+  const factory HistoryLoading() = _$HistoryLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$HistoryTransactionLoggedCopyWith<$Res> {
-  factory _$$HistoryTransactionLoggedCopyWith(_$HistoryTransactionLogged value,
-          $Res Function(_$HistoryTransactionLogged) then) =
-      __$$HistoryTransactionLoggedCopyWithImpl<$Res>;
+abstract class _$$HistoryTransactionLoggedImplCopyWith<$Res> {
+  factory _$$HistoryTransactionLoggedImplCopyWith(
+          _$HistoryTransactionLoggedImpl value,
+          $Res Function(_$HistoryTransactionLoggedImpl) then) =
+      __$$HistoryTransactionLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<HistoryModel>? data, bool? isFinish});
 }
 
 /// @nodoc
-class __$$HistoryTransactionLoggedCopyWithImpl<$Res>
-    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryTransactionLogged>
-    implements _$$HistoryTransactionLoggedCopyWith<$Res> {
-  __$$HistoryTransactionLoggedCopyWithImpl(_$HistoryTransactionLogged _value,
-      $Res Function(_$HistoryTransactionLogged) _then)
+class __$$HistoryTransactionLoggedImplCopyWithImpl<$Res>
+    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryTransactionLoggedImpl>
+    implements _$$HistoryTransactionLoggedImplCopyWith<$Res> {
+  __$$HistoryTransactionLoggedImplCopyWithImpl(
+      _$HistoryTransactionLoggedImpl _value,
+      $Res Function(_$HistoryTransactionLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
     Object? isFinish = freezed,
   }) {
-    return _then(_$HistoryTransactionLogged(
+    return _then(_$HistoryTransactionLoggedImpl(
       data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -148,8 +158,8 @@ class __$$HistoryTransactionLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HistoryTransactionLogged implements HistoryTransactionLogged {
-  const _$HistoryTransactionLogged(
+class _$HistoryTransactionLoggedImpl implements HistoryTransactionLogged {
+  const _$HistoryTransactionLoggedImpl(
       {final List<HistoryModel>? data, this.isFinish})
       : _data = data;
 
@@ -171,13 +181,14 @@ class _$HistoryTransactionLogged implements HistoryTransactionLogged {
     return 'HistoryState.historyTransactionLogged(data: $data, isFinish: $isFinish)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HistoryTransactionLoggedCopyWith<_$HistoryTransactionLogged>
-      get copyWith =>
-          __$$HistoryTransactionLoggedCopyWithImpl<_$HistoryTransactionLogged>(
-              this, _$identity);
+  _$$HistoryTransactionLoggedImplCopyWith<_$HistoryTransactionLoggedImpl>
+      get copyWith => __$$HistoryTransactionLoggedImplCopyWithImpl<
+          _$HistoryTransactionLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -209,38 +220,43 @@ class _$HistoryTransactionLogged implements HistoryTransactionLogged {
 abstract class HistoryTransactionLogged implements HistoryState {
   const factory HistoryTransactionLogged(
       {final List<HistoryModel>? data,
-      final bool? isFinish}) = _$HistoryTransactionLogged;
+      final bool? isFinish}) = _$HistoryTransactionLoggedImpl;
 
   List<HistoryModel>? get data;
   bool? get isFinish;
-  @JsonKey(ignore: true)
-  _$$HistoryTransactionLoggedCopyWith<_$HistoryTransactionLogged>
+
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HistoryTransactionLoggedImplCopyWith<_$HistoryTransactionLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$HistoryErrorCopyWith<$Res> {
-  factory _$$HistoryErrorCopyWith(
-          _$HistoryError value, $Res Function(_$HistoryError) then) =
-      __$$HistoryErrorCopyWithImpl<$Res>;
+abstract class _$$HistoryErrorImplCopyWith<$Res> {
+  factory _$$HistoryErrorImplCopyWith(
+          _$HistoryErrorImpl value, $Res Function(_$HistoryErrorImpl) then) =
+      __$$HistoryErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$HistoryErrorCopyWithImpl<$Res>
-    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryError>
-    implements _$$HistoryErrorCopyWith<$Res> {
-  __$$HistoryErrorCopyWithImpl(
-      _$HistoryError _value, $Res Function(_$HistoryError) _then)
+class __$$HistoryErrorImplCopyWithImpl<$Res>
+    extends _$HistoryStateCopyWithImpl<$Res, _$HistoryErrorImpl>
+    implements _$$HistoryErrorImplCopyWith<$Res> {
+  __$$HistoryErrorImplCopyWithImpl(
+      _$HistoryErrorImpl _value, $Res Function(_$HistoryErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$HistoryError(
+    return _then(_$HistoryErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -251,8 +267,8 @@ class __$$HistoryErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HistoryError implements HistoryError {
-  const _$HistoryError({this.error});
+class _$HistoryErrorImpl implements HistoryError {
+  const _$HistoryErrorImpl({this.error});
 
   @override
   final String? error;
@@ -262,11 +278,13 @@ class _$HistoryError implements HistoryError {
     return 'HistoryState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HistoryErrorCopyWith<_$HistoryError> get copyWith =>
-      __$$HistoryErrorCopyWithImpl<_$HistoryError>(this, _$identity);
+  _$$HistoryErrorImplCopyWith<_$HistoryErrorImpl> get copyWith =>
+      __$$HistoryErrorImplCopyWithImpl<_$HistoryErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -296,10 +314,13 @@ class _$HistoryError implements HistoryError {
 }
 
 abstract class HistoryError implements HistoryState {
-  const factory HistoryError({final String? error}) = _$HistoryError;
+  const factory HistoryError({final String? error}) = _$HistoryErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$HistoryErrorCopyWith<_$HistoryError> get copyWith =>
+
+  /// Create a copy of HistoryState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HistoryErrorImplCopyWith<_$HistoryErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

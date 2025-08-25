@@ -29,31 +29,29 @@ DetailBillModel _$DetailBillModelFromJson(Map json) => DetailBillModel()
   ..point_value_before = json['point_value_before'] as num?
   ..point_value_after = json['point_value_after'] as num?;
 
-Map<String, dynamic> _$DetailBillModelToJson(DetailBillModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('user_id', instance.user_id);
-  writeNotNull('customer_id', instance.customer_id);
-  writeNotNull('transaction_id', instance.transaction_id);
-  writeNotNull('bill_status_id', instance.bill_status_id);
-  writeNotNull('bill_status_name', instance.bill_status_name);
-  writeNotNull('bill_status_code', instance.bill_status_code);
-  writeNotNull('bill_date_time', instance.bill_date_time?.toIso8601String());
-  writeNotNull('pay_date_time', instance.pay_date_time?.toIso8601String());
-  writeNotNull('price_type', instance.price_type);
-  writeNotNull('price_type_name', instance.price_type_name);
-  writeNotNull('unit', instance.unit);
-  writeNotNull('total_value', instance.total_value);
-  writeNotNull('total_price', instance.total_price);
-  writeNotNull('currency', instance.currency);
-  writeNotNull('point_value_before', instance.point_value_before);
-  writeNotNull('point_value_after', instance.point_value_after);
-  return val;
-}
+Map<String, dynamic> _$DetailBillModelToJson(DetailBillModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.user_id case final value?) 'user_id': value,
+      if (instance.customer_id case final value?) 'customer_id': value,
+      if (instance.transaction_id case final value?) 'transaction_id': value,
+      if (instance.bill_status_id case final value?) 'bill_status_id': value,
+      if (instance.bill_status_name case final value?)
+        'bill_status_name': value,
+      if (instance.bill_status_code case final value?)
+        'bill_status_code': value,
+      if (instance.bill_date_time?.toIso8601String() case final value?)
+        'bill_date_time': value,
+      if (instance.pay_date_time?.toIso8601String() case final value?)
+        'pay_date_time': value,
+      if (instance.price_type case final value?) 'price_type': value,
+      if (instance.price_type_name case final value?) 'price_type_name': value,
+      if (instance.unit case final value?) 'unit': value,
+      if (instance.total_value case final value?) 'total_value': value,
+      if (instance.total_price case final value?) 'total_price': value,
+      if (instance.currency case final value?) 'currency': value,
+      if (instance.point_value_before case final value?)
+        'point_value_before': value,
+      if (instance.point_value_after case final value?)
+        'point_value_after': value,
+    };

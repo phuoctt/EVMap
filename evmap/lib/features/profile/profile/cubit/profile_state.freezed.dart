@@ -12,7 +12,7 @@ part of 'profile_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ProfileState {
@@ -51,28 +51,34 @@ class _$ProfileStateCopyWithImpl<$Res, $Val extends ProfileState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$ProfileLoadingCopyWith<$Res> {
-  factory _$$ProfileLoadingCopyWith(
-          _$ProfileLoading value, $Res Function(_$ProfileLoading) then) =
-      __$$ProfileLoadingCopyWithImpl<$Res>;
+abstract class _$$ProfileLoadingImplCopyWith<$Res> {
+  factory _$$ProfileLoadingImplCopyWith(_$ProfileLoadingImpl value,
+          $Res Function(_$ProfileLoadingImpl) then) =
+      __$$ProfileLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ProfileLoadingCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLoading>
-    implements _$$ProfileLoadingCopyWith<$Res> {
-  __$$ProfileLoadingCopyWithImpl(
-      _$ProfileLoading _value, $Res Function(_$ProfileLoading) _then)
+class __$$ProfileLoadingImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLoadingImpl>
+    implements _$$ProfileLoadingImplCopyWith<$Res> {
+  __$$ProfileLoadingImplCopyWithImpl(
+      _$ProfileLoadingImpl _value, $Res Function(_$ProfileLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ProfileLoading implements ProfileLoading {
-  const _$ProfileLoading();
+class _$ProfileLoadingImpl implements ProfileLoading {
+  const _$ProfileLoadingImpl();
 
   @override
   String toString() {
@@ -107,32 +113,34 @@ class _$ProfileLoading implements ProfileLoading {
 }
 
 abstract class ProfileLoading implements ProfileState {
-  const factory ProfileLoading() = _$ProfileLoading;
+  const factory ProfileLoading() = _$ProfileLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ProfileLoggedCopyWith<$Res> {
-  factory _$$ProfileLoggedCopyWith(
-          _$ProfileLogged value, $Res Function(_$ProfileLogged) then) =
-      __$$ProfileLoggedCopyWithImpl<$Res>;
+abstract class _$$ProfileLoggedImplCopyWith<$Res> {
+  factory _$$ProfileLoggedImplCopyWith(
+          _$ProfileLoggedImpl value, $Res Function(_$ProfileLoggedImpl) then) =
+      __$$ProfileLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({UserModel user});
 }
 
 /// @nodoc
-class __$$ProfileLoggedCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLogged>
-    implements _$$ProfileLoggedCopyWith<$Res> {
-  __$$ProfileLoggedCopyWithImpl(
-      _$ProfileLogged _value, $Res Function(_$ProfileLogged) _then)
+class __$$ProfileLoggedImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileLoggedImpl>
+    implements _$$ProfileLoggedImplCopyWith<$Res> {
+  __$$ProfileLoggedImplCopyWithImpl(
+      _$ProfileLoggedImpl _value, $Res Function(_$ProfileLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = null,
   }) {
-    return _then(_$ProfileLogged(
+    return _then(_$ProfileLoggedImpl(
       null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -143,8 +151,8 @@ class __$$ProfileLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileLogged implements ProfileLogged {
-  const _$ProfileLogged(this.user);
+class _$ProfileLoggedImpl implements ProfileLogged {
+  const _$ProfileLoggedImpl(this.user);
 
   @override
   final UserModel user;
@@ -154,11 +162,13 @@ class _$ProfileLogged implements ProfileLogged {
     return 'ProfileState.logged(user: $user)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileLoggedCopyWith<_$ProfileLogged> get copyWith =>
-      __$$ProfileLoggedCopyWithImpl<_$ProfileLogged>(this, _$identity);
+  _$$ProfileLoggedImplCopyWith<_$ProfileLoggedImpl> get copyWith =>
+      __$$ProfileLoggedImplCopyWithImpl<_$ProfileLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -188,34 +198,40 @@ class _$ProfileLogged implements ProfileLogged {
 }
 
 abstract class ProfileLogged implements ProfileState {
-  const factory ProfileLogged(final UserModel user) = _$ProfileLogged;
+  const factory ProfileLogged(final UserModel user) = _$ProfileLoggedImpl;
 
   UserModel get user;
-  @JsonKey(ignore: true)
-  _$$ProfileLoggedCopyWith<_$ProfileLogged> get copyWith =>
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProfileLoggedImplCopyWith<_$ProfileLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProfileUpdateSuccessCopyWith<$Res> {
-  factory _$$ProfileUpdateSuccessCopyWith(_$ProfileUpdateSuccess value,
-          $Res Function(_$ProfileUpdateSuccess) then) =
-      __$$ProfileUpdateSuccessCopyWithImpl<$Res>;
+abstract class _$$ProfileUpdateSuccessImplCopyWith<$Res> {
+  factory _$$ProfileUpdateSuccessImplCopyWith(_$ProfileUpdateSuccessImpl value,
+          $Res Function(_$ProfileUpdateSuccessImpl) then) =
+      __$$ProfileUpdateSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ProfileUpdateSuccessCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUpdateSuccess>
-    implements _$$ProfileUpdateSuccessCopyWith<$Res> {
-  __$$ProfileUpdateSuccessCopyWithImpl(_$ProfileUpdateSuccess _value,
-      $Res Function(_$ProfileUpdateSuccess) _then)
+class __$$ProfileUpdateSuccessImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileUpdateSuccessImpl>
+    implements _$$ProfileUpdateSuccessImplCopyWith<$Res> {
+  __$$ProfileUpdateSuccessImplCopyWithImpl(_$ProfileUpdateSuccessImpl _value,
+      $Res Function(_$ProfileUpdateSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ProfileUpdateSuccess implements ProfileUpdateSuccess {
-  const _$ProfileUpdateSuccess();
+class _$ProfileUpdateSuccessImpl implements ProfileUpdateSuccess {
+  const _$ProfileUpdateSuccessImpl();
 
   @override
   String toString() {
@@ -250,32 +266,34 @@ class _$ProfileUpdateSuccess implements ProfileUpdateSuccess {
 }
 
 abstract class ProfileUpdateSuccess implements ProfileState {
-  const factory ProfileUpdateSuccess() = _$ProfileUpdateSuccess;
+  const factory ProfileUpdateSuccess() = _$ProfileUpdateSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$ProfileErrorCopyWith<$Res> {
-  factory _$$ProfileErrorCopyWith(
-          _$ProfileError value, $Res Function(_$ProfileError) then) =
-      __$$ProfileErrorCopyWithImpl<$Res>;
+abstract class _$$ProfileErrorImplCopyWith<$Res> {
+  factory _$$ProfileErrorImplCopyWith(
+          _$ProfileErrorImpl value, $Res Function(_$ProfileErrorImpl) then) =
+      __$$ProfileErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$ProfileErrorCopyWithImpl<$Res>
-    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileError>
-    implements _$$ProfileErrorCopyWith<$Res> {
-  __$$ProfileErrorCopyWithImpl(
-      _$ProfileError _value, $Res Function(_$ProfileError) _then)
+class __$$ProfileErrorImplCopyWithImpl<$Res>
+    extends _$ProfileStateCopyWithImpl<$Res, _$ProfileErrorImpl>
+    implements _$$ProfileErrorImplCopyWith<$Res> {
+  __$$ProfileErrorImplCopyWithImpl(
+      _$ProfileErrorImpl _value, $Res Function(_$ProfileErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$ProfileError(
+    return _then(_$ProfileErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -286,8 +304,8 @@ class __$$ProfileErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProfileError implements ProfileError {
-  const _$ProfileError({this.error});
+class _$ProfileErrorImpl implements ProfileError {
+  const _$ProfileErrorImpl({this.error});
 
   @override
   final String? error;
@@ -297,11 +315,13 @@ class _$ProfileError implements ProfileError {
     return 'ProfileState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileErrorCopyWith<_$ProfileError> get copyWith =>
-      __$$ProfileErrorCopyWithImpl<_$ProfileError>(this, _$identity);
+  _$$ProfileErrorImplCopyWith<_$ProfileErrorImpl> get copyWith =>
+      __$$ProfileErrorImplCopyWithImpl<_$ProfileErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,10 +351,13 @@ class _$ProfileError implements ProfileError {
 }
 
 abstract class ProfileError implements ProfileState {
-  const factory ProfileError({final String? error}) = _$ProfileError;
+  const factory ProfileError({final String? error}) = _$ProfileErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$ProfileErrorCopyWith<_$ProfileError> get copyWith =>
+
+  /// Create a copy of ProfileState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProfileErrorImplCopyWith<_$ProfileErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

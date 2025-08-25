@@ -12,7 +12,7 @@ part of 'charge_station_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$ChargeStationState {
@@ -71,28 +71,34 @@ class _$ChargeStationStateCopyWithImpl<$Res, $Val extends ChargeStationState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$ChargeStationLoadingCopyWith<$Res> {
-  factory _$$ChargeStationLoadingCopyWith(_$ChargeStationLoading value,
-          $Res Function(_$ChargeStationLoading) then) =
-      __$$ChargeStationLoadingCopyWithImpl<$Res>;
+abstract class _$$ChargeStationLoadingImplCopyWith<$Res> {
+  factory _$$ChargeStationLoadingImplCopyWith(_$ChargeStationLoadingImpl value,
+          $Res Function(_$ChargeStationLoadingImpl) then) =
+      __$$ChargeStationLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChargeStationLoadingCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationLoading>
-    implements _$$ChargeStationLoadingCopyWith<$Res> {
-  __$$ChargeStationLoadingCopyWithImpl(_$ChargeStationLoading _value,
-      $Res Function(_$ChargeStationLoading) _then)
+class __$$ChargeStationLoadingImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationLoadingImpl>
+    implements _$$ChargeStationLoadingImplCopyWith<$Res> {
+  __$$ChargeStationLoadingImplCopyWithImpl(_$ChargeStationLoadingImpl _value,
+      $Res Function(_$ChargeStationLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ChargeStationLoading implements ChargeStationLoading {
-  const _$ChargeStationLoading();
+class _$ChargeStationLoadingImpl implements ChargeStationLoading {
+  const _$ChargeStationLoadingImpl();
 
   @override
   String toString() {
@@ -147,31 +153,35 @@ class _$ChargeStationLoading implements ChargeStationLoading {
 }
 
 abstract class ChargeStationLoading implements ChargeStationState {
-  const factory ChargeStationLoading() = _$ChargeStationLoading;
+  const factory ChargeStationLoading() = _$ChargeStationLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationScreenLoadingCopyWith<$Res> {
-  factory _$$ChargeStationScreenLoadingCopyWith(
-          _$ChargeStationScreenLoading value,
-          $Res Function(_$ChargeStationScreenLoading) then) =
-      __$$ChargeStationScreenLoadingCopyWithImpl<$Res>;
+abstract class _$$ChargeStationScreenLoadingImplCopyWith<$Res> {
+  factory _$$ChargeStationScreenLoadingImplCopyWith(
+          _$ChargeStationScreenLoadingImpl value,
+          $Res Function(_$ChargeStationScreenLoadingImpl) then) =
+      __$$ChargeStationScreenLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChargeStationScreenLoadingCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationScreenLoading>
-    implements _$$ChargeStationScreenLoadingCopyWith<$Res> {
-  __$$ChargeStationScreenLoadingCopyWithImpl(
-      _$ChargeStationScreenLoading _value,
-      $Res Function(_$ChargeStationScreenLoading) _then)
+class __$$ChargeStationScreenLoadingImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res,
+        _$ChargeStationScreenLoadingImpl>
+    implements _$$ChargeStationScreenLoadingImplCopyWith<$Res> {
+  __$$ChargeStationScreenLoadingImplCopyWithImpl(
+      _$ChargeStationScreenLoadingImpl _value,
+      $Res Function(_$ChargeStationScreenLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ChargeStationScreenLoading implements ChargeStationScreenLoading {
-  const _$ChargeStationScreenLoading();
+class _$ChargeStationScreenLoadingImpl implements ChargeStationScreenLoading {
+  const _$ChargeStationScreenLoadingImpl();
 
   @override
   String toString() {
@@ -226,34 +236,37 @@ class _$ChargeStationScreenLoading implements ChargeStationScreenLoading {
 }
 
 abstract class ChargeStationScreenLoading implements ChargeStationState {
-  const factory ChargeStationScreenLoading() = _$ChargeStationScreenLoading;
+  const factory ChargeStationScreenLoading() = _$ChargeStationScreenLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationScanQrSuccessCopyWith<$Res> {
-  factory _$$ChargeStationScanQrSuccessCopyWith(
-          _$ChargeStationScanQrSuccess value,
-          $Res Function(_$ChargeStationScanQrSuccess) then) =
-      __$$ChargeStationScanQrSuccessCopyWithImpl<$Res>;
+abstract class _$$ChargeStationScanQrSuccessImplCopyWith<$Res> {
+  factory _$$ChargeStationScanQrSuccessImplCopyWith(
+          _$ChargeStationScanQrSuccessImpl value,
+          $Res Function(_$ChargeStationScanQrSuccessImpl) then) =
+      __$$ChargeStationScanQrSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ConnectorsModel? data});
 }
 
 /// @nodoc
-class __$$ChargeStationScanQrSuccessCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationScanQrSuccess>
-    implements _$$ChargeStationScanQrSuccessCopyWith<$Res> {
-  __$$ChargeStationScanQrSuccessCopyWithImpl(
-      _$ChargeStationScanQrSuccess _value,
-      $Res Function(_$ChargeStationScanQrSuccess) _then)
+class __$$ChargeStationScanQrSuccessImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res,
+        _$ChargeStationScanQrSuccessImpl>
+    implements _$$ChargeStationScanQrSuccessImplCopyWith<$Res> {
+  __$$ChargeStationScanQrSuccessImplCopyWithImpl(
+      _$ChargeStationScanQrSuccessImpl _value,
+      $Res Function(_$ChargeStationScanQrSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$ChargeStationScanQrSuccess(
+    return _then(_$ChargeStationScanQrSuccessImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -264,8 +277,8 @@ class __$$ChargeStationScanQrSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationScanQrSuccess implements ChargeStationScanQrSuccess {
-  const _$ChargeStationScanQrSuccess({this.data});
+class _$ChargeStationScanQrSuccessImpl implements ChargeStationScanQrSuccess {
+  const _$ChargeStationScanQrSuccessImpl({this.data});
 
   @override
   final ConnectorsModel? data;
@@ -275,12 +288,14 @@ class _$ChargeStationScanQrSuccess implements ChargeStationScanQrSuccess {
     return 'ChargeStationState.scanQrSuccess(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationScanQrSuccessCopyWith<_$ChargeStationScanQrSuccess>
-      get copyWith => __$$ChargeStationScanQrSuccessCopyWithImpl<
-          _$ChargeStationScanQrSuccess>(this, _$identity);
+  _$$ChargeStationScanQrSuccessImplCopyWith<_$ChargeStationScanQrSuccessImpl>
+      get copyWith => __$$ChargeStationScanQrSuccessImplCopyWithImpl<
+          _$ChargeStationScanQrSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -331,34 +346,40 @@ class _$ChargeStationScanQrSuccess implements ChargeStationScanQrSuccess {
 
 abstract class ChargeStationScanQrSuccess implements ChargeStationState {
   const factory ChargeStationScanQrSuccess({final ConnectorsModel? data}) =
-      _$ChargeStationScanQrSuccess;
+      _$ChargeStationScanQrSuccessImpl;
 
   ConnectorsModel? get data;
-  @JsonKey(ignore: true)
-  _$$ChargeStationScanQrSuccessCopyWith<_$ChargeStationScanQrSuccess>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationScanQrSuccessImplCopyWith<_$ChargeStationScanQrSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationNothingCopyWith<$Res> {
-  factory _$$ChargeStationNothingCopyWith(_$ChargeStationNothing value,
-          $Res Function(_$ChargeStationNothing) then) =
-      __$$ChargeStationNothingCopyWithImpl<$Res>;
+abstract class _$$ChargeStationNothingImplCopyWith<$Res> {
+  factory _$$ChargeStationNothingImplCopyWith(_$ChargeStationNothingImpl value,
+          $Res Function(_$ChargeStationNothingImpl) then) =
+      __$$ChargeStationNothingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ChargeStationNothingCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationNothing>
-    implements _$$ChargeStationNothingCopyWith<$Res> {
-  __$$ChargeStationNothingCopyWithImpl(_$ChargeStationNothing _value,
-      $Res Function(_$ChargeStationNothing) _then)
+class __$$ChargeStationNothingImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationNothingImpl>
+    implements _$$ChargeStationNothingImplCopyWith<$Res> {
+  __$$ChargeStationNothingImplCopyWithImpl(_$ChargeStationNothingImpl _value,
+      $Res Function(_$ChargeStationNothingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$ChargeStationNothing implements ChargeStationNothing {
-  const _$ChargeStationNothing();
+class _$ChargeStationNothingImpl implements ChargeStationNothing {
+  const _$ChargeStationNothingImpl();
 
   @override
   String toString() {
@@ -413,33 +434,35 @@ class _$ChargeStationNothing implements ChargeStationNothing {
 }
 
 abstract class ChargeStationNothing implements ChargeStationState {
-  const factory ChargeStationNothing() = _$ChargeStationNothing;
+  const factory ChargeStationNothing() = _$ChargeStationNothingImpl;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationLoggedCopyWith<$Res> {
-  factory _$$ChargeStationLoggedCopyWith(_$ChargeStationLogged value,
-          $Res Function(_$ChargeStationLogged) then) =
-      __$$ChargeStationLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeStationLoggedImplCopyWith<$Res> {
+  factory _$$ChargeStationLoggedImplCopyWith(_$ChargeStationLoggedImpl value,
+          $Res Function(_$ChargeStationLoggedImpl) then) =
+      __$$ChargeStationLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ChargeStationModel> data, bool? isFinish});
 }
 
 /// @nodoc
-class __$$ChargeStationLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationLogged>
-    implements _$$ChargeStationLoggedCopyWith<$Res> {
-  __$$ChargeStationLoggedCopyWithImpl(
-      _$ChargeStationLogged _value, $Res Function(_$ChargeStationLogged) _then)
+class __$$ChargeStationLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationLoggedImpl>
+    implements _$$ChargeStationLoggedImplCopyWith<$Res> {
+  __$$ChargeStationLoggedImplCopyWithImpl(_$ChargeStationLoggedImpl _value,
+      $Res Function(_$ChargeStationLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
     Object? isFinish = freezed,
   }) {
-    return _then(_$ChargeStationLogged(
+    return _then(_$ChargeStationLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -454,8 +477,8 @@ class __$$ChargeStationLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationLogged implements ChargeStationLogged {
-  const _$ChargeStationLogged(
+class _$ChargeStationLoggedImpl implements ChargeStationLogged {
+  const _$ChargeStationLoggedImpl(
       {required final List<ChargeStationModel> data, this.isFinish})
       : _data = data;
 
@@ -475,11 +498,13 @@ class _$ChargeStationLogged implements ChargeStationLogged {
     return 'ChargeStationState.logged(data: $data, isFinish: $isFinish)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationLoggedCopyWith<_$ChargeStationLogged> get copyWith =>
-      __$$ChargeStationLoggedCopyWithImpl<_$ChargeStationLogged>(
+  _$$ChargeStationLoggedImplCopyWith<_$ChargeStationLoggedImpl> get copyWith =>
+      __$$ChargeStationLoggedImplCopyWithImpl<_$ChargeStationLoggedImpl>(
           this, _$identity);
 
   @override
@@ -532,41 +557,46 @@ class _$ChargeStationLogged implements ChargeStationLogged {
 abstract class ChargeStationLogged implements ChargeStationState {
   const factory ChargeStationLogged(
       {required final List<ChargeStationModel> data,
-      final bool? isFinish}) = _$ChargeStationLogged;
+      final bool? isFinish}) = _$ChargeStationLoggedImpl;
 
   List<ChargeStationModel> get data;
   bool? get isFinish;
-  @JsonKey(ignore: true)
-  _$$ChargeStationLoggedCopyWith<_$ChargeStationLogged> get copyWith =>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationLoggedImplCopyWith<_$ChargeStationLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationSearchHistoryLoggedCopyWith<$Res> {
-  factory _$$ChargeStationSearchHistoryLoggedCopyWith(
-          _$ChargeStationSearchHistoryLogged value,
-          $Res Function(_$ChargeStationSearchHistoryLogged) then) =
-      __$$ChargeStationSearchHistoryLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeStationSearchHistoryLoggedImplCopyWith<$Res> {
+  factory _$$ChargeStationSearchHistoryLoggedImplCopyWith(
+          _$ChargeStationSearchHistoryLoggedImpl value,
+          $Res Function(_$ChargeStationSearchHistoryLoggedImpl) then) =
+      __$$ChargeStationSearchHistoryLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ChargeStationModel> data});
 }
 
 /// @nodoc
-class __$$ChargeStationSearchHistoryLoggedCopyWithImpl<$Res>
+class __$$ChargeStationSearchHistoryLoggedImplCopyWithImpl<$Res>
     extends _$ChargeStationStateCopyWithImpl<$Res,
-        _$ChargeStationSearchHistoryLogged>
-    implements _$$ChargeStationSearchHistoryLoggedCopyWith<$Res> {
-  __$$ChargeStationSearchHistoryLoggedCopyWithImpl(
-      _$ChargeStationSearchHistoryLogged _value,
-      $Res Function(_$ChargeStationSearchHistoryLogged) _then)
+        _$ChargeStationSearchHistoryLoggedImpl>
+    implements _$$ChargeStationSearchHistoryLoggedImplCopyWith<$Res> {
+  __$$ChargeStationSearchHistoryLoggedImplCopyWithImpl(
+      _$ChargeStationSearchHistoryLoggedImpl _value,
+      $Res Function(_$ChargeStationSearchHistoryLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$ChargeStationSearchHistoryLogged(
+    return _then(_$ChargeStationSearchHistoryLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -577,9 +607,9 @@ class __$$ChargeStationSearchHistoryLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationSearchHistoryLogged
+class _$ChargeStationSearchHistoryLoggedImpl
     implements ChargeStationSearchHistoryLogged {
-  const _$ChargeStationSearchHistoryLogged(
+  const _$ChargeStationSearchHistoryLoggedImpl(
       {required final List<ChargeStationModel> data})
       : _data = data;
 
@@ -596,13 +626,15 @@ class _$ChargeStationSearchHistoryLogged
     return 'ChargeStationState.searchHistoryLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationSearchHistoryLoggedCopyWith<
-          _$ChargeStationSearchHistoryLogged>
-      get copyWith => __$$ChargeStationSearchHistoryLoggedCopyWithImpl<
-          _$ChargeStationSearchHistoryLogged>(this, _$identity);
+  _$$ChargeStationSearchHistoryLoggedImplCopyWith<
+          _$ChargeStationSearchHistoryLoggedImpl>
+      get copyWith => __$$ChargeStationSearchHistoryLoggedImplCopyWithImpl<
+          _$ChargeStationSearchHistoryLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -654,38 +686,45 @@ class _$ChargeStationSearchHistoryLogged
 abstract class ChargeStationSearchHistoryLogged implements ChargeStationState {
   const factory ChargeStationSearchHistoryLogged(
           {required final List<ChargeStationModel> data}) =
-      _$ChargeStationSearchHistoryLogged;
+      _$ChargeStationSearchHistoryLoggedImpl;
 
   List<ChargeStationModel> get data;
-  @JsonKey(ignore: true)
-  _$$ChargeStationSearchHistoryLoggedCopyWith<
-          _$ChargeStationSearchHistoryLogged>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationSearchHistoryLoggedImplCopyWith<
+          _$ChargeStationSearchHistoryLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationMapLoggedCopyWith<$Res> {
-  factory _$$ChargeStationMapLoggedCopyWith(_$ChargeStationMapLogged value,
-          $Res Function(_$ChargeStationMapLogged) then) =
-      __$$ChargeStationMapLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeStationMapLoggedImplCopyWith<$Res> {
+  factory _$$ChargeStationMapLoggedImplCopyWith(
+          _$ChargeStationMapLoggedImpl value,
+          $Res Function(_$ChargeStationMapLoggedImpl) then) =
+      __$$ChargeStationMapLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({RouteDirectionModel data});
 }
 
 /// @nodoc
-class __$$ChargeStationMapLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationMapLogged>
-    implements _$$ChargeStationMapLoggedCopyWith<$Res> {
-  __$$ChargeStationMapLoggedCopyWithImpl(_$ChargeStationMapLogged _value,
-      $Res Function(_$ChargeStationMapLogged) _then)
+class __$$ChargeStationMapLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationMapLoggedImpl>
+    implements _$$ChargeStationMapLoggedImplCopyWith<$Res> {
+  __$$ChargeStationMapLoggedImplCopyWithImpl(
+      _$ChargeStationMapLoggedImpl _value,
+      $Res Function(_$ChargeStationMapLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$ChargeStationMapLogged(
+    return _then(_$ChargeStationMapLoggedImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -696,8 +735,8 @@ class __$$ChargeStationMapLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationMapLogged implements ChargeStationMapLogged {
-  const _$ChargeStationMapLogged({required this.data});
+class _$ChargeStationMapLoggedImpl implements ChargeStationMapLogged {
+  const _$ChargeStationMapLoggedImpl({required this.data});
 
   @override
   final RouteDirectionModel data;
@@ -707,12 +746,14 @@ class _$ChargeStationMapLogged implements ChargeStationMapLogged {
     return 'ChargeStationState.mapLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationMapLoggedCopyWith<_$ChargeStationMapLogged> get copyWith =>
-      __$$ChargeStationMapLoggedCopyWithImpl<_$ChargeStationMapLogged>(
-          this, _$identity);
+  _$$ChargeStationMapLoggedImplCopyWith<_$ChargeStationMapLoggedImpl>
+      get copyWith => __$$ChargeStationMapLoggedImplCopyWithImpl<
+          _$ChargeStationMapLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -763,37 +804,42 @@ class _$ChargeStationMapLogged implements ChargeStationMapLogged {
 
 abstract class ChargeStationMapLogged implements ChargeStationState {
   const factory ChargeStationMapLogged(
-      {required final RouteDirectionModel data}) = _$ChargeStationMapLogged;
+      {required final RouteDirectionModel data}) = _$ChargeStationMapLoggedImpl;
 
   RouteDirectionModel get data;
-  @JsonKey(ignore: true)
-  _$$ChargeStationMapLoggedCopyWith<_$ChargeStationMapLogged> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationMapLoggedImplCopyWith<_$ChargeStationMapLoggedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeBoxInAppLoggedCopyWith<$Res> {
-  factory _$$ChargeBoxInAppLoggedCopyWith(_$ChargeBoxInAppLogged value,
-          $Res Function(_$ChargeBoxInAppLogged) then) =
-      __$$ChargeBoxInAppLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeBoxInAppLoggedImplCopyWith<$Res> {
+  factory _$$ChargeBoxInAppLoggedImplCopyWith(_$ChargeBoxInAppLoggedImpl value,
+          $Res Function(_$ChargeBoxInAppLoggedImpl) then) =
+      __$$ChargeBoxInAppLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ChargeBoxDataModel? data});
 }
 
 /// @nodoc
-class __$$ChargeBoxInAppLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeBoxInAppLogged>
-    implements _$$ChargeBoxInAppLoggedCopyWith<$Res> {
-  __$$ChargeBoxInAppLoggedCopyWithImpl(_$ChargeBoxInAppLogged _value,
-      $Res Function(_$ChargeBoxInAppLogged) _then)
+class __$$ChargeBoxInAppLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeBoxInAppLoggedImpl>
+    implements _$$ChargeBoxInAppLoggedImplCopyWith<$Res> {
+  __$$ChargeBoxInAppLoggedImplCopyWithImpl(_$ChargeBoxInAppLoggedImpl _value,
+      $Res Function(_$ChargeBoxInAppLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$ChargeBoxInAppLogged(
+    return _then(_$ChargeBoxInAppLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -804,8 +850,8 @@ class __$$ChargeBoxInAppLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeBoxInAppLogged implements ChargeBoxInAppLogged {
-  const _$ChargeBoxInAppLogged({this.data});
+class _$ChargeBoxInAppLoggedImpl implements ChargeBoxInAppLogged {
+  const _$ChargeBoxInAppLoggedImpl({this.data});
 
   @override
   final ChargeBoxDataModel? data;
@@ -815,12 +861,15 @@ class _$ChargeBoxInAppLogged implements ChargeBoxInAppLogged {
     return 'ChargeStationState.chargeBoxInAppLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeBoxInAppLoggedCopyWith<_$ChargeBoxInAppLogged> get copyWith =>
-      __$$ChargeBoxInAppLoggedCopyWithImpl<_$ChargeBoxInAppLogged>(
-          this, _$identity);
+  _$$ChargeBoxInAppLoggedImplCopyWith<_$ChargeBoxInAppLoggedImpl>
+      get copyWith =>
+          __$$ChargeBoxInAppLoggedImplCopyWithImpl<_$ChargeBoxInAppLoggedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -871,38 +920,45 @@ class _$ChargeBoxInAppLogged implements ChargeBoxInAppLogged {
 
 abstract class ChargeBoxInAppLogged implements ChargeStationState {
   const factory ChargeBoxInAppLogged({final ChargeBoxDataModel? data}) =
-      _$ChargeBoxInAppLogged;
+      _$ChargeBoxInAppLoggedImpl;
 
   ChargeBoxDataModel? get data;
-  @JsonKey(ignore: true)
-  _$$ChargeBoxInAppLoggedCopyWith<_$ChargeBoxInAppLogged> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeBoxInAppLoggedImplCopyWith<_$ChargeBoxInAppLoggedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DetailChargeStationLoggedCopyWith<$Res> {
-  factory _$$DetailChargeStationLoggedCopyWith(
-          _$DetailChargeStationLogged value,
-          $Res Function(_$DetailChargeStationLogged) then) =
-      __$$DetailChargeStationLoggedCopyWithImpl<$Res>;
+abstract class _$$DetailChargeStationLoggedImplCopyWith<$Res> {
+  factory _$$DetailChargeStationLoggedImplCopyWith(
+          _$DetailChargeStationLoggedImpl value,
+          $Res Function(_$DetailChargeStationLoggedImpl) then) =
+      __$$DetailChargeStationLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ChargeStationModel? data});
 }
 
 /// @nodoc
-class __$$DetailChargeStationLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$DetailChargeStationLogged>
-    implements _$$DetailChargeStationLoggedCopyWith<$Res> {
-  __$$DetailChargeStationLoggedCopyWithImpl(_$DetailChargeStationLogged _value,
-      $Res Function(_$DetailChargeStationLogged) _then)
+class __$$DetailChargeStationLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res,
+        _$DetailChargeStationLoggedImpl>
+    implements _$$DetailChargeStationLoggedImplCopyWith<$Res> {
+  __$$DetailChargeStationLoggedImplCopyWithImpl(
+      _$DetailChargeStationLoggedImpl _value,
+      $Res Function(_$DetailChargeStationLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$DetailChargeStationLogged(
+    return _then(_$DetailChargeStationLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -913,8 +969,8 @@ class __$$DetailChargeStationLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DetailChargeStationLogged implements DetailChargeStationLogged {
-  const _$DetailChargeStationLogged({this.data});
+class _$DetailChargeStationLoggedImpl implements DetailChargeStationLogged {
+  const _$DetailChargeStationLoggedImpl({this.data});
 
   @override
   final ChargeStationModel? data;
@@ -924,12 +980,14 @@ class _$DetailChargeStationLogged implements DetailChargeStationLogged {
     return 'ChargeStationState.detailChargeStation(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DetailChargeStationLoggedCopyWith<_$DetailChargeStationLogged>
-      get copyWith => __$$DetailChargeStationLoggedCopyWithImpl<
-          _$DetailChargeStationLogged>(this, _$identity);
+  _$$DetailChargeStationLoggedImplCopyWith<_$DetailChargeStationLoggedImpl>
+      get copyWith => __$$DetailChargeStationLoggedImplCopyWithImpl<
+          _$DetailChargeStationLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -980,37 +1038,43 @@ class _$DetailChargeStationLogged implements DetailChargeStationLogged {
 
 abstract class DetailChargeStationLogged implements ChargeStationState {
   const factory DetailChargeStationLogged({final ChargeStationModel? data}) =
-      _$DetailChargeStationLogged;
+      _$DetailChargeStationLoggedImpl;
 
   ChargeStationModel? get data;
-  @JsonKey(ignore: true)
-  _$$DetailChargeStationLoggedCopyWith<_$DetailChargeStationLogged>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailChargeStationLoggedImplCopyWith<_$DetailChargeStationLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$DetailChargeBoxLoggedCopyWith<$Res> {
-  factory _$$DetailChargeBoxLoggedCopyWith(_$DetailChargeBoxLogged value,
-          $Res Function(_$DetailChargeBoxLogged) then) =
-      __$$DetailChargeBoxLoggedCopyWithImpl<$Res>;
+abstract class _$$DetailChargeBoxLoggedImplCopyWith<$Res> {
+  factory _$$DetailChargeBoxLoggedImplCopyWith(
+          _$DetailChargeBoxLoggedImpl value,
+          $Res Function(_$DetailChargeBoxLoggedImpl) then) =
+      __$$DetailChargeBoxLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ChargeBoxModel> data});
 }
 
 /// @nodoc
-class __$$DetailChargeBoxLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$DetailChargeBoxLogged>
-    implements _$$DetailChargeBoxLoggedCopyWith<$Res> {
-  __$$DetailChargeBoxLoggedCopyWithImpl(_$DetailChargeBoxLogged _value,
-      $Res Function(_$DetailChargeBoxLogged) _then)
+class __$$DetailChargeBoxLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$DetailChargeBoxLoggedImpl>
+    implements _$$DetailChargeBoxLoggedImplCopyWith<$Res> {
+  __$$DetailChargeBoxLoggedImplCopyWithImpl(_$DetailChargeBoxLoggedImpl _value,
+      $Res Function(_$DetailChargeBoxLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$DetailChargeBoxLogged(
+    return _then(_$DetailChargeBoxLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1021,8 +1085,8 @@ class __$$DetailChargeBoxLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DetailChargeBoxLogged implements DetailChargeBoxLogged {
-  const _$DetailChargeBoxLogged({required final List<ChargeBoxModel> data})
+class _$DetailChargeBoxLoggedImpl implements DetailChargeBoxLogged {
+  const _$DetailChargeBoxLoggedImpl({required final List<ChargeBoxModel> data})
       : _data = data;
 
   final List<ChargeBoxModel> _data;
@@ -1038,12 +1102,14 @@ class _$DetailChargeBoxLogged implements DetailChargeBoxLogged {
     return 'ChargeStationState.detailChargeBox(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$DetailChargeBoxLoggedCopyWith<_$DetailChargeBoxLogged> get copyWith =>
-      __$$DetailChargeBoxLoggedCopyWithImpl<_$DetailChargeBoxLogged>(
-          this, _$identity);
+  _$$DetailChargeBoxLoggedImplCopyWith<_$DetailChargeBoxLoggedImpl>
+      get copyWith => __$$DetailChargeBoxLoggedImplCopyWithImpl<
+          _$DetailChargeBoxLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1094,37 +1160,42 @@ class _$DetailChargeBoxLogged implements DetailChargeBoxLogged {
 
 abstract class DetailChargeBoxLogged implements ChargeStationState {
   const factory DetailChargeBoxLogged(
-      {required final List<ChargeBoxModel> data}) = _$DetailChargeBoxLogged;
+      {required final List<ChargeBoxModel> data}) = _$DetailChargeBoxLoggedImpl;
 
   List<ChargeBoxModel> get data;
-  @JsonKey(ignore: true)
-  _$$DetailChargeBoxLoggedCopyWith<_$DetailChargeBoxLogged> get copyWith =>
-      throw _privateConstructorUsedError;
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DetailChargeBoxLoggedImplCopyWith<_$DetailChargeBoxLoggedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeBoxLoggedCopyWith<$Res> {
-  factory _$$ChargeBoxLoggedCopyWith(
-          _$ChargeBoxLogged value, $Res Function(_$ChargeBoxLogged) then) =
-      __$$ChargeBoxLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeBoxLoggedImplCopyWith<$Res> {
+  factory _$$ChargeBoxLoggedImplCopyWith(_$ChargeBoxLoggedImpl value,
+          $Res Function(_$ChargeBoxLoggedImpl) then) =
+      __$$ChargeBoxLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ChargeBoxModel data});
 }
 
 /// @nodoc
-class __$$ChargeBoxLoggedCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeBoxLogged>
-    implements _$$ChargeBoxLoggedCopyWith<$Res> {
-  __$$ChargeBoxLoggedCopyWithImpl(
-      _$ChargeBoxLogged _value, $Res Function(_$ChargeBoxLogged) _then)
+class __$$ChargeBoxLoggedImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeBoxLoggedImpl>
+    implements _$$ChargeBoxLoggedImplCopyWith<$Res> {
+  __$$ChargeBoxLoggedImplCopyWithImpl(
+      _$ChargeBoxLoggedImpl _value, $Res Function(_$ChargeBoxLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$ChargeBoxLogged(
+    return _then(_$ChargeBoxLoggedImpl(
       data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1135,8 +1206,8 @@ class __$$ChargeBoxLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeBoxLogged implements ChargeBoxLogged {
-  const _$ChargeBoxLogged({required this.data});
+class _$ChargeBoxLoggedImpl implements ChargeBoxLogged {
+  const _$ChargeBoxLoggedImpl({required this.data});
 
   @override
   final ChargeBoxModel data;
@@ -1146,11 +1217,14 @@ class _$ChargeBoxLogged implements ChargeBoxLogged {
     return 'ChargeStationState.chargeBox(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeBoxLoggedCopyWith<_$ChargeBoxLogged> get copyWith =>
-      __$$ChargeBoxLoggedCopyWithImpl<_$ChargeBoxLogged>(this, _$identity);
+  _$$ChargeBoxLoggedImplCopyWith<_$ChargeBoxLoggedImpl> get copyWith =>
+      __$$ChargeBoxLoggedImplCopyWithImpl<_$ChargeBoxLoggedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1201,37 +1275,42 @@ class _$ChargeBoxLogged implements ChargeBoxLogged {
 
 abstract class ChargeBoxLogged implements ChargeStationState {
   const factory ChargeBoxLogged({required final ChargeBoxModel data}) =
-      _$ChargeBoxLogged;
+      _$ChargeBoxLoggedImpl;
 
   ChargeBoxModel get data;
-  @JsonKey(ignore: true)
-  _$$ChargeBoxLoggedCopyWith<_$ChargeBoxLogged> get copyWith =>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeBoxLoggedImplCopyWith<_$ChargeBoxLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$LoggedChargeTypesCopyWith<$Res> {
-  factory _$$LoggedChargeTypesCopyWith(
-          _$LoggedChargeTypes value, $Res Function(_$LoggedChargeTypes) then) =
-      __$$LoggedChargeTypesCopyWithImpl<$Res>;
+abstract class _$$LoggedChargeTypesImplCopyWith<$Res> {
+  factory _$$LoggedChargeTypesImplCopyWith(_$LoggedChargeTypesImpl value,
+          $Res Function(_$LoggedChargeTypesImpl) then) =
+      __$$LoggedChargeTypesImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<ChargeTypeModel> data});
 }
 
 /// @nodoc
-class __$$LoggedChargeTypesCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$LoggedChargeTypes>
-    implements _$$LoggedChargeTypesCopyWith<$Res> {
-  __$$LoggedChargeTypesCopyWithImpl(
-      _$LoggedChargeTypes _value, $Res Function(_$LoggedChargeTypes) _then)
+class __$$LoggedChargeTypesImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$LoggedChargeTypesImpl>
+    implements _$$LoggedChargeTypesImplCopyWith<$Res> {
+  __$$LoggedChargeTypesImplCopyWithImpl(_$LoggedChargeTypesImpl _value,
+      $Res Function(_$LoggedChargeTypesImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$LoggedChargeTypes(
+    return _then(_$LoggedChargeTypesImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1242,8 +1321,8 @@ class __$$LoggedChargeTypesCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$LoggedChargeTypes implements LoggedChargeTypes {
-  const _$LoggedChargeTypes({required final List<ChargeTypeModel> data})
+class _$LoggedChargeTypesImpl implements LoggedChargeTypes {
+  const _$LoggedChargeTypesImpl({required final List<ChargeTypeModel> data})
       : _data = data;
 
   final List<ChargeTypeModel> _data;
@@ -1259,11 +1338,14 @@ class _$LoggedChargeTypes implements LoggedChargeTypes {
     return 'ChargeStationState.loggedChargeTypes(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoggedChargeTypesCopyWith<_$LoggedChargeTypes> get copyWith =>
-      __$$LoggedChargeTypesCopyWithImpl<_$LoggedChargeTypes>(this, _$identity);
+  _$$LoggedChargeTypesImplCopyWith<_$LoggedChargeTypesImpl> get copyWith =>
+      __$$LoggedChargeTypesImplCopyWithImpl<_$LoggedChargeTypesImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1314,40 +1396,45 @@ class _$LoggedChargeTypes implements LoggedChargeTypes {
 
 abstract class LoggedChargeTypes implements ChargeStationState {
   const factory LoggedChargeTypes({required final List<ChargeTypeModel> data}) =
-      _$LoggedChargeTypes;
+      _$LoggedChargeTypesImpl;
 
   List<ChargeTypeModel> get data;
-  @JsonKey(ignore: true)
-  _$$LoggedChargeTypesCopyWith<_$LoggedChargeTypes> get copyWith =>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoggedChargeTypesImplCopyWith<_$LoggedChargeTypesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationConnectorsLoggedCopyWith<$Res> {
-  factory _$$ChargeStationConnectorsLoggedCopyWith(
-          _$ChargeStationConnectorsLogged value,
-          $Res Function(_$ChargeStationConnectorsLogged) then) =
-      __$$ChargeStationConnectorsLoggedCopyWithImpl<$Res>;
+abstract class _$$ChargeStationConnectorsLoggedImplCopyWith<$Res> {
+  factory _$$ChargeStationConnectorsLoggedImplCopyWith(
+          _$ChargeStationConnectorsLoggedImpl value,
+          $Res Function(_$ChargeStationConnectorsLoggedImpl) then) =
+      __$$ChargeStationConnectorsLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({ChargeBoxModel? data});
 }
 
 /// @nodoc
-class __$$ChargeStationConnectorsLoggedCopyWithImpl<$Res>
+class __$$ChargeStationConnectorsLoggedImplCopyWithImpl<$Res>
     extends _$ChargeStationStateCopyWithImpl<$Res,
-        _$ChargeStationConnectorsLogged>
-    implements _$$ChargeStationConnectorsLoggedCopyWith<$Res> {
-  __$$ChargeStationConnectorsLoggedCopyWithImpl(
-      _$ChargeStationConnectorsLogged _value,
-      $Res Function(_$ChargeStationConnectorsLogged) _then)
+        _$ChargeStationConnectorsLoggedImpl>
+    implements _$$ChargeStationConnectorsLoggedImplCopyWith<$Res> {
+  __$$ChargeStationConnectorsLoggedImplCopyWithImpl(
+      _$ChargeStationConnectorsLoggedImpl _value,
+      $Res Function(_$ChargeStationConnectorsLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$ChargeStationConnectorsLogged(
+    return _then(_$ChargeStationConnectorsLoggedImpl(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -1358,8 +1445,9 @@ class __$$ChargeStationConnectorsLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationConnectorsLogged implements ChargeStationConnectorsLogged {
-  const _$ChargeStationConnectorsLogged({this.data});
+class _$ChargeStationConnectorsLoggedImpl
+    implements ChargeStationConnectorsLogged {
+  const _$ChargeStationConnectorsLoggedImpl({this.data});
 
   @override
   final ChargeBoxModel? data;
@@ -1369,12 +1457,15 @@ class _$ChargeStationConnectorsLogged implements ChargeStationConnectorsLogged {
     return 'ChargeStationState.connectorsLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationConnectorsLoggedCopyWith<_$ChargeStationConnectorsLogged>
-      get copyWith => __$$ChargeStationConnectorsLoggedCopyWithImpl<
-          _$ChargeStationConnectorsLogged>(this, _$identity);
+  _$$ChargeStationConnectorsLoggedImplCopyWith<
+          _$ChargeStationConnectorsLoggedImpl>
+      get copyWith => __$$ChargeStationConnectorsLoggedImplCopyWithImpl<
+          _$ChargeStationConnectorsLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1425,37 +1516,43 @@ class _$ChargeStationConnectorsLogged implements ChargeStationConnectorsLogged {
 
 abstract class ChargeStationConnectorsLogged implements ChargeStationState {
   const factory ChargeStationConnectorsLogged({final ChargeBoxModel? data}) =
-      _$ChargeStationConnectorsLogged;
+      _$ChargeStationConnectorsLoggedImpl;
 
   ChargeBoxModel? get data;
-  @JsonKey(ignore: true)
-  _$$ChargeStationConnectorsLoggedCopyWith<_$ChargeStationConnectorsLogged>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationConnectorsLoggedImplCopyWith<
+          _$ChargeStationConnectorsLoggedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ChargeStationErrorCopyWith<$Res> {
-  factory _$$ChargeStationErrorCopyWith(_$ChargeStationError value,
-          $Res Function(_$ChargeStationError) then) =
-      __$$ChargeStationErrorCopyWithImpl<$Res>;
+abstract class _$$ChargeStationErrorImplCopyWith<$Res> {
+  factory _$$ChargeStationErrorImplCopyWith(_$ChargeStationErrorImpl value,
+          $Res Function(_$ChargeStationErrorImpl) then) =
+      __$$ChargeStationErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$ChargeStationErrorCopyWithImpl<$Res>
-    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationError>
-    implements _$$ChargeStationErrorCopyWith<$Res> {
-  __$$ChargeStationErrorCopyWithImpl(
-      _$ChargeStationError _value, $Res Function(_$ChargeStationError) _then)
+class __$$ChargeStationErrorImplCopyWithImpl<$Res>
+    extends _$ChargeStationStateCopyWithImpl<$Res, _$ChargeStationErrorImpl>
+    implements _$$ChargeStationErrorImplCopyWith<$Res> {
+  __$$ChargeStationErrorImplCopyWithImpl(_$ChargeStationErrorImpl _value,
+      $Res Function(_$ChargeStationErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$ChargeStationError(
+    return _then(_$ChargeStationErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1466,8 +1563,8 @@ class __$$ChargeStationErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ChargeStationError implements ChargeStationError {
-  const _$ChargeStationError({this.error});
+class _$ChargeStationErrorImpl implements ChargeStationError {
+  const _$ChargeStationErrorImpl({this.error});
 
   @override
   final String? error;
@@ -1477,11 +1574,13 @@ class _$ChargeStationError implements ChargeStationError {
     return 'ChargeStationState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ChargeStationErrorCopyWith<_$ChargeStationError> get copyWith =>
-      __$$ChargeStationErrorCopyWithImpl<_$ChargeStationError>(
+  _$$ChargeStationErrorImplCopyWith<_$ChargeStationErrorImpl> get copyWith =>
+      __$$ChargeStationErrorImplCopyWithImpl<_$ChargeStationErrorImpl>(
           this, _$identity);
 
   @override
@@ -1533,10 +1632,13 @@ class _$ChargeStationError implements ChargeStationError {
 
 abstract class ChargeStationError implements ChargeStationState {
   const factory ChargeStationError({final String? error}) =
-      _$ChargeStationError;
+      _$ChargeStationErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$ChargeStationErrorCopyWith<_$ChargeStationError> get copyWith =>
+
+  /// Create a copy of ChargeStationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ChargeStationErrorImplCopyWith<_$ChargeStationErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

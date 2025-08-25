@@ -11,7 +11,7 @@ BaseResponse<T> _$BaseResponseFromJson<T>(
   T Function(Object? json) fromJsonT,
 ) =>
     BaseResponse<T>(
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
       message: json['message'] as String?,
       errors: json['errors'] == null
@@ -22,21 +22,14 @@ BaseResponse<T> _$BaseResponseFromJson<T>(
 Map<String, dynamic> _$BaseResponseToJson<T>(
   BaseResponse<T> instance,
   Object? Function(T value) toJsonT,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('data', _$nullableGenericToJson(instance.data, toJsonT));
-  writeNotNull('message', instance.message);
-  writeNotNull('code', instance.code);
-  writeNotNull('errors', instance.errors);
-  return val;
-}
+) =>
+    <String, dynamic>{
+      if (_$nullableGenericToJson(instance.data, toJsonT) case final value?)
+        'data': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.errors case final value?) 'errors': value,
+    };
 
 T? _$nullableGenericFromJson<T>(
   Object? input,
@@ -57,7 +50,7 @@ BaseListResponse<T> _$BaseListResponseFromJson<T>(
     BaseListResponse<T>(
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
       message: json['message'] as String?,
-      code: json['code'] as int?,
+      code: (json['code'] as num?)?.toInt(),
       errors: json['errors'] == null
           ? null
           : Errors.fromJson(Map<String, dynamic>.from(json['errors'] as Map)),
@@ -66,21 +59,14 @@ BaseListResponse<T> _$BaseListResponseFromJson<T>(
 Map<String, dynamic> _$BaseListResponseToJson<T>(
   BaseListResponse<T> instance,
   Object? Function(T value) toJsonT,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('data', _$nullableGenericToJson(instance.data, toJsonT));
-  writeNotNull('message', instance.message);
-  writeNotNull('code', instance.code);
-  writeNotNull('errors', instance.errors);
-  return val;
-}
+) =>
+    <String, dynamic>{
+      if (_$nullableGenericToJson(instance.data, toJsonT) case final value?)
+        'data': value,
+      if (instance.message case final value?) 'message': value,
+      if (instance.code case final value?) 'code': value,
+      if (instance.errors case final value?) 'errors': value,
+    };
 
 ListResponse<T> _$ListResponseFromJson<T>(
   Map json,
@@ -96,52 +82,27 @@ ListResponse<T> _$ListResponseFromJson<T>(
 Map<String, dynamic> _$ListResponseToJson<T>(
   ListResponse<T> instance,
   Object? Function(T value) toJsonT,
-) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('list', instance.list?.map(toJsonT).toList());
-  writeNotNull('pagination', instance.pagination);
-  return val;
-}
+) =>
+    <String, dynamic>{
+      if (instance.list?.map(toJsonT).toList() case final value?) 'list': value,
+      if (instance.pagination case final value?) 'pagination': value,
+    };
 
 Errors _$ErrorsFromJson(Map json) =>
     Errors()..messageApp = json['message_app'] as String?;
 
-Map<String, dynamic> _$ErrorsToJson(Errors instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('message_app', instance.messageApp);
-  return val;
-}
+Map<String, dynamic> _$ErrorsToJson(Errors instance) => <String, dynamic>{
+      if (instance.messageApp case final value?) 'message_app': value,
+    };
 
 PaginationModel _$PaginationModelFromJson(Map json) => PaginationModel()
   ..total = json['total'] as num?
   ..page = json['page'] as num?
   ..size = json['size'] as num?;
 
-Map<String, dynamic> _$PaginationModelToJson(PaginationModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('total', instance.total);
-  writeNotNull('page', instance.page);
-  writeNotNull('size', instance.size);
-  return val;
-}
+Map<String, dynamic> _$PaginationModelToJson(PaginationModel instance) =>
+    <String, dynamic>{
+      if (instance.total case final value?) 'total': value,
+      if (instance.page case final value?) 'page': value,
+      if (instance.size case final value?) 'size': value,
+    };

@@ -11,16 +11,8 @@ UserPointModel _$UserPointModelFromJson(Map json) => UserPointModel(
       point: json['point'] as num?,
     );
 
-Map<String, dynamic> _$UserPointModelToJson(UserPointModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('user_id', instance.user_id);
-  writeNotNull('point', instance.point);
-  return val;
-}
+Map<String, dynamic> _$UserPointModelToJson(UserPointModel instance) =>
+    <String, dynamic>{
+      if (instance.user_id case final value?) 'user_id': value,
+      if (instance.point case final value?) 'point': value,
+    };

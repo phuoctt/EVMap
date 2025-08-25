@@ -26,25 +26,18 @@ ChargeBoxModel _$ChargeBoxModelFromJson(Map json) => ChargeBoxModel(
               Map<String, dynamic>.from(json['charge_station'] as Map)),
     );
 
-Map<String, dynamic> _$ChargeBoxModelToJson(ChargeBoxModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('charge_box_id', instance.charge_box_id);
-  writeNotNull('charge_box_name', instance.charge_box_name);
-  writeNotNull('status', instance.status);
-  writeNotNull('registration_status', instance.registration_status);
-  writeNotNull('description', instance.description);
-  writeNotNull('connectors', instance.connectors);
-  writeNotNull('price', instance.price);
-  writeNotNull('charge_station', instance.charge_station);
-  return val;
-}
+Map<String, dynamic> _$ChargeBoxModelToJson(ChargeBoxModel instance) =>
+    <String, dynamic>{
+      if (instance.charge_box_id case final value?) 'charge_box_id': value,
+      if (instance.charge_box_name case final value?) 'charge_box_name': value,
+      if (instance.status case final value?) 'status': value,
+      if (instance.registration_status case final value?)
+        'registration_status': value,
+      if (instance.description case final value?) 'description': value,
+      if (instance.connectors case final value?) 'connectors': value,
+      if (instance.price case final value?) 'price': value,
+      if (instance.charge_station case final value?) 'charge_station': value,
+    };
 
 ConnectorsModel _$ConnectorsModelFromJson(Map json) => ConnectorsModel(
       connector_status: json['connector_status'] as String?,
@@ -57,44 +50,29 @@ ConnectorsModel _$ConnectorsModelFromJson(Map json) => ConnectorsModel(
               Map<String, dynamic>.from(json['type'] as Map)),
     );
 
-Map<String, dynamic> _$ConnectorsModelToJson(ConnectorsModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('connector_status', instance.connector_status);
-  writeNotNull('connector_id', instance.connector_id);
-  writeNotNull('charge_box_id', instance.charge_box_id);
-  writeNotNull('transaction_id', instance.transaction_id);
-  writeNotNull('type', instance.type);
-  return val;
-}
+Map<String, dynamic> _$ConnectorsModelToJson(ConnectorsModel instance) =>
+    <String, dynamic>{
+      if (instance.connector_status case final value?)
+        'connector_status': value,
+      if (instance.connector_id case final value?) 'connector_id': value,
+      if (instance.charge_box_id case final value?) 'charge_box_id': value,
+      if (instance.transaction_id case final value?) 'transaction_id': value,
+      if (instance.type case final value?) 'type': value,
+    };
 
 ConnectorType _$ConnectorTypeFromJson(Map json) => ConnectorType()
   ..name = json['name'] as String?
-  ..id = json['id'] as int?
+  ..id = (json['id'] as num?)?.toInt()
   ..image_url = json['image_url'] as String?
   ..power_supply = json['power_supply'] as String?;
 
-Map<String, dynamic> _$ConnectorTypeToJson(ConnectorType instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('name', instance.name);
-  writeNotNull('id', instance.id);
-  writeNotNull('image_url', instance.image_url);
-  writeNotNull('power_supply', instance.power_supply);
-  return val;
-}
+Map<String, dynamic> _$ConnectorTypeToJson(ConnectorType instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.id case final value?) 'id': value,
+      if (instance.image_url case final value?) 'image_url': value,
+      if (instance.power_supply case final value?) 'power_supply': value,
+    };
 
 PriceBoxModel _$PriceBoxModelFromJson(Map json) => PriceBoxModel()
   ..id = json['id'] as num?
@@ -105,37 +83,21 @@ PriceBoxModel _$PriceBoxModelFromJson(Map json) => PriceBoxModel()
       ?.map((e) => DetailsPrice.fromJson(Map<String, dynamic>.from(e as Map)))
       .toList();
 
-Map<String, dynamic> _$PriceBoxModelToJson(PriceBoxModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('unit', instance.unit);
-  writeNotNull('price_type', instance.price_type);
-  writeNotNull('price_type_name', instance.price_type_name);
-  writeNotNull('details', instance.details);
-  return val;
-}
+Map<String, dynamic> _$PriceBoxModelToJson(PriceBoxModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.unit case final value?) 'unit': value,
+      if (instance.price_type case final value?) 'price_type': value,
+      if (instance.price_type_name case final value?) 'price_type_name': value,
+      if (instance.details case final value?) 'details': value,
+    };
 
 DetailsPrice _$DetailsPriceFromJson(Map json) => DetailsPrice()
   ..id = json['id'] as num?
   ..price = json['price'] as num?;
 
-Map<String, dynamic> _$DetailsPriceToJson(DetailsPrice instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('price', instance.price);
-  return val;
-}
+Map<String, dynamic> _$DetailsPriceToJson(DetailsPrice instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.price case final value?) 'price': value,
+    };

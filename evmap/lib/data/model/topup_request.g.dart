@@ -14,19 +14,11 @@ TopUpRequest _$TopUpRequestFromJson(Map json) => TopUpRequest(
       amount: json['amount'] as num?,
     );
 
-Map<String, dynamic> _$TopUpRequestToJson(TopUpRequest instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('env', instance.env);
-  writeNotNull('payment_type', instance.payment_type);
-  writeNotNull('payment_method', instance.payment_method);
-  writeNotNull('redirect_url', instance.redirect_url);
-  writeNotNull('amount', instance.amount);
-  return val;
-}
+Map<String, dynamic> _$TopUpRequestToJson(TopUpRequest instance) =>
+    <String, dynamic>{
+      if (instance.env case final value?) 'env': value,
+      if (instance.payment_type case final value?) 'payment_type': value,
+      if (instance.payment_method case final value?) 'payment_method': value,
+      if (instance.redirect_url case final value?) 'redirect_url': value,
+      if (instance.amount case final value?) 'amount': value,
+    };

@@ -7,20 +7,12 @@ part of 'charge_type_model.dart';
 // **************************************************************************
 
 ChargeTypeModel _$ChargeTypeModelFromJson(Map json) => ChargeTypeModel(
-      id: json['id'] as int?,
+      id: (json['id'] as num?)?.toInt(),
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$ChargeTypeModelToJson(ChargeTypeModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('name', instance.name);
-  return val;
-}
+Map<String, dynamic> _$ChargeTypeModelToJson(ChargeTypeModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.name case final value?) 'name': value,
+    };

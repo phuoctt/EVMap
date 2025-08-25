@@ -7,8 +7,8 @@ part of 'reason_model.dart';
 // **************************************************************************
 
 ReasonModel _$ReasonModelFromJson(Map json) => ReasonModel(
-      id: json['id'] as int?,
-      sort: json['sort'] as int?,
+      id: (json['id'] as num?)?.toInt(),
+      sort: (json['sort'] as num?)?.toInt(),
       reasonVi: json['reason_vi'] as String?,
       reasonEn: json['reason_en'] as String?,
       createdAt: json['created_at'] == null
@@ -21,22 +21,16 @@ ReasonModel _$ReasonModelFromJson(Map json) => ReasonModel(
       updatedUser: json['updated_user'] as String?,
     );
 
-Map<String, dynamic> _$ReasonModelToJson(ReasonModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('sort', instance.sort);
-  writeNotNull('reason_vi', instance.reasonVi);
-  writeNotNull('reason_en', instance.reasonEn);
-  writeNotNull('created_at', instance.createdAt?.toIso8601String());
-  writeNotNull('updated_at', instance.updatedAt?.toIso8601String());
-  writeNotNull('created_user', instance.createdUser);
-  writeNotNull('updated_user', instance.updatedUser);
-  return val;
-}
+Map<String, dynamic> _$ReasonModelToJson(ReasonModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.sort case final value?) 'sort': value,
+      if (instance.reasonVi case final value?) 'reason_vi': value,
+      if (instance.reasonEn case final value?) 'reason_en': value,
+      if (instance.createdAt?.toIso8601String() case final value?)
+        'created_at': value,
+      if (instance.updatedAt?.toIso8601String() case final value?)
+        'updated_at': value,
+      if (instance.createdUser case final value?) 'created_user': value,
+      if (instance.updatedUser case final value?) 'updated_user': value,
+    };

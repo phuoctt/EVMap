@@ -17,21 +17,14 @@ HistoryModel _$HistoryModelFromJson(Map json) => HistoryModel()
   ..extra_id = json['extra_id'] as num?
   ..description = json['description'] as String?;
 
-Map<String, dynamic> _$HistoryModelToJson(HistoryModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('id', instance.id);
-  writeNotNull('user_id', instance.user_id);
-  writeNotNull('point_value', instance.point_value);
-  writeNotNull('point_datetime', instance.point_datetime?.toIso8601String());
-  writeNotNull('extra_type', instance.extra_type);
-  writeNotNull('extra_id', instance.extra_id);
-  writeNotNull('description', instance.description);
-  return val;
-}
+Map<String, dynamic> _$HistoryModelToJson(HistoryModel instance) =>
+    <String, dynamic>{
+      if (instance.id case final value?) 'id': value,
+      if (instance.user_id case final value?) 'user_id': value,
+      if (instance.point_value case final value?) 'point_value': value,
+      if (instance.point_datetime?.toIso8601String() case final value?)
+        'point_datetime': value,
+      if (instance.extra_type case final value?) 'extra_type': value,
+      if (instance.extra_id case final value?) 'extra_id': value,
+      if (instance.description case final value?) 'description': value,
+    };

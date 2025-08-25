@@ -15,17 +15,9 @@ ChargeBoxDataModel _$ChargeBoxDataModelFromJson(Map json) => ChargeBoxDataModel(
               Map<String, dynamic>.from(json['event_data'] as Map)),
     );
 
-Map<String, dynamic> _$ChargeBoxDataModelToJson(ChargeBoxDataModel instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('charge_box_id', instance.charge_box_id);
-  writeNotNull('event_name', instance.event_name);
-  writeNotNull('event_data', instance.event_data);
-  return val;
-}
+Map<String, dynamic> _$ChargeBoxDataModelToJson(ChargeBoxDataModel instance) =>
+    <String, dynamic>{
+      if (instance.charge_box_id case final value?) 'charge_box_id': value,
+      if (instance.event_name case final value?) 'event_name': value,
+      if (instance.event_data case final value?) 'event_data': value,
+    };

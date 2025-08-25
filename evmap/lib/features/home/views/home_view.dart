@@ -163,7 +163,9 @@ class _HomeViewState extends State<HomeView>
                         }
                         break;
                       case null:
-                      // TODO: Handle this case.
+                       break;
+                      case TransactionActiveType.booking:
+                        break;
                     }
                   },
                   child: _type != null

@@ -12,7 +12,7 @@ part of 'feed_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FeedState {
@@ -48,28 +48,34 @@ class _$FeedStateCopyWithImpl<$Res, $Val extends FeedState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$FeedLoadingCopyWith<$Res> {
-  factory _$$FeedLoadingCopyWith(
-          _$FeedLoading value, $Res Function(_$FeedLoading) then) =
-      __$$FeedLoadingCopyWithImpl<$Res>;
+abstract class _$$FeedLoadingImplCopyWith<$Res> {
+  factory _$$FeedLoadingImplCopyWith(
+          _$FeedLoadingImpl value, $Res Function(_$FeedLoadingImpl) then) =
+      __$$FeedLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FeedLoadingCopyWithImpl<$Res>
-    extends _$FeedStateCopyWithImpl<$Res, _$FeedLoading>
-    implements _$$FeedLoadingCopyWith<$Res> {
-  __$$FeedLoadingCopyWithImpl(
-      _$FeedLoading _value, $Res Function(_$FeedLoading) _then)
+class __$$FeedLoadingImplCopyWithImpl<$Res>
+    extends _$FeedStateCopyWithImpl<$Res, _$FeedLoadingImpl>
+    implements _$$FeedLoadingImplCopyWith<$Res> {
+  __$$FeedLoadingImplCopyWithImpl(
+      _$FeedLoadingImpl _value, $Res Function(_$FeedLoadingImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$FeedLoading implements FeedLoading {
-  const _$FeedLoading();
+class _$FeedLoadingImpl implements FeedLoading {
+  const _$FeedLoadingImpl();
 
   @override
   String toString() {
@@ -102,32 +108,34 @@ class _$FeedLoading implements FeedLoading {
 }
 
 abstract class FeedLoading implements FeedState {
-  const factory FeedLoading() = _$FeedLoading;
+  const factory FeedLoading() = _$FeedLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$FeedLoggedCopyWith<$Res> {
-  factory _$$FeedLoggedCopyWith(
-          _$FeedLogged value, $Res Function(_$FeedLogged) then) =
-      __$$FeedLoggedCopyWithImpl<$Res>;
+abstract class _$$FeedLoggedImplCopyWith<$Res> {
+  factory _$$FeedLoggedImplCopyWith(
+          _$FeedLoggedImpl value, $Res Function(_$FeedLoggedImpl) then) =
+      __$$FeedLoggedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<FeedModel> data});
 }
 
 /// @nodoc
-class __$$FeedLoggedCopyWithImpl<$Res>
-    extends _$FeedStateCopyWithImpl<$Res, _$FeedLogged>
-    implements _$$FeedLoggedCopyWith<$Res> {
-  __$$FeedLoggedCopyWithImpl(
-      _$FeedLogged _value, $Res Function(_$FeedLogged) _then)
+class __$$FeedLoggedImplCopyWithImpl<$Res>
+    extends _$FeedStateCopyWithImpl<$Res, _$FeedLoggedImpl>
+    implements _$$FeedLoggedImplCopyWith<$Res> {
+  __$$FeedLoggedImplCopyWithImpl(
+      _$FeedLoggedImpl _value, $Res Function(_$FeedLoggedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$FeedLogged(
+    return _then(_$FeedLoggedImpl(
       data: null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -138,8 +146,8 @@ class __$$FeedLoggedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FeedLogged implements FeedLogged {
-  const _$FeedLogged({required final List<FeedModel> data}) : _data = data;
+class _$FeedLoggedImpl implements FeedLogged {
+  const _$FeedLoggedImpl({required final List<FeedModel> data}) : _data = data;
 
   final List<FeedModel> _data;
   @override
@@ -154,11 +162,13 @@ class _$FeedLogged implements FeedLogged {
     return 'FeedState.feedLogged(data: $data)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FeedLoggedCopyWith<_$FeedLogged> get copyWith =>
-      __$$FeedLoggedCopyWithImpl<_$FeedLogged>(this, _$identity);
+  _$$FeedLoggedImplCopyWith<_$FeedLoggedImpl> get copyWith =>
+      __$$FeedLoggedImplCopyWithImpl<_$FeedLoggedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -187,37 +197,42 @@ class _$FeedLogged implements FeedLogged {
 
 abstract class FeedLogged implements FeedState {
   const factory FeedLogged({required final List<FeedModel> data}) =
-      _$FeedLogged;
+      _$FeedLoggedImpl;
 
   List<FeedModel> get data;
-  @JsonKey(ignore: true)
-  _$$FeedLoggedCopyWith<_$FeedLogged> get copyWith =>
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FeedLoggedImplCopyWith<_$FeedLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FeedErrorCopyWith<$Res> {
-  factory _$$FeedErrorCopyWith(
-          _$FeedError value, $Res Function(_$FeedError) then) =
-      __$$FeedErrorCopyWithImpl<$Res>;
+abstract class _$$FeedErrorImplCopyWith<$Res> {
+  factory _$$FeedErrorImplCopyWith(
+          _$FeedErrorImpl value, $Res Function(_$FeedErrorImpl) then) =
+      __$$FeedErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? error});
 }
 
 /// @nodoc
-class __$$FeedErrorCopyWithImpl<$Res>
-    extends _$FeedStateCopyWithImpl<$Res, _$FeedError>
-    implements _$$FeedErrorCopyWith<$Res> {
-  __$$FeedErrorCopyWithImpl(
-      _$FeedError _value, $Res Function(_$FeedError) _then)
+class __$$FeedErrorImplCopyWithImpl<$Res>
+    extends _$FeedStateCopyWithImpl<$Res, _$FeedErrorImpl>
+    implements _$$FeedErrorImplCopyWith<$Res> {
+  __$$FeedErrorImplCopyWithImpl(
+      _$FeedErrorImpl _value, $Res Function(_$FeedErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_$FeedError(
+    return _then(_$FeedErrorImpl(
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -228,8 +243,8 @@ class __$$FeedErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$FeedError implements FeedError {
-  const _$FeedError({this.error});
+class _$FeedErrorImpl implements FeedError {
+  const _$FeedErrorImpl({this.error});
 
   @override
   final String? error;
@@ -239,11 +254,13 @@ class _$FeedError implements FeedError {
     return 'FeedState.error(error: $error)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FeedErrorCopyWith<_$FeedError> get copyWith =>
-      __$$FeedErrorCopyWithImpl<_$FeedError>(this, _$identity);
+  _$$FeedErrorImplCopyWith<_$FeedErrorImpl> get copyWith =>
+      __$$FeedErrorImplCopyWithImpl<_$FeedErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -271,10 +288,13 @@ class _$FeedError implements FeedError {
 }
 
 abstract class FeedError implements FeedState {
-  const factory FeedError({final String? error}) = _$FeedError;
+  const factory FeedError({final String? error}) = _$FeedErrorImpl;
 
   String? get error;
-  @JsonKey(ignore: true)
-  _$$FeedErrorCopyWith<_$FeedError> get copyWith =>
+
+  /// Create a copy of FeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FeedErrorImplCopyWith<_$FeedErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
