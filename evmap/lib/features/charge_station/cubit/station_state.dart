@@ -16,6 +16,8 @@ class StationState with _$StationState {
       {required List<Station> data,
       bool? isFinish}) = StationLogged;
 
+  const factory StationState.detailLogged(
+      { Station? data}) = StationDetaiLogged;
 
   const factory StationState.error({String? error}) = StationError;
 }

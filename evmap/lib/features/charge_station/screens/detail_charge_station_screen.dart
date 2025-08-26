@@ -3,18 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_state.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/widgets/item_charge_station.dart';
 import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charge_station/charge_box_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_station_model.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/route/navigator.dart';
 import 'package:rabbitevc/widget/app_image.dart';
 
 class DetailCharStationScreen extends StatefulWidget {
-  final ChargeStationModel? data;
+  final Station? data;
   static const route = '/detail_charge_station';
 
-  const DetailCharStationScreen({this.data, Key? key}) : super(key: key);
+  const DetailCharStationScreen({required this.data, Key? key}) : super(key: key);
 
   @override
   State<DetailCharStationScreen> createState() =>
@@ -22,19 +24,14 @@ class DetailCharStationScreen extends StatefulWidget {
 }
 
 class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
-  ChargeStationModel? _data;
+  Station? _data;
 
-  ChargeStationCubit get _cubit => BlocProvider.of(context);
+ StationCubit get _cubit => BlocProvider.of(context);
 
   @override
   void initState() {
     _data = widget.data;
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _cubit.onLoadDetailCharStation(_data?.id);
-      if (_data?.chargeBoxList == null &&
-          _data?.chargeBoxList?.isEmpty == true) {
-        _cubit.onLoadChargeBox(_data?.id);
-      }
     });
     super.initState();
   }
@@ -73,50 +70,26 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BlocBuilder<ChargeStationCubit, ChargeStationState>(
-                buildWhen: (prev, current) =>
-                    current is DetailChargeStationLogged,
-                builder: (_, state) {
-                  state.whenOrNull(detailChargeStation: (data) {
-                    _data = data?.copyWith(chargeBoxList: _data?.chargeBoxList);
-                  });
-                  return _buildHeader(_data);
-                },
-              ),
+              _buildHeader(null),
               const SizedBox(height: 16),
-              BlocBuilder<ChargeStationCubit, ChargeStationState>(
-                buildWhen: (prev, current) => current is DetailChargeBoxLogged,
-                builder: (_, state) {
-                  List<ChargeBoxModel> listBox =
-                      List.from(_data?.chargeBoxList ?? []);
-                  state.whenOrNull(
-                      // detailChargeBox: (data) {
-                      //   listBox = List.from(data);
-                      // },
-                      );
-                  return ListView.separated(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        final item = listBox[index];
-                        return BlocProvider<ChargeStationCubit>(
-                            create: (context) => ChargeStationCubit(),
-                            child: ItemChargeStation(
-                              data: item,
-                              onChanged: (val) {
-                                List<ChargeBoxModel> list = listBox;
-                                list[index] = val;
-                                _data = _data?.copyWith(chargeBoxList: list);
-                              },
-                            ));
-                      },
-                      separatorBuilder: (_, context) {
-                        return const SizedBox(height: 16);
-                      },
-                      itemCount: listBox.length);
-                },
-              )
+              ListView.separated(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return BlocProvider<ChargeStationCubit>(
+                        create: (context) => ChargeStationCubit(),
+                        child: ItemChargeStation(
+                          data: ChargeBoxModel(),
+                          onChanged: (val) {
+
+                          },
+                        ));
+                  },
+                  separatorBuilder: (_, context) {
+                    return const SizedBox(height: 16);
+                  },
+                  itemCount: 10)
             ],
           ),
         ),

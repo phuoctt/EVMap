@@ -10,6 +10,7 @@ import 'package:rabbitevc/features/charge_station/cubit/charge_station_cubit.dar
 import 'package:rabbitevc/features/charge_station/cubit/charge_type_cubit.dart';
 import 'package:rabbitevc/features/booking/screens/book_charging_screen.dart';
 import 'package:rabbitevc/features/charge_station/cubit/map_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/screens/charge_station_screen.dart';
 import 'package:rabbitevc/features/charge_station/screens/detail_charge_station_screen.dart';
 import 'package:rabbitevc/features/charge_station/screens/detail_charger_dock.dart';
@@ -26,6 +27,7 @@ import 'package:rabbitevc/features/top_up/cubit/top_up_cubit.dart';
 import 'package:rabbitevc/features/top_up/screens/excharge_screen.dart';
 import 'package:rabbitevc/features/top_up/screens/top_up_screen.dart';
 import 'package:rabbitevc/features/transaction/cubit/transaction_cubit.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/widget/app_scaffold.dart';
 import '../app_setup.dart';
 
@@ -89,9 +91,9 @@ RouteFactory routes(AppSetup app) {
             ));
         break;
       case DetailCharStationScreen.route:
-        final data = arguments['data'];
-        screen = BlocProvider<ChargeStationCubit>(
-            create: (context) => ChargeStationCubit(),
+        Station data = arguments['data'];
+        screen = BlocProvider<StationCubit>(
+            create: (context) => StationCubit(),
             child: DetailCharStationScreen(data: data));
         break;
       case DetailChangerDock.route:

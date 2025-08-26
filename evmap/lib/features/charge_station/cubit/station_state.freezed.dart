@@ -22,6 +22,7 @@ mixin _$StationState {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -31,6 +32,7 @@ mixin _$StationState {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) =>
@@ -94,6 +96,7 @@ class _$StationLoadingImpl implements StationLoading {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) {
     return loading?.call();
@@ -106,6 +109,7 @@ class _$StationLoadingImpl implements StationLoading {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -156,6 +160,7 @@ class _$StationScreenLoadingImpl implements StationScreenLoading {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) {
     return screenLoading?.call();
@@ -168,6 +173,7 @@ class _$StationScreenLoadingImpl implements StationScreenLoading {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -218,6 +224,7 @@ class _$StationNothingImpl implements StationNothing {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) {
     return nothing?.call();
@@ -230,6 +237,7 @@ class _$StationNothingImpl implements StationNothing {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -319,6 +327,7 @@ class _$StationLoggedImpl implements StationLogged {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) {
     return logged?.call(data, isFinish);
@@ -331,6 +340,7 @@ class _$StationLoggedImpl implements StationLogged {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -353,6 +363,105 @@ abstract class StationLogged implements StationState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StationLoggedImplCopyWith<_$StationLoggedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StationDetaiLoggedImplCopyWith<$Res> {
+  factory _$$StationDetaiLoggedImplCopyWith(_$StationDetaiLoggedImpl value,
+          $Res Function(_$StationDetaiLoggedImpl) then) =
+      __$$StationDetaiLoggedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Station? data});
+}
+
+/// @nodoc
+class __$$StationDetaiLoggedImplCopyWithImpl<$Res>
+    extends _$StationStateCopyWithImpl<$Res, _$StationDetaiLoggedImpl>
+    implements _$$StationDetaiLoggedImplCopyWith<$Res> {
+  __$$StationDetaiLoggedImplCopyWithImpl(_$StationDetaiLoggedImpl _value,
+      $Res Function(_$StationDetaiLoggedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StationState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$StationDetaiLoggedImpl(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as Station?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StationDetaiLoggedImpl implements StationDetaiLogged {
+  const _$StationDetaiLoggedImpl({this.data});
+
+  @override
+  final Station? data;
+
+  @override
+  String toString() {
+    return 'StationState.detailLogged(data: $data)';
+  }
+
+  /// Create a copy of StationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StationDetaiLoggedImplCopyWith<_$StationDetaiLoggedImpl> get copyWith =>
+      __$$StationDetaiLoggedImplCopyWithImpl<_$StationDetaiLoggedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? loading,
+    TResult? Function()? screenLoading,
+    TResult? Function()? nothing,
+    TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
+    TResult? Function(String? error)? error,
+  }) {
+    return detailLogged?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function()? screenLoading,
+    TResult Function()? nothing,
+    TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
+    TResult Function(String? error)? error,
+    required TResult orElse(),
+  }) {
+    if (detailLogged != null) {
+      return detailLogged(data);
+    }
+    return orElse();
+  }
+}
+
+abstract class StationDetaiLogged implements StationState {
+  const factory StationDetaiLogged({final Station? data}) =
+      _$StationDetaiLoggedImpl;
+
+  Station? get data;
+
+  /// Create a copy of StationState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StationDetaiLoggedImplCopyWith<_$StationDetaiLoggedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -417,6 +526,7 @@ class _$StationErrorImpl implements StationError {
     TResult? Function()? screenLoading,
     TResult? Function()? nothing,
     TResult? Function(List<Station> data, bool? isFinish)? logged,
+    TResult? Function(Station? data)? detailLogged,
     TResult? Function(String? error)? error,
   }) {
     return error?.call(this.error);
@@ -429,6 +539,7 @@ class _$StationErrorImpl implements StationError {
     TResult Function()? screenLoading,
     TResult Function()? nothing,
     TResult Function(List<Station> data, bool? isFinish)? logged,
+    TResult Function(Station? data)? detailLogged,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
