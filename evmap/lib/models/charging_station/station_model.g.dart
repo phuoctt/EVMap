@@ -138,13 +138,15 @@ Connector _$ConnectorFromJson(Map json) => Connector(
       id: (json['id'] as num?)?.toInt(),
       chargeboxId: (json['chargebox_id'] as num?)?.toInt(),
       connectorType: (json['connector_type'] as num?)?.toInt(),
-      status: (json['status'] as num?)?.toInt(),
+      status: json['status'],
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
       updatedAt: json['updated_at'] == null
           ? null
           : DateTime.parse(json['updated_at'] as String),
+      typeCode: json['type_code'] as String?,
+      powerKw: (json['power_kw'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ConnectorToJson(Connector instance) => <String, dynamic>{
@@ -156,4 +158,6 @@ Map<String, dynamic> _$ConnectorToJson(Connector instance) => <String, dynamic>{
         'created_at': value,
       if (instance.updatedAt?.toIso8601String() case final value?)
         'updated_at': value,
+      if (instance.typeCode case final value?) 'type_code': value,
+      if (instance.powerKw case final value?) 'power_kw': value,
     };

@@ -132,10 +132,11 @@ class Connector {
   int? id;
   int? chargeboxId;
   int? connectorType;
-  int? status;
+  dynamic? status;
   DateTime? createdAt;
   DateTime? updatedAt;
-
+  String? typeCode;
+  int? powerKw;
   Connector({
     this.id,
     this.chargeboxId,
@@ -143,6 +144,8 @@ class Connector {
     this.status,
     this.createdAt,
     this.updatedAt,
+    this.typeCode,
+    this.powerKw,
   });
 
   factory Connector.fromJson(Map<String, dynamic> json) =>

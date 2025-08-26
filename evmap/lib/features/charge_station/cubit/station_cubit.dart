@@ -16,9 +16,7 @@ class StationCubit extends Cubit<StationState> {
   final Station? data;
 
   StationCubit({this.data}) : super(const StationLoading()) {
-    if (data != null) {
-      onLoadDetailStation(data?.id);
-    } else {
+    if (data == null) {
       onLoadStations();
     }
   }
@@ -44,7 +42,7 @@ class StationCubit extends Cubit<StationState> {
       final res =
           await getIt.get<ChargeStationApiService>().detailStation(id: id);
       if (res.code == ApiStatus.success) {
-        emit(StationDetaiLogged(data: res.data != null ? res.data : data!));
+        emit(StationDetaiLogged(data: res.data ?? data!));
       } else {
         emit(StationError(error: res.errors?.messageApp));
       }

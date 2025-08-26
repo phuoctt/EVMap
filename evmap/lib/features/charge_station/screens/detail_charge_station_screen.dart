@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_state.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/widgets/item_charge_station.dart';
 import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charge_station/charge_box_model.dart';
@@ -16,7 +17,8 @@ class DetailCharStationScreen extends StatefulWidget {
   final Station? data;
   static const route = '/detail_charge_station';
 
-  const DetailCharStationScreen({required this.data, Key? key}) : super(key: key);
+  const DetailCharStationScreen({required this.data, Key? key})
+      : super(key: key);
 
   @override
   State<DetailCharStationScreen> createState() =>
@@ -26,18 +28,20 @@ class DetailCharStationScreen extends StatefulWidget {
 class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
   Station? _data;
 
- StationCubit get _cubit => BlocProvider.of(context);
+  StationCubit get _cubit => BlocProvider.of(context);
 
   @override
   void initState() {
     _data = widget.data;
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _cubit.onLoadDetailStation(_data?.id);
     });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    List<ChargeBox> chargeBoxes = List.from(_data?.chargeBoxes ?? []);
     return Container(
       width: double.infinity,
       height: double.infinity,
@@ -54,50 +58,59 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
           elevation: 0,
           leading: IconButton(
             onPressed: () => pop(_data),
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             ),
           ),
           centerTitle: true,
           title: Text(_data?.name ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                   color: Colors.white)),
         ),
-        body: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildHeader(null),
-              const SizedBox(height: 16),
-              ListView.separated(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemBuilder: (context, index) {
-                    return BlocProvider<ChargeStationCubit>(
-                        create: (context) => ChargeStationCubit(),
-                        child: ItemChargeStation(
-                          data: ChargeBoxModel(),
-                          onChanged: (val) {
+        body: BlocBuilder<StationCubit, StationState>(
+          builder: (context, state) {
+            if (state is StationDetaiLogged) {
+              _data = state.data;
+              chargeBoxes = List.from(_data?.chargeBoxes ?? []);
+            }
 
-                          },
-                        ));
-                  },
-                  separatorBuilder: (_, context) {
-                    return const SizedBox(height: 16);
-                  },
-                  itemCount: 10)
-            ],
-          ),
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildHeader(_data),
+                  const SizedBox(height: 16),
+                  if (chargeBoxes.isNotEmpty)
+                    ListView.separated(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          final item = chargeBoxes[index];
+                          return BlocProvider<ChargeStationCubit>(
+                              create: (context) => ChargeStationCubit(),
+                              child: ItemChargeStation(
+                                data: item,
+                                onChanged: (val) {},
+                              ));
+                        },
+                        separatorBuilder: (_, context) {
+                          return const SizedBox(height: 16);
+                        },
+                        itemCount: chargeBoxes.length)
+                ],
+              ),
+            );
+          },
         ),
       ),
     );
   }
 
-  Widget _buildHeader(ChargeStationModel? data) {
+  Widget _buildHeader(Station? data) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -118,12 +131,12 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
             children: [
               Text(
                 data?.name ?? '',
-                style: TextStyle(color: Colors.white, fontSize: 22),
+                style: const TextStyle(color: Colors.white, fontSize: 22),
               ),
               const SizedBox(height: 8),
               Text(
                 data?.address ?? '',
-                style: TextStyle(color: Colors.white, fontSize: 14),
+                style: const TextStyle(color: Colors.white, fontSize: 14),
               ),
               const SizedBox(height: 4),
               Row(
@@ -138,7 +151,7 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
                         const SizedBox(width: 4),
                         Expanded(
                           child: Text(
-                            '${data?.chargeBoxList?.length ?? 0} trụ sạc',
+                            '${data?.chargeBoxes?.length ?? 0} trụ sạc',
                             style: const TextStyle(
                                 fontWeight: FontWeight.w400,
                                 fontSize: 14,
@@ -157,7 +170,7 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        '${_getDistance(data?.distance ?? 0)} km',
+                        '0 km',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 14,

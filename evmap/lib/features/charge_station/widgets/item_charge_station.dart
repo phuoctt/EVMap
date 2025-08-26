@@ -6,12 +6,13 @@ import 'package:rabbitevc/features/charge_station/cubit/charge_station_state.dar
 import 'package:rabbitevc/features/charge_station/widgets/charge_station_connectors.dart';
 import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charge_station/charge_box_model.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/share/enums/charge_box_type.dart';
 import 'package:rabbitevc/share/enums/charge_status_type.dart';
 import 'package:rabbitevc/theme/colors.dart';
 
 class ItemChargeStation extends StatefulWidget {
-  final ChargeBoxModel data;
+  final ChargeBox data;
   final ValueChanged<ChargeBoxModel>? onChanged;
 
   const ItemChargeStation({
@@ -25,7 +26,7 @@ class ItemChargeStation extends StatefulWidget {
 }
 
 class _ItemChargeStationState extends State<ItemChargeStation> {
-  late ChargeBoxModel item;
+  late ChargeBox item;
 
   ChargeStationCubit get _cubit => BlocProvider.of(context);
 
@@ -33,14 +34,19 @@ class _ItemChargeStationState extends State<ItemChargeStation> {
   void initState() {
     item = widget.data;
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _cubit.onLoadConnectors(item.charge_box_id);
+      // _cubit.onLoadConnectors(item.charge_box_id);
     });
     super.initState();
+  }
+  @override
+  void didUpdateWidget(covariant ItemChargeStation oldWidget) {
+    item = widget.data;
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
   Widget build(BuildContext context) {
-    final boxType = ChargeStatusType.fromTypeStatus(item.status);
+    final boxType = ChargeStatusType.fromTypeStatus('item.status');
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -61,24 +67,14 @@ class _ItemChargeStationState extends State<ItemChargeStation> {
               const SizedBox(width: 4),
               Expanded(
                   child: Text(
-                item.charge_box_name ?? '',
+                item.name ?? '',
                 maxLines: 1,
                 style: const TextStyle(color: Colors.white),
               )),
               const SizedBox(width: 2),
-              BlocBuilder<ChargeStationCubit, ChargeStationState>(
-                builder: (_, state) {
-                  state.whenOrNull(connectorsLogged: (data) {
-                    item.copyWith(price: data?.price);
-                  });
-                  final price = item.price?.details?.first.price;
-                  return price == null
-                      ? const SizedBox.shrink()
-                      : Text(
-                          '${price ?? 0} điểm/${item.price?.unit}',
-                          style: TextStyle(color: Colors.white, fontSize: 10),
-                        );
-                },
+              Text(
+                '${'price' ?? 0} điểm/${'item.price?.unit'}',
+                style: const TextStyle(color: Colors.white, fontSize: 10),
               ),
             ],
           ),
