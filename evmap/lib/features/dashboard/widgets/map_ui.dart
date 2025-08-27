@@ -80,7 +80,7 @@ class MapUiBodyState extends State<MapUiBody>
       FilterSearchModel(
           status: StationStatusType.all,
           chargeTypeModel: ChargeTypeModel(name: S.text?.text_all)));
-  List<LatLng> markers = [];
+  List<Station> stations = [];
 
   @override
   void initState() {
@@ -115,27 +115,25 @@ class MapUiBodyState extends State<MapUiBody>
           BlocBuilder<StationCubit, StationState>(
             builder: (context, state) {
               if (state is StationLogged) {
-                for (final e in state.data) {
-                  if (e.lat > 0 && e.long > 0) {
-                    final latLng =
-                        LatLng(Angle.degree(e.lat), Angle.degree(e.long));
-                    markers.add(latLng);
-                  }
-                }
-                _itemNotifier.value = state.data.first;
+                stations = List.from(state.data);
+
+                // _itemNotifier.value = state.data.first;
               }
 
               return RasterMapPage(
-                markers: markers,
+                data: stations,
+                onChanged: (item){
+                  _itemNotifier.value = item;
+                },
               );
             },
           ),
-          // Positioned(
-          //   top: 16,
-          //   left: 0,
-          //   right: 0,
-          //   child: _buildHeaderSearch(),
-          // ),
+          Positioned(
+            top: 16,
+            left: 0,
+            right: 0,
+            child: _buildHeaderSearch(),
+          ),
           ValueListenableBuilder<Station>(
             valueListenable: _itemNotifier,
             builder: (context, value, _) {
@@ -385,7 +383,7 @@ class MapUiBodyState extends State<MapUiBody>
                                 return const Text('');
                               } else {
                                 final distanceValue = snapshot.data!;
-                                if(distanceValue>0){
+                                if (distanceValue > 0) {
                                   return Text(
                                     '${_distanceString(distanceValue)} / ${_getDuration(distanceValue)}',
                                     style: const TextStyle(
@@ -445,7 +443,7 @@ class MapUiBodyState extends State<MapUiBody>
   }
 
   String _getDuration(distance) {
-    final durationSecond = ((distance/1000) / 60) * 3600;
+    final durationSecond = ((distance / 1000) / 60) * 3600;
     return _printDuration(Duration(seconds: durationSecond.toInt()));
   }
 

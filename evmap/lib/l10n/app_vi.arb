@@ -12,6 +12,7 @@
   "charge_status_supendedEV": "Đang kết nối",
   "charge_status_finishing": "Đang sử dụng",
   "charge_confirm_stop_charge": "Bạn chắc chắn muốn ngưng sạc ?",
+  "charge_status_maintenance": "Đang bảo trì",
   "text_try_again": "Please try again.",
   "text_confirm": "Xác nhận",
   "text_cancel": "Hủy bỏ",

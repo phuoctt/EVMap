@@ -9,6 +9,7 @@ import 'package:rabbitevc/models/charge_station/charge_box_model.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/share/enums/charge_box_type.dart';
 import 'package:rabbitevc/share/enums/charge_status_type.dart';
+import 'package:rabbitevc/share/enums/station_type.dart';
 import 'package:rabbitevc/theme/colors.dart';
 
 class ItemChargeStation extends StatefulWidget {
@@ -46,7 +47,8 @@ class _ItemChargeStationState extends State<ItemChargeStation> {
 
   @override
   Widget build(BuildContext context) {
-    final boxType = ChargeStatusType.fromTypeStatus('item.status');
+    final boxType = ChargeBoxStatus.fromValue(item.status);
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -60,7 +62,7 @@ class _ItemChargeStationState extends State<ItemChargeStation> {
               SvgPicture.asset(
                 IcSvg.icDetailStationCharging,
                 width: 20,
-                color: boxType == ChargeStatusType.available
+                color: boxType == ChargeBoxStatus.available
                     ? AppColors.primaryColor
                     : Colors.red,
               ),

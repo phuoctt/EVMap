@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/utils/utils.dart';
 import 'package:rabbitevc/utils/tile_servers.dart';
 import 'package:rabbitevc/utils/viewport_painter.dart';
@@ -13,8 +14,14 @@ import 'package:latlng/latlng.dart';
 import 'package:map/map.dart';
 
 class RasterMapPage extends StatefulWidget {
-  final List<LatLng> markers;
-  const RasterMapPage({Key? key,required this.markers}) : super(key: key);
+  final List<Station> data;
+  final ValueChanged<Station>? onChanged;
+
+  const RasterMapPage({
+    Key? key,
+    required this.data,
+    this.onChanged,
+  }) : super(key: key);
 
   @override
   RasterMapPageState createState() => RasterMapPageState();
@@ -34,6 +41,7 @@ class RasterMapPageState extends State<RasterMapPage> {
   );
 
   bool _darkMode = false;
+
   // List<LatLng> markers = [];
 
   void _gotoDefault() {
@@ -119,8 +127,7 @@ class RasterMapPageState extends State<RasterMapPage> {
               details.localPosition,
             ),
             onScaleStart: _onScaleStart,
-            onScaleUpdate: (details) =>
-                _onScaleUpdate(details, transformer),
+            onScaleUpdate: (details) => _onScaleUpdate(details, transformer),
             child: Listener(
               behavior: HitTestBehavior.opaque,
               onPointerSignal: (event) {
@@ -149,23 +156,26 @@ class RasterMapPageState extends State<RasterMapPage> {
                       y %= tilesInZoom;
 
                       return CachedNetworkImage(
-                        imageUrl: _darkMode
-                            ? googleDark(z, x, y)
-                            : google(z, x, y),
+                        imageUrl:
+                            _darkMode ? googleDark(z, x, y) : google(z, x, y),
                         fit: BoxFit.cover,
                       );
                     },
                   ),
                   // Marker
-                  ...widget.markers.map((location) {
-                    final markerOffset = transformer.toOffset(location);
+                  ...widget.data.map((e) {
+                    final markerOffset = transformer.toOffset(
+                        LatLng(Angle.degree(e.lat), Angle.degree(e.long)));
                     return Positioned(
                       left: markerOffset.dx - 12,
                       top: markerOffset.dy - 24,
-                      child: const Icon(
-                        Icons.location_on,
-                        color: Colors.red,
-                        size: 32,
+                      child: InkWell(
+                        onTap: () => widget.onChanged?.call(e),
+                        child: const Icon(
+                          Icons.location_on,
+                          color: Colors.red,
+                          size: 32,
+                        ),
                       ),
                     );
                   }).toList(),

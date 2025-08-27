@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
         .get<LocalStorageService>()
         .getString(LocalStorageKey.saveLogin.name);
     if (token == null || token.isEmpty) {
-      pushReplacementNamed(AuthScreen.route);
+      pushNamedAndRemoveUntil(MapUiBody.route, (_) => false);
     } else {
       pushNamedAndRemoveUntil(MapUiBody.route, (_) => false);
     }

@@ -15,6 +15,7 @@ import 'package:rabbitevc/route/navigator.dart';
 import 'package:rabbitevc/share/enums/charge_box_type.dart';
 import 'package:rabbitevc/share/enums/charge_status_type.dart';
 import 'package:rabbitevc/share/enums/connector_type.dart';
+import 'package:rabbitevc/share/enums/station_type.dart';
 import 'package:rabbitevc/share/utils/localization_utils.dart';
 import 'package:rabbitevc/widget/app_image.dart';
 import 'package:rabbitevc/widget/no_data.dart';
@@ -91,8 +92,8 @@ class _ChargeStationConnectorsState extends State<ChargeStationConnectors> {
       {ValueChanged<ConnectorsModel>? onChanged}) {
     // final url = item.type?.image_url;
 
-    ChargeStatusType? connectorBoxType =
-        ChargeStatusType.fromTypeStatus('Available');
+    ConnectorStatus connectorBoxType =
+        ConnectorStatus.fromValue(int.parse(item.status.toString()));
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -116,7 +117,8 @@ class _ChargeStationConnectorsState extends State<ChargeStationConnectors> {
           padding: const EdgeInsets.only(left: 24),
           child: Text(
             connectorBoxType?.statusText ?? '',
-            style: TextStyle(fontSize: 10, color: connectorBoxType?.color),
+            style:
+                TextStyle(fontSize: 10, color: connectorBoxType?.statusColor),
           ),
         )
       ],

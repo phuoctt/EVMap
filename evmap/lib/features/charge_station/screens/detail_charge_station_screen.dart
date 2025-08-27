@@ -169,7 +169,7 @@ class _DetailCharStationScreenState extends State<DetailCharStationScreen> {
                         width: 16,
                       ),
                       const SizedBox(width: 4),
-                      Text(
+                      const Text(
                         '0 km',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
