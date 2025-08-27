@@ -109,7 +109,6 @@ class MapUiBodyState extends State<MapUiBody>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           BlocBuilder<StationCubit, StationState>(
@@ -407,7 +406,7 @@ class MapUiBodyState extends State<MapUiBody>
                         _buildContent(
                           iconPath: IcSvg.icHomeLocation,
                           text:
-                              '${data.chargeBoxes?.length ?? 0}/${data.chargeBoxes?.length ?? 0} trụ khả dụng',
+                              '${data.countAvailable}/${data.chargeBoxes?.length ?? 0} trụ khả dụng',
                         )
                       ],
                       separatorBuilder: () => const SizedBox(height: 6),

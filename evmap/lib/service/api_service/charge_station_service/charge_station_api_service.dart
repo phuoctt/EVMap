@@ -10,6 +10,7 @@ import 'package:rabbitevc/models/booking/slot_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_box_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_station_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_type_model.dart';
+import 'package:rabbitevc/models/charge_station/connector_type_model.dart';
 import 'package:rabbitevc/models/charge_station/direction_model.dart';
 import 'package:rabbitevc/models/charge_station/start_charge_model.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
@@ -60,8 +61,11 @@ abstract class ChargeStationApiService {
       {@Path('chargeBoxId') String? chargeBoxId,
       @Path('connectorId') num? connectorId});
 
-  @GET('charge-types')
+  @GET('connector-types')
   Future<BaseResponse<List<ChargeTypeModel>>> chargeTypes();
+
+  @GET('connector-types')
+  Future<BaseResponse<List<ConnectorTypeModel>>> connectorTypes();
 
   @GET(
       'https://api.ekgis.vn/v1/route/direction/osm/driving/{myLng},{myLat};{lng},{lat}?api_key=${apiKey}&steps=true&geometries=geojson')

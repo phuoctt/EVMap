@@ -97,36 +97,26 @@ flavorizr:
   flavors:
     dev:
       app:
-        name: "Supercharge Dev"
+        name: "EVMap Dev"
 
       android:
-        applicationId: "com.ziot.supercharge.dev"
+        applicationId: "com.ziot.evmap.dev"
 
       ios:
-        bundleId: "com.ziot.supercharge.dev"
-
-    stag:
-      app:
-        name: "Supercharge Stag"
-
-      android:
-        applicationId: "com.ziot.supercharge.stag"
-      ios:
-        bundleId: "com.ziot.supercharge.stag"
-
+        bundleId: "com.ziot.evmap.dev"
     prod:
       app:
-        name: "Supercharge"
+        name: "EVMap"
 
       android:
-        applicationId: "com.ziot.supercharge"
+        applicationId: "com.ziot.evmap"
       ios:
-        bundleId: "com.ziot.supercharge"
+        bundleId: "com.ziot.evmap"
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/images/app_logo.png"
+  image_path: "assets/images/app_logo.jpg"
 
 #flutter_native_splash:
 #  #  android: false

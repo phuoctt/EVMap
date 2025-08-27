@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
+import 'package:rabbitevc/share/utils/app_utils.dart';
+import 'package:rabbitevc/theme/colors.dart';
 import 'package:rabbitevc/utils/utils.dart';
 import 'package:rabbitevc/utils/tile_servers.dart';
 import 'package:rabbitevc/utils/viewport_painter.dart';
@@ -44,8 +46,15 @@ class RasterMapPageState extends State<RasterMapPage> {
 
   // List<LatLng> markers = [];
 
-  void _gotoDefault() {
-    controller.center = const LatLng(Angle.degree(35.68), Angle.degree(51.41));
+  void _gotoDefault() async {
+    final myLocation = await AppUtils.getMyLocation();
+    if (myLocation?.latitude == null && myLocation?.longitude == null) return;
+    // controller.center = LatLng(
+    //     Angle.degree(myLocation!.latitude), Angle.degree(myLocation.longitude));
+    controller.center = LatLng(
+      Angle.degree(10.7769),
+      Angle.degree(106.7009),
+    );
     controller.zoom = 14;
     setState(() {});
   }
@@ -103,20 +112,20 @@ class RasterMapPageState extends State<RasterMapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Basic Map'),
-        actions: [
-          IconButton(
-            tooltip: 'Toggle Dark Mode',
-            onPressed: () {
-              setState(() {
-                _darkMode = !_darkMode;
-              });
-            },
-            icon: const Icon(Icons.wb_sunny),
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Basic Map'),
+      //   actions: [
+      //     IconButton(
+      //       tooltip: 'Toggle Dark Mode',
+      //       onPressed: () {
+      //         setState(() {
+      //           _darkMode = !_darkMode;
+      //         });
+      //       },
+      //       icon: const Icon(Icons.wb_sunny),
+      //     ),
+      //   ],
+      // ),
       body: MapLayout(
         controller: controller,
         builder: (context, transformer) {
@@ -194,6 +203,7 @@ class RasterMapPageState extends State<RasterMapPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _gotoDefault,
         tooltip: 'My Location',
+        backgroundColor: PrimaryColor.primary900,
         child: const Icon(Icons.my_location),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rabbitevc/share/enums/station_type.dart';
 
 part 'station_model.g.dart';
 
@@ -63,7 +64,11 @@ class Station {
   double get long => double.parse(longitude ?? '0.0');
 
   String get thumbnail =>
-          'https://vinfastnguyenkiem.vn/files/assets/he-thong-tram-sac-tram-doi-pin-vinfast-anh-3_1646272174.jpg';
+      'https://vinfastnguyenkiem.vn/files/assets/he-thong-tram-sac-tram-doi-pin-vinfast-anh-3_1646272174.jpg';
+
+  int get countAvailable => chargeBoxes
+      ?.where((box) => box.status == 1)
+      .length ?? 0;
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake)
@@ -121,6 +126,8 @@ class ChargeBox {
     this.station,
   });
 
+  ChargeBoxStatus get chargeBoxStatus => ChargeBoxStatus.fromValue(status);
+
   factory ChargeBox.fromJson(Map<String, dynamic> json) =>
       _$ChargeBoxFromJson(json);
 
@@ -137,6 +144,7 @@ class Connector {
   DateTime? updatedAt;
   String? typeCode;
   int? powerKw;
+
   Connector({
     this.id,
     this.chargeboxId,

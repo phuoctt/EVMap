@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:rabbitevc/app_setup.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_box_in_app_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_cubit.dart';
@@ -41,6 +42,7 @@ void mainApp() async {
   } catch (e) {}
   final app = AppSetup();
   await app.setup();
+  await Permission.location.request();
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<ChargeBoxInAppCubit>(

@@ -9,6 +9,8 @@ class ChargeTypeModel {
   int? id;
   @JsonKey(name: "name")
   String? name;
+  @JsonKey(name: "image_url")
+  String? imageUrl;
   // @JsonKey(name: "kW")
   // int? kW;
   // @JsonKey(name: "power_supply")
