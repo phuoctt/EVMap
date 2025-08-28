@@ -45,7 +45,7 @@ class ListSearchStation extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              item.name ?? '',
+                              'item.name ?? ''',
                               maxLines: 1,
                               style: AppTextStyle.bodyMedium
                                   .copyWith(color: Colors.white),
@@ -55,7 +55,7 @@ class ListSearchStation extends StatelessWidget {
                           Row(
                             children: [
                               Text(
-                                '${item.distanceString} km',
+                                '0 km',
                                 style: AppTextStyle.bodyMedium
                                     .copyWith(color: Colors.white),
                               ),
@@ -67,7 +67,7 @@ class ListSearchStation extends StatelessWidget {
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        item.address ?? '',
+                        'item.address' ?? '',
                         maxLines: 2,
                         style: AppTextStyle.bodyMedium
                             .copyWith(color: GreyColor.grey600),

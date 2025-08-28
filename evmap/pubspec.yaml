@@ -75,7 +75,8 @@ dependencies:
   map_launcher: ^3.2.0
   latlng: ^2.0.7
   map: ^2.0.2
-  flutter_map: ^8.2.1
+  flutter_map: any
+  flutter_map_marker_cluster: any
 
 
 dev_dependencies:

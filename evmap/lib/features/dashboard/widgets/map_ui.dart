@@ -4,62 +4,43 @@
 import 'dart:io';
 import 'dart:math';
 
-// import 'package:url_launcher/url_launcher.dart';
-
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_map/flutter_map.dart';
+import 'package:flutter_map_marker_cluster/flutter_map_marker_cluster.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
-
 import 'package:map_launcher/map_launcher.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_cubit.dart';
-import 'package:rabbitevc/features/charge_station/cubit/charge_station_state.dart';
 import 'package:rabbitevc/features/charge_station/cubit/map_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
-import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
-import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/screens/detail_charge_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/screens/search_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/views/popup_filter.dart';
-import 'package:rabbitevc/features/dashboard/widgets/raster_map_page.dart';
+import 'package:rabbitevc/features/dashboard/widgets/marker_icon.dart';
+import 'package:rabbitevc/features/dashboard/widgets/marker_my_location.dart';
 import 'package:rabbitevc/features/dashboard/widgets/tile_providers.dart';
-import 'package:rabbitevc/features/home/widgets/text_station_available.dart';
-import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charge_station/charge_station_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_type_model.dart';
-import 'package:rabbitevc/models/charge_station/direction_model.dart';
-import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/route/navigator.dart';
 import 'package:rabbitevc/service/event_bus/event_bus_manager.dart';
 import 'package:rabbitevc/share/enums/station_status_type.dart';
 import 'package:rabbitevc/share/utils/app_utils.dart';
-import 'package:rabbitevc/share/utils/app_utils.dart';
 import 'package:rabbitevc/share/utils/localization_utils.dart';
-import 'package:rabbitevc/theme/colors.dart';
 import 'package:rabbitevc/theme/colors.dart';
 import 'package:rabbitevc/theme/fonts.dart';
 import 'package:rabbitevc/theme/style.dart';
-import 'package:rabbitevc/utils/tile_servers.dart';
-import 'package:rabbitevc/utils/utils.dart';
-import 'package:rabbitevc/utils/viewport_painter.dart';
 import 'package:rabbitevc/widget/app_button.dart';
-import 'package:rabbitevc/widget/app_cicular_indicator.dart';
-import 'package:rabbitevc/widget/app_image.dart';
 import 'package:rabbitevc/widget/app_image.dart';
 import 'package:rabbitevc/widget/separated_flexible.dart';
-import 'package:flutter_map/flutter_map.dart';
+
+import 'map_polygon_layer.dart';
 
 const apiKey = 'qnAIH1NWu9uLyXRUgMpi5JUuVNMFypMjh31pw40z';
 
@@ -74,15 +55,7 @@ class MapUiBody extends StatefulWidget {
 
 class MapUiBodyState extends State<MapUiBody>
     with AutomaticKeepAliveClientMixin {
-  // CameraPosition _kInitialPosition = const CameraPosition(
-  //   target: LatLng(10.7786117, 106.671677),
-  //   zoom: 11.0,
-  // );
-
-  // late MaplibreMapController mapController;
   List<ChargeStationModel> data = List.from([]);
-
-  void _onMapChanged() {}
 
   ChargeStationCubit get _stationCubit => BlocProvider.of(context);
 
@@ -90,18 +63,17 @@ class MapUiBodyState extends State<MapUiBody>
 
   final ValueNotifier<Station> _itemNotifier = ValueNotifier(Station());
 
-  // ValueNotifier<String> _textNotifier = ValueNotifier('');
   ValueNotifier<FilterSearchModel> filterModel = ValueNotifier(
       FilterSearchModel(
           status: StationStatusType.all,
           chargeTypeModel: ChargeTypeModel(name: S.text?.text_all)));
   List<Station> stations = [];
 
-  bool _darkMode = false;
   Station? stationSelected;
   final mapController = MapController();
   final List<Marker> _markers = [];
   final random = Random();
+  Marker? markerMyLocation;
 
   @override
   void initState() {
@@ -111,7 +83,7 @@ class MapUiBodyState extends State<MapUiBody>
         _onSelectItemSearch();
       }
     });
-
+    WidgetsBinding.instance.addPostFrameCallback((_) async {});
     super.initState();
   }
 
@@ -121,8 +93,6 @@ class MapUiBodyState extends State<MapUiBody>
 
   @override
   void dispose() {
-    // mapController.removeListener(_onMapChanged);
-    // mapController.onSymbolTapped.remove(_onSymbolTapped);
     _itemNotifier.dispose();
     filterModel.dispose();
     super.dispose();
@@ -133,22 +103,31 @@ class MapUiBodyState extends State<MapUiBody>
     for (final e in stations) {
       final lat = e.lat;
       final lng = e.long;
+      final latLng = LatLng(lat, lng);
+      final isSelected = stationSelected?.id == e.id;
       _markers.add(
         Marker(
-          point: LatLng(lat, lng),
-          width: 40,
-          height: 40,
-          child: const Icon(
-            Icons.location_on,
-            color: Colors.red,
-            size: 30,
+          point: latLng,
+          width: isSelected ? 45 : 40,
+          height: isSelected ? 45 : 40,
+          child: InkWell(
+            onTap: () {
+              setState(() {
+                _itemNotifier.value = e;
+                stationSelected = e;
+                _addMarker(stations);
+              });
+              // mapController.move(latLng, 16);
+            },
+            // child: AppImage.asset(IcPng.icCustomMarker, height: 30),
+            child: MarkerIcon(isSelected: isSelected),
           ),
         ),
       );
     }
-
-
   }
+
+  // center location
 
   @override
   Widget build(BuildContext context) {
@@ -167,10 +146,67 @@ class MapUiBodyState extends State<MapUiBody>
                 options: const MapOptions(
                   initialCenter: LatLng(10.799136, 106.719461),
                   initialZoom: 12,
+                  interactionOptions: InteractionOptions(
+                    flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
+                  ),
                 ),
                 children: [
                   openStreetMapTileLayer,
-                  MarkerLayer(markers: _markers),
+                  const MapPolygonLayer(),
+                  MarkerLayer(markers: [
+                    Marker(
+                      point:
+                      const LatLng(16.818714181934283, 112.33720953819945),
+                      width: 100,
+                      height: 100,
+                      child: AppImage.asset(IcPng.hoangsa, height: 150),
+                    ),
+                    Marker(
+                      point: const LatLng(9.10486246002327, 112.35971946132798),
+                      width: 100,
+                      height: 100,
+                      child: AppImage.asset(IcPng.truongsa, height: 150),
+                    )
+                  ]),
+                  if (markerMyLocation != null)
+                    MarkerLayer(markers: [markerMyLocation!]),
+
+                  if (_markers.isNotEmpty)
+                    MarkerClusterLayerWidget(
+                      key: ValueKey(stationSelected?.id ?? 'none'),
+                      options: MarkerClusterLayerOptions(
+                        maxClusterRadius: 45,
+                        disableClusteringAtZoom: 16,
+                        size: const Size(60, 60),
+                        markers: _markers,
+                        builder: (context, markers) {
+                          return Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: PrimaryColor.primary900.withOpacity(0.5),
+                            ),
+                            child: Container(
+                              margin: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(30),
+                                color: PrimaryColor.primary900,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  markers.length.toString(),
+                                  style: const TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+
+                  // MarkerLayer(markers: _markers),
                 ],
               );
             },
@@ -194,7 +230,21 @@ class MapUiBodyState extends State<MapUiBody>
                     Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: FloatingActionButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          final myLocation = await AppUtils.getMyLocation();
+                          if (myLocation == null) return;
+                          setState(() {
+                            final latLng = LatLng(
+                                myLocation.latitude, myLocation.longitude);
+                            markerMyLocation = Marker(
+                              point: latLng,
+                              height: 40,
+                              width: 40,
+                              child: MarkerMyLocation(),
+                            );
+                            mapController.move(latLng, 17);
+                          });
+                        },
                         tooltip: 'My Location',
                         backgroundColor: PrimaryColor.primary900,
                         child: const Icon(Icons.my_location),
@@ -232,21 +282,21 @@ class MapUiBodyState extends State<MapUiBody>
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: GreyColor.grey800,
+                    color: Colors.white,
                   ),
                   width: double.infinity,
                   child: Row(
                     children: [
                       Expanded(
                           child: Text(
-                        S.text?.station_search_hint_text ?? '',
-                        style: const TextStyle(
-                            fontFamily: AppFonts.beVietnamPro,
-                            fontSize: 14,
-                            color: GreyColor.grey600,
-                            fontWeight: FontWeight.w300,
-                            height: 20 / 14),
-                      )),
+                            S.text?.station_search_hint_text ?? '',
+                            style: const TextStyle(
+                                fontFamily: AppFonts.beVietnamPro,
+                                fontSize: 14,
+                                color: GreyColor.grey600,
+                                fontWeight: FontWeight.w300,
+                                height: 20 / 14),
+                          )),
                       AppImage.asset(IcSvg.icSearch)
                     ],
                   ),
@@ -266,9 +316,10 @@ class MapUiBodyState extends State<MapUiBody>
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: GreyColor.grey800,
+                          color: Colors.white,
                         ),
-                        child: AppImage.asset(IcSvg.icFilter),
+                        child: AppImage.asset(IcSvg.icFilter,
+                            color: GreyColor.grey600),
                       ),
                       if (activeFilter == true)
                         Positioned(
@@ -295,20 +346,14 @@ class MapUiBodyState extends State<MapUiBody>
   void _onSelectItemSearch() async {
     final result = await pushNamed(SearchStationScreen.route,
         arguments: {'data': data, 'filterModel': filterModel});
+    // final model = stations.firstWhereOrNull((e) => e.id == 163);
+    // if (model != null) {
+    //   mapController.move(LatLng(model.lat, model.long), 17);
+    //   _itemNotifier.value = model;
+    // }
     if (result != null && result is ChargeStationModel) {
       final item = data.firstWhereOrNull((element) => element.id == result.id);
-      if (item != null) {
-        // _onLoadItemMap(item);
-
-        // _textNotifier.value = _itemNotifier.value.name ?? '';
-        // mapController.animateCamera(
-        //   CameraUpdate.newLatLngZoom(
-        //       LatLng(_itemNotifier.value.location_latitude?.toDouble() ?? 0,
-        //           _itemNotifier.value.location_longitude?.toDouble() ?? 0),
-        //       13),
-        //   duration: const Duration(milliseconds: 300),
-        // );
-      }
+      if (item != null) {}
     }
   }
 
@@ -324,7 +369,7 @@ class MapUiBodyState extends State<MapUiBody>
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 27),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: GreyColor.grey800),
+            borderRadius: BorderRadius.circular(8), color: Colors.white),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -348,7 +393,7 @@ class MapUiBodyState extends State<MapUiBody>
                           data.name ?? '',
                           maxLines: 1,
                           style: AppTextStyle.bodyMedium
-                              .copyWith(color: Colors.white),
+                              .copyWith(color: GreyColor.grey800),
                         ),
                         Text(
                           data.address ?? '',
@@ -371,12 +416,14 @@ class MapUiBodyState extends State<MapUiBody>
                                 final distanceValue = snapshot.data!;
                                 if (distanceValue > 0) {
                                   return Text(
-                                    '${_distanceString(distanceValue)} / ${_getDuration(distanceValue)}',
+                                    '${_distanceString(
+                                        distanceValue)} / ${_getDuration(
+                                        distanceValue)}',
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 14,
                                         height: 20 / 14,
-                                        color: Color(0xffFFC218)),
+                                        color: Colors.amber),
                                   );
                                 }
                                 return const Text('');
@@ -393,7 +440,8 @@ class MapUiBodyState extends State<MapUiBody>
                         _buildContent(
                           iconPath: IcSvg.icHomeLocation,
                           text:
-                              '${data.countAvailable}/${data.chargeBoxes?.length ?? 0} trụ khả dụng',
+                          '${data.countAvailable}/${data.chargeBoxes?.length ??
+                              0} trụ khả dụng',
                         )
                       ],
                       separatorBuilder: () => const SizedBox(height: 6),
@@ -429,7 +477,7 @@ class MapUiBodyState extends State<MapUiBody>
   }
 
   String _getDuration(distance) {
-    final durationSecond = ((distance / 1000) / 60) * 3600;
+    final durationSecond = ((distance / 1000) / 40) * 3600;
     return _printDuration(Duration(seconds: durationSecond.toInt()));
   }
 
@@ -438,15 +486,17 @@ class MapUiBodyState extends State<MapUiBody>
     String twoDigits(int n) => n.toString().padLeft(2, "0");
     String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60).abs());
     String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60).abs());
-    return "$negativeSign${twoDigits(duration.inHours) == '00' ? '' : '${twoDigits(duration.inHours)} giờ '}${twoDigitMinutes == '00' ? '' : '${twoDigitMinutes} phút'}";
+    return "$negativeSign${twoDigits(duration.inHours) == '00'
+        ? ''
+        : '${twoDigits(duration.inHours)} giờ '}${twoDigitMinutes == '00'
+        ? ''
+        : '${twoDigitMinutes} phút'}";
   }
 
-  double distanceInMeters(
-    double startLatitude,
-    double startLongitude,
-    double endLatitude,
-    double endLongitude,
-  ) {
+  double distanceInMeters(double startLatitude,
+      double startLongitude,
+      double endLatitude,
+      double endLongitude,) {
     return Geolocator.distanceBetween(
       startLatitude,
       startLongitude,

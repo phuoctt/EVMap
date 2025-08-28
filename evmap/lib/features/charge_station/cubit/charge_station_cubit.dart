@@ -118,6 +118,7 @@ class ChargeStationCubit extends Cubit<ChargeStationState> {
       int? typeId,
       int? statusId}) async {
     try {
+
       final res = await getIt.get<ChargeStationApiService>().listChargeStation(
           lat: lat,
           long: long,

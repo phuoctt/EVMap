@@ -1,5 +1,6 @@
 
 class IcPng {
+  static const hoangsa = 'assets/images/png/hoangsa.png';
   static const icAccountZalo = 'assets/images/png/ic_account_zalo.png';
   static const icCustomMarker = 'assets/images/png/ic_custom_marker.png';
   static const icDetailStationEffect1 = 'assets/images/png/ic_detail_station_effect1.png';
@@ -29,7 +30,9 @@ class IcPng {
   static const imageLogoSplash = 'assets/images/png/image_logo_splash.png';
   static const imageNotFound = 'assets/images/png/image_not_found.png';
   static const imagePlaceholder = 'assets/images/png/image_placeholder.png';
+  static const sea = 'assets/images/png/sea.png';
   static const tabbarBackground = 'assets/images/png/tabbar_background.png';
+  static const truongsa = 'assets/images/png/truongsa.png';
 }
 
 class IcSvg {

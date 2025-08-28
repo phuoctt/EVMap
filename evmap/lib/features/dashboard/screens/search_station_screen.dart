@@ -62,13 +62,14 @@ class _SearchStationScreenState extends State<SearchStationScreen> {
   }
 
   void _onSearchStation() async {
-    final position = await AppUtils.getPosition();
+    // final position = await AppUtils.getPosition();
     _cubit.onLoadCharStation(
-        lat: position?.latitude,
-        long: position?.longitude,
-        keyword: keyword,
-        statusId: widget.filterModel.value.status?.type,
-        typeId: widget.filterModel.value.chargeTypeModel?.id);
+      // lat: position?.latitude,
+      // long: position?.longitude,
+      keyword: keyword,
+      // statusId: widget.filterModel.value.status?.type,
+      // typeId: widget.filterModel.value.chargeTypeModel?.id,
+    );
   }
 
   void _onLoadSearchHistory() {

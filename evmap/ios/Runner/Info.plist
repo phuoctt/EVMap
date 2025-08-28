@@ -52,6 +52,8 @@
 	<true/>
 	<key>NSCameraUsageDescription</key>
 	<string>This app needs camera access to scan QR codes</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+    <string>Ứng dụng cần vị trí của bạn</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is required for accurate notifaction benefits for you lso you cane disable it with no problem</string>
 	<key>NSPhotoLibraryUsageDescription</key>
