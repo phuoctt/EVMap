@@ -75,6 +75,7 @@ dependencies:
   map_launcher: ^3.2.0
   latlng: ^2.0.7
   map: ^2.0.2
+  flutter_map: ^8.2.1
 
 
 dev_dependencies:
@@ -100,18 +101,18 @@ flavorizr:
         name: "EVMap Dev"
 
       android:
-        applicationId: "com.ziot.evmap.dev"
+        applicationId: "vn.ziot.evmap.dev"
 
       ios:
-        bundleId: "com.ziot.evmap.dev"
+        bundleId: "vn.ziot.evmap.dev"
     prod:
       app:
         name: "EVMap"
 
       android:
-        applicationId: "com.ziot.evmap"
+        applicationId: "vn.ziot.evmap"
       ios:
-        bundleId: "com.ziot.evmap"
+        bundleId: "vn.ziot.evmap"
 
 flutter_icons:
   android: "launcher_icon"

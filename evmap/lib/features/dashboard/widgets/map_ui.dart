@@ -1,48 +1,65 @@
 // Copyright 2018 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
 import 'dart:io';
-import 'package:geolocator/geolocator.dart';
-import 'package:latlng/latlng.dart';
-import 'package:map_launcher/map_launcher.dart';
+import 'dart:math';
 
-import 'package:flutter/material.dart';
+// import 'package:url_launcher/url_launcher.dart';
+
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:permission_handler/permission_handler.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:latlong2/latlong.dart';
 
-// import 'package:maplibre_gl/maplibre_gl.dart';
+import 'package:map_launcher/map_launcher.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/charge_station_state.dart';
 import 'package:rabbitevc/features/charge_station/cubit/map_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
+import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/screens/detail_charge_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/screens/search_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/views/popup_filter.dart';
 import 'package:rabbitevc/features/dashboard/widgets/raster_map_page.dart';
+import 'package:rabbitevc/features/dashboard/widgets/tile_providers.dart';
 import 'package:rabbitevc/features/home/widgets/text_station_available.dart';
+import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charge_station/charge_station_model.dart';
 import 'package:rabbitevc/models/charge_station/charge_type_model.dart';
 import 'package:rabbitevc/models/charge_station/direction_model.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
+import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/route/navigator.dart';
 import 'package:rabbitevc/service/event_bus/event_bus_manager.dart';
 import 'package:rabbitevc/share/enums/station_status_type.dart';
 import 'package:rabbitevc/share/utils/app_utils.dart';
+import 'package:rabbitevc/share/utils/app_utils.dart';
 import 'package:rabbitevc/share/utils/localization_utils.dart';
+import 'package:rabbitevc/theme/colors.dart';
 import 'package:rabbitevc/theme/colors.dart';
 import 'package:rabbitevc/theme/fonts.dart';
 import 'package:rabbitevc/theme/style.dart';
+import 'package:rabbitevc/utils/tile_servers.dart';
+import 'package:rabbitevc/utils/utils.dart';
+import 'package:rabbitevc/utils/viewport_painter.dart';
 import 'package:rabbitevc/widget/app_button.dart';
 import 'package:rabbitevc/widget/app_cicular_indicator.dart';
 import 'package:rabbitevc/widget/app_image.dart';
+import 'package:rabbitevc/widget/app_image.dart';
 import 'package:rabbitevc/widget/separated_flexible.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_map/flutter_map.dart';
 
 const apiKey = 'qnAIH1NWu9uLyXRUgMpi5JUuVNMFypMjh31pw40z';
 
@@ -57,8 +74,6 @@ class MapUiBody extends StatefulWidget {
 
 class MapUiBodyState extends State<MapUiBody>
     with AutomaticKeepAliveClientMixin {
-  MapUiBodyState();
-
   // CameraPosition _kInitialPosition = const CameraPosition(
   //   target: LatLng(10.7786117, 106.671677),
   //   zoom: 11.0,
@@ -82,6 +97,12 @@ class MapUiBodyState extends State<MapUiBody>
           chargeTypeModel: ChargeTypeModel(name: S.text?.text_all)));
   List<Station> stations = [];
 
+  bool _darkMode = false;
+  Station? stationSelected;
+  final mapController = MapController();
+  final List<Marker> _markers = [];
+  final random = Random();
+
   @override
   void initState() {
     _requestPermission();
@@ -90,6 +111,7 @@ class MapUiBodyState extends State<MapUiBody>
         _onSelectItemSearch();
       }
     });
+
     super.initState();
   }
 
@@ -106,6 +128,28 @@ class MapUiBodyState extends State<MapUiBody>
     super.dispose();
   }
 
+  void _addMarker(List<Station> stations) {
+    _markers.clear();
+    for (final e in stations) {
+      final lat = e.lat;
+      final lng = e.long;
+      _markers.add(
+        Marker(
+          point: LatLng(lat, lng),
+          width: 40,
+          height: 40,
+          child: const Icon(
+            Icons.location_on,
+            color: Colors.red,
+            size: 30,
+          ),
+        ),
+      );
+    }
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,15 +159,19 @@ class MapUiBodyState extends State<MapUiBody>
             builder: (context, state) {
               if (state is StationLogged) {
                 stations = List.from(state.data);
-
+                _addMarker(stations);
                 // _itemNotifier.value = state.data.first;
               }
-
-              return RasterMapPage(
-                data: stations,
-                onChanged: (item){
-                  _itemNotifier.value = item;
-                },
+              return FlutterMap(
+                mapController: mapController,
+                options: const MapOptions(
+                  initialCenter: LatLng(10.799136, 106.719461),
+                  initialZoom: 12,
+                ),
+                children: [
+                  openStreetMapTileLayer,
+                  MarkerLayer(markers: _markers),
+                ],
               );
             },
           ),
@@ -136,14 +184,28 @@ class MapUiBodyState extends State<MapUiBody>
           ValueListenableBuilder<Station>(
             valueListenable: _itemNotifier,
             builder: (context, value, _) {
-              return value.id != null
-                  ? Positioned(
-                      left: 0,
-                      right: 0,
-                      bottom: 114,
-                      child: _buildItemStation(value),
-                    )
-                  : const SizedBox.shrink();
+              return Positioned(
+                left: 0,
+                right: 0,
+                bottom: 24,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: FloatingActionButton(
+                        onPressed: () {},
+                        tooltip: 'My Location',
+                        backgroundColor: PrimaryColor.primary900,
+                        child: const Icon(Icons.my_location),
+                      ),
+                    ),
+                    value.id != null
+                        ? _buildItemStation(value)
+                        : const SizedBox.shrink(),
+                  ],
+                ),
+              );
             },
           ),
         ],
@@ -155,81 +217,6 @@ class MapUiBodyState extends State<MapUiBody>
     final result = await pushNamed(DetailCharStationScreen.route,
         arguments: {'data': val});
   }
-
-  void _addLine(RouteDirectionModel val) {
-    // final geometry = val.geometry?.coordinates
-    //         ?.map((e) => LatLng(e.last, e.first))
-    //         .toList() ??
-    //     [];
-    // mapController.clearLines();
-    // mapController.addLine(
-    //   LineOptions(
-    //       geometry: geometry,
-    //       lineColor: "#1BF698",
-    //       lineWidth: 5.0,
-    //       lineOpacity: 0.5,
-    //       draggable: false),
-    // );
-    // mapController.removeLine(line)
-  }
-
-  void _getItemMin(List<ChargeStationModel> val) {
-    num distanceMin = val.first.distance ?? 0;
-    int index = 0;
-    for (int i = 0; i < val.length; i++) {
-      final item = val[i];
-      final distance = item.distance ?? 0;
-      if (distance < distanceMin) {
-        distanceMin = distance;
-        index = i;
-      }
-    }
-    // _onLoadItemMap(data.first);
-    // _kInitialPosition = CameraPosition(
-    //   target: LatLng(_itemNotifier.value.location_latitude?.toDouble() ?? 0,
-    //       _itemNotifier.value.location_longitude?.toDouble() ?? 0),
-    //   zoom: 13.0,
-    // );
-  }
-
-  // Future<void> addImageFromAsset(
-  //     MaplibreMapController controller, String name, String assetName) async {
-  //   final ByteData bytes = await rootBundle.load(assetName);
-  //   final Uint8List list = bytes.buffer.asUint8List();
-  //   return controller.addImage(name, list);
-  // }
-  //
-  // void _onStyleLoaded() async {
-  //   if (data.isNotEmpty == true) {
-  //     await addImageFromAsset(
-  //         mapController, "custom-marker", IcPng.icCustomMarker);
-  //     mapController.addSymbols(List.generate(data.length, (index) {
-  //       final e = data[index];
-  //       return SymbolOptions(
-  //           zIndex: index,
-  //           geometry: LatLng(e.location_latitude?.toDouble() ?? 0,
-  //               e.location_longitude?.toDouble() ?? 0),
-  //           iconImage: "custom-marker", //"fast-food-15",
-  //           iconSize: 0.8);
-  //     }));
-  //   }
-  // }
-  //
-  // void onMapCreated(MaplibreMapController controller) {
-  //   mapController = controller;
-  //   mapController.addListener(_onMapChanged);
-  //   mapController.onSymbolTapped.add(_onSymbolTapped);
-  // }
-  //
-  // void _onSymbolTapped(Symbol symbol) {
-  //   mapController.animateCamera(
-  //     CameraUpdate.newLatLngZoom(
-  //         symbol.options.geometry ?? const LatLng(0, 11), 13),
-  //     duration: const Duration(milliseconds: 300),
-  //   );
-  //
-  //   _onLoadItemMap(data[symbol.options.zIndex ?? 0]);
-  // }
 
   Widget _buildHeaderSearch() {
     return SafeArea(

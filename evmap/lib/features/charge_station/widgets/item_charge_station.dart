@@ -73,11 +73,7 @@ class _ItemChargeStationState extends State<ItemChargeStation> {
                 maxLines: 1,
                 style: const TextStyle(color: Colors.white),
               )),
-              const SizedBox(width: 2),
-              Text(
-                '${'price' ?? 0} điểm/${'item.price?.unit'}',
-                style: const TextStyle(color: Colors.white, fontSize: 10),
-              ),
+
             ],
           ),
           Divider(color: Colors.white.withOpacity(0.1)),

@@ -25,7 +25,7 @@ class StationCubit extends Cubit<StationState> {
     try {
       emit(const StationLoading());
       final res =
-          await getIt.get<ChargeStationApiService>().stations(limit: 10);
+          await getIt.get<ChargeStationApiService>().stations(limit: 1000);
       if (res.code == ApiStatus.success) {
         emit(StationLogged(data: List.from(res.data?.list ?? [])));
       } else {

@@ -44,12 +44,12 @@ android {
     productFlavors {
         dev {
             dimension "flavor-type"
-            applicationId "com.ziot.evmap.dev"
+            applicationId "vn.ziot.evmap.dev"
             resValue "string", "app_name", "EVMap Dev"
         }
         prod {
             dimension "flavor-type"
-            applicationId "com.ziot.evmap"
+            applicationId "vn.ziot.evmap"
             resValue "string", "app_name", "EVMap"
         }
     }

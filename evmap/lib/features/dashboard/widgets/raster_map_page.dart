@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_cubit.dart';
 import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
+import 'package:rabbitevc/generated_images.dart';
 import 'package:rabbitevc/models/charging_station/station_model.dart';
 import 'package:rabbitevc/share/utils/app_utils.dart';
 import 'package:rabbitevc/theme/colors.dart';
@@ -14,6 +15,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:latlng/latlng.dart';
 import 'package:map/map.dart';
+import 'package:rabbitevc/widget/app_image.dart';
 
 class RasterMapPage extends StatefulWidget {
   final List<Station> data;
@@ -43,6 +45,7 @@ class RasterMapPageState extends State<RasterMapPage> {
   );
 
   bool _darkMode = false;
+  Station? stationSelected;
 
   // List<LatLng> markers = [];
 
@@ -51,7 +54,7 @@ class RasterMapPageState extends State<RasterMapPage> {
     if (myLocation?.latitude == null && myLocation?.longitude == null) return;
     // controller.center = LatLng(
     //     Angle.degree(myLocation!.latitude), Angle.degree(myLocation.longitude));
-    controller.center = LatLng(
+    controller.center = const LatLng(
       Angle.degree(10.7769),
       Angle.degree(106.7009),
     );
@@ -112,20 +115,6 @@ class RasterMapPageState extends State<RasterMapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Basic Map'),
-      //   actions: [
-      //     IconButton(
-      //       tooltip: 'Toggle Dark Mode',
-      //       onPressed: () {
-      //         setState(() {
-      //           _darkMode = !_darkMode;
-      //         });
-      //       },
-      //       icon: const Icon(Icons.wb_sunny),
-      //     ),
-      //   ],
-      // ),
       body: MapLayout(
         controller: controller,
         builder: (context, transformer) {
@@ -175,15 +164,20 @@ class RasterMapPageState extends State<RasterMapPage> {
                   ...widget.data.map((e) {
                     final markerOffset = transformer.toOffset(
                         LatLng(Angle.degree(e.lat), Angle.degree(e.long)));
+                    final select = stationSelected?.id == e.id;
                     return Positioned(
                       left: markerOffset.dx - 12,
                       top: markerOffset.dy - 24,
                       child: InkWell(
-                        onTap: () => widget.onChanged?.call(e),
-                        child: const Icon(
-                          Icons.location_on,
-                          color: Colors.red,
-                          size: 32,
+                        onTap: () {
+                          widget.onChanged?.call(e);
+                          setState(() {
+                            stationSelected = e;
+                          });
+                        },
+                        child: Image.asset(
+                          IcPng.icCustomMarker,
+                          width: select ? 28 : 22,
                         ),
                       ),
                     );

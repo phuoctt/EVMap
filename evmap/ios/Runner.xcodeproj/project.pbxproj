@@ -453,7 +453,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -521,7 +521,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -591,7 +591,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -602,7 +602,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -748,7 +748,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap.dev;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -814,7 +814,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -939,7 +939,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -950,7 +950,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -967,7 +967,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/Runner.entitlements;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -978,7 +978,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1112,7 +1112,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1243,7 +1243,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D4AA89E650CDDBB5E8D41B7 /* Pods-Runner.release-stag.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap.stag;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Release-stag";
@@ -1261,7 +1262,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE46BC501B5EE85061534D31 /* Pods-Runner.profile-prod.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Profile-prod";
@@ -1270,7 +1271,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B26273D732DC036342CA0F67 /* Pods-Runner.release-prod.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = GJ5DZ99UK2;
+				DEVELOPMENT_TEAM = 7R2L7PADXU;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Release-prod";
@@ -1340,7 +1341,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ziot.evmap;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.ziot.evmap;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
