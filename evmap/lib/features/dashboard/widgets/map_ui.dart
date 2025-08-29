@@ -21,6 +21,7 @@ import 'package:rabbitevc/features/charge_station/cubit/station_state.dart';
 import 'package:rabbitevc/features/charge_station/screens/detail_charge_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/screens/search_station_screen.dart';
 import 'package:rabbitevc/features/dashboard/views/popup_filter.dart';
+import 'package:rabbitevc/features/dashboard/widgets/map_bottom_info.dart';
 import 'package:rabbitevc/features/dashboard/widgets/marker_icon.dart';
 import 'package:rabbitevc/features/dashboard/widgets/marker_my_location.dart';
 import 'package:rabbitevc/features/dashboard/widgets/tile_providers.dart';
@@ -108,8 +109,8 @@ class MapUiBodyState extends State<MapUiBody>
       _markers.add(
         Marker(
           point: latLng,
-          width: isSelected ? 45 : 40,
-          height: isSelected ? 45 : 40,
+          width: isSelected ? 42 : 36,
+          height: isSelected ? 42 : 35,
           child: InkWell(
             onTap: () {
               setState(() {
@@ -139,7 +140,6 @@ class MapUiBodyState extends State<MapUiBody>
               if (state is StationLogged) {
                 stations = List.from(state.data);
                 _addMarker(stations);
-                // _itemNotifier.value = state.data.first;
               }
               return FlutterMap(
                 mapController: mapController,
@@ -156,7 +156,7 @@ class MapUiBodyState extends State<MapUiBody>
                   MarkerLayer(markers: [
                     Marker(
                       point:
-                      const LatLng(16.818714181934283, 112.33720953819945),
+                          const LatLng(16.818714181934283, 112.33720953819945),
                       width: 100,
                       height: 100,
                       child: AppImage.asset(IcPng.hoangsa, height: 150),
@@ -170,7 +170,6 @@ class MapUiBodyState extends State<MapUiBody>
                   ]),
                   if (markerMyLocation != null)
                     MarkerLayer(markers: [markerMyLocation!]),
-
                   if (_markers.isNotEmpty)
                     MarkerClusterLayerWidget(
                       key: ValueKey(stationSelected?.id ?? 'none'),
@@ -217,49 +216,82 @@ class MapUiBodyState extends State<MapUiBody>
             right: 0,
             child: _buildHeaderSearch(),
           ),
+          // ValueListenableBuilder<Station>(
+          //   valueListenable: _itemNotifier,
+          //   builder: (context, value, _) {
+          //     return Positioned(
+          //       left: 0,
+          //       right: 0,
+          //       bottom: 24,
+          //       child: Column(
+          //         crossAxisAlignment: CrossAxisAlignment.end,
+          //         children: [
+          //           Padding(
+          //             padding: const EdgeInsets.all(16.0),
+          //             child: FloatingActionButton(
+          //               onPressed: () async {
+          //                 final myLocation = await AppUtils.getMyLocation();
+          //                 if (myLocation == null) return;
+          //                 setState(() {
+          //                   final latLng = LatLng(
+          //                       myLocation.latitude, myLocation.longitude);
+          //                   markerMyLocation = Marker(
+          //                     point: latLng,
+          //                     height: 40,
+          //                     width: 40,
+          //                     child: MarkerMyLocation(),
+          //                   );
+          //                   mapController.move(latLng, 17);
+          //                 });
+          //               },
+          //               tooltip: 'My Location',
+          //               backgroundColor: PrimaryColor.primary900,
+          //               child: const Icon(Icons.my_location),
+          //             ),
+          //           ),
+          //           value.id != null
+          //               ? _buildItemStation(value)
+          //               : const SizedBox.shrink(),
+          //         ],
+          //       ),
+          //     );
+          //   },
+          // ),
+          // DraggableScrollableSheet
           ValueListenableBuilder<Station>(
             valueListenable: _itemNotifier,
             builder: (context, value, _) {
-              return Positioned(
-                left: 0,
-                right: 0,
-                bottom: 24,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: FloatingActionButton(
-                        onPressed: () async {
-                          final myLocation = await AppUtils.getMyLocation();
-                          if (myLocation == null) return;
-                          setState(() {
-                            final latLng = LatLng(
-                                myLocation.latitude, myLocation.longitude);
-                            markerMyLocation = Marker(
-                              point: latLng,
-                              height: 40,
-                              width: 40,
-                              child: MarkerMyLocation(),
+              return value.id != null
+                  ? DraggableScrollableSheet(
+                      initialChildSize: 0.3,
+                      minChildSize: 0.18,
+                      maxChildSize: 0.7,
+                      builder: (BuildContext context,
+                          ScrollController scrollController) {
+                        return ValueListenableBuilder<Station>(
+                          valueListenable: _itemNotifier,
+                          builder: (context, value, _) {
+                            return MapBottomInfo(
+                              value: value,
+                              scrollController: scrollController,
                             );
-                            mapController.move(latLng, 17);
-                          });
-                        },
-                        tooltip: 'My Location',
-                        backgroundColor: PrimaryColor.primary900,
-                        child: const Icon(Icons.my_location),
-                      ),
-                    ),
-                    value.id != null
-                        ? _buildItemStation(value)
-                        : const SizedBox.shrink(),
-                  ],
-                ),
-              );
+                          },
+                        );
+                      },
+                    )
+                  : const SizedBox.shrink();
             },
-          ),
+          )
         ],
       ),
+      // bottomSheet: ValueListenableBuilder<Station>(
+      //   valueListenable: _itemNotifier,
+      //   builder: (context, value, _) {
+      //     return MapBottomInfo(
+      //       value: value,
+      //     );
+      //   },
+      // ),
     );
   }
 
@@ -289,14 +321,14 @@ class MapUiBodyState extends State<MapUiBody>
                     children: [
                       Expanded(
                           child: Text(
-                            S.text?.station_search_hint_text ?? '',
-                            style: const TextStyle(
-                                fontFamily: AppFonts.beVietnamPro,
-                                fontSize: 14,
-                                color: GreyColor.grey600,
-                                fontWeight: FontWeight.w300,
-                                height: 20 / 14),
-                          )),
+                        S.text?.station_search_hint_text ?? '',
+                        style: const TextStyle(
+                            fontFamily: AppFonts.beVietnamPro,
+                            fontSize: 14,
+                            color: GreyColor.grey600,
+                            fontWeight: FontWeight.w300,
+                            height: 20 / 14),
+                      )),
                       AppImage.asset(IcSvg.icSearch)
                     ],
                   ),
@@ -416,9 +448,7 @@ class MapUiBodyState extends State<MapUiBody>
                                 final distanceValue = snapshot.data!;
                                 if (distanceValue > 0) {
                                   return Text(
-                                    '${_distanceString(
-                                        distanceValue)} / ${_getDuration(
-                                        distanceValue)}',
+                                    '${_distanceString(distanceValue)} / ${_getDuration(distanceValue)}',
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 14,
@@ -440,8 +470,7 @@ class MapUiBodyState extends State<MapUiBody>
                         _buildContent(
                           iconPath: IcSvg.icHomeLocation,
                           text:
-                          '${data.countAvailable}/${data.chargeBoxes?.length ??
-                              0} trụ khả dụng',
+                              '${data.countAvailable}/${data.chargeBoxes?.length ?? 0} trụ khả dụng',
                         )
                       ],
                       separatorBuilder: () => const SizedBox(height: 6),
@@ -486,17 +515,15 @@ class MapUiBodyState extends State<MapUiBody>
     String twoDigits(int n) => n.toString().padLeft(2, "0");
     String twoDigitMinutes = twoDigits(duration.inMinutes.remainder(60).abs());
     String twoDigitSeconds = twoDigits(duration.inSeconds.remainder(60).abs());
-    return "$negativeSign${twoDigits(duration.inHours) == '00'
-        ? ''
-        : '${twoDigits(duration.inHours)} giờ '}${twoDigitMinutes == '00'
-        ? ''
-        : '${twoDigitMinutes} phút'}";
+    return "$negativeSign${twoDigits(duration.inHours) == '00' ? '' : '${twoDigits(duration.inHours)} giờ '}${twoDigitMinutes == '00' ? '' : '${twoDigitMinutes} phút'}";
   }
 
-  double distanceInMeters(double startLatitude,
-      double startLongitude,
-      double endLatitude,
-      double endLongitude,) {
+  double distanceInMeters(
+    double startLatitude,
+    double startLongitude,
+    double endLatitude,
+    double endLongitude,
+  ) {
     return Geolocator.distanceBetween(
       startLatitude,
       startLongitude,

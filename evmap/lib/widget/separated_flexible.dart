@@ -13,7 +13,7 @@ class SeparatedRow extends StatelessWidget {
   final bool flexEqual;
 
   const SeparatedRow({
-    Key? key,
+    super.key,
     required this.children,
     this.separatorBuilder,
     this.mainAxisAlignment = MainAxisAlignment.start,
@@ -24,26 +24,32 @@ class SeparatedRow extends StatelessWidget {
     this.textDirection,
     this.padding,
     this.flexEqual = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> c = flexEqual
-        ? children.map<Widget>((e) => Expanded(child: e)).toList()
-        : children.toList();
-    for (var i = c.length; i-- > 0;) {
-      if (i > 0 && separatorBuilder != null) c.insert(i, separatorBuilder!());
+    List<Widget> itemList = [];
+    if (separatorBuilder != null) {
+      for (var i = 0; i < children.length; i++) {
+        itemList.add(children[i]);
+        if (i != children.length - 1) {
+          itemList.add(separatorBuilder!());
+        }
+      }
+    } else {
+      itemList.addAll(children);
     }
+
     Widget row = Row(
-      children: c,
       mainAxisAlignment: mainAxisAlignment,
       crossAxisAlignment: crossAxisAlignment,
       mainAxisSize: mainAxisSize,
       textBaseline: textBaseline,
       textDirection: textDirection,
       verticalDirection: verticalDirection,
+      children: itemList,
     );
-    return this.padding == null ? row : Padding(padding: padding!, child: row);
+    return padding == null ? row : Padding(padding: padding!, child: row);
   }
 }
 

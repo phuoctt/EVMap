@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:rabbitevc/share/enums/service_type.dart';
 import 'package:rabbitevc/share/enums/station_type.dart';
 
 part 'station_model.g.dart';
@@ -23,7 +24,7 @@ class Station {
   DateTime? updatedAt;
 
   dynamic? province;
-  String? ward;
+  dynamic? ward;
 
   List<String>? images;
   List<Service>? services;
@@ -90,6 +91,8 @@ class Service {
     this.createdAt,
     this.updatedAt,
   });
+
+  StationServiceType get stationServiceType =>StationServiceType.fromValue(serviceType);
 
   factory Service.fromJson(Map<String, dynamic> json) =>
       _$ServiceFromJson(json);

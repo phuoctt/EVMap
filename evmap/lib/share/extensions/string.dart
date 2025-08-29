@@ -1,8 +1,10 @@
-// ignore_for_file: prefer_interpolation_to_compose_strings
 
-import 'package:rabbitevc/share/extensions/date_time.dart';
 
 extension StringExtension on String? {
+  bool get isNullOrEmpty => this == null || this!.isEmpty;
+
+  bool get notNullOrEmpty => this != null && this!.isNotEmpty;
+
   bool get emailValid {
     return RegExp(
             r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')

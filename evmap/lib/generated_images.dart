@@ -27,7 +27,7 @@ class IcPng {
   static const imageChargerDock = 'assets/images/png/image_charger_dock.png';
   static const imageDetailBill = 'assets/images/png/image_detail_bill.png';
   static const imageHomeModel = 'assets/images/png/image_home_model.png';
-  static const imageLogoSplash = 'assets/images/png/image_logo_splash.png';
+  static const imageLogoSplash = 'assets/images/png/image_logo_splash.jpg';
   static const imageNotFound = 'assets/images/png/image_not_found.png';
   static const imagePlaceholder = 'assets/images/png/image_placeholder.png';
   static const sea = 'assets/images/png/sea.png';

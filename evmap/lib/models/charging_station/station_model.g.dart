@@ -27,7 +27,7 @@ Station _$StationFromJson(Map json) => Station(
           ? null
           : DateTime.parse(json['updated_at'] as String),
       province: json['province'],
-      ward: json['ward'] as String?,
+      ward: json['ward'],
       images:
           (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
       services: (json['services'] as List<dynamic>?)
